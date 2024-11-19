@@ -14,6 +14,10 @@ This repository is for the work of the CoSAI Workstream 2, Preparing Defenders f
 ### About this workstream
 The goal of this workstream is to develop a defender’s framework to identify needed investments to address the security impacts of AI use by business applications, attackers, and defenders as well as mitigations techniques and best practices. The Defender’s framework aims to scale investments and mitigation strategies with the emergence of pivotal offensive cybersecurity advancements in AI models. Further information can be found [here](https://github.com/cosai-oasis/oasis-open-project/blob/main/WORKSTREAMS.md).
 
+### Workstream Leads
+* Josia Hagen, Trend Micro
+* Vinay Bansal, Cisco
+
 <!-- ## Badges [optional – TBD]
 
 Using badges is optional, but they are a nice way to show some key facts and stats about your project at a glance. There are badges for all kinds of things relating to your repository, e.g. to show the license you're using, the programming language, the number of forks, or a CI badge to show build/test status. Be mindful not to use too many badges. You can use [Shields](http://shields.io/) to add some to your README. Many services also have instructions for adding a badge. Check out the README of the Open Cybersecurity Alliance project [Kestrel](https://github.com/opencybersecurityalliance/kestrel-lang) to see badges in action.
