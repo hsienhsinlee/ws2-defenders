@@ -1351,6 +1351,7 @@ The ZTMM maps security implementations for each of the pillars to 4 levels of ma
 + Network: Segmentation, Traffic Management, Traffic Encryption, Network Resilience
 + Application Workload: Application Access, Application Threat Protection, Application Accessibility, Secure Development Lifecycle, Application Security Testing
 
+<img src="./frameworks/images/Zero-Trust-Maturity-Model-Pillars-from-CISA-2156918887.jpg" alt="Zero Trust Pillars" style="width:40%; height:auto;">
 
 ##### 2.10.2.3. Zero Trust Cross-Cutting Features
 
