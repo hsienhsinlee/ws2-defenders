@@ -128,6 +128,18 @@
 
 ### 1.1. Overview of Defender Frameworks
 
+This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
+1. Overview and detail on defender frameworks
+2. Mapping frameworks to organizational roles and responsibilities
+3. Identifying the gaps in these frameworks
+
+For each framework from the defenders corpus we provide an overview identifying the source, purpose and audience of the material.  An overview of the material and its scope for general or specific cybersecurity topics including defense of AI systems is presented.  Further detail on the framework is provided, especially for practioners, summarized to capture the key concepts in and uses for the framework.  This material is intended to give defenders a systematic guide to understand how each framework is applicable to their work.
+
+Organizational roles are categorized, and each framework is mapped to intended audiences and stakeholders.  This document presents a high-level mapping, and the framework detail mapping breaks down responsibilities further.  For each, a RACI matrix is used to map roles to the actions specified for the framework, indicating who is responsible, accountable, consulted and informed.  This mapping assists defenders in understanding the responsibilities associated for each framework, which roles are responsible and how.
+
+Gaps in each framework are identified, and gaps common to all frameworks are surfaced in this document.  This points to extensions required to the system of frameworks in order to effectively secure AI systems.  Specific missing elements for each framework are also identified, indicating specific work that may be done to cover these gaps. 
+
+
 ### 1.2. Roles Addressed
 
 Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&CK/ATLAS/CAPEC, OWASP and Zero Trust to ensure secure, compliant, and resilient AI deployment. Executives align strategy with regulatory and risk imperatives, while CISOs operationalize security controls and threat monitoring. Architects integrate these frameworks to design robust infrastructures, and IT and SOC teams employ them for system integrity, incident response, and proactive threat hunting. Service operations ensure compliance in deployment, auditors enforce policy adherence, and researchers develop resilient, fair AI models. Practitioners follow these guidelines, contributing to continuous improvement. Together, these roles enable responsible, secure AI adoption.
