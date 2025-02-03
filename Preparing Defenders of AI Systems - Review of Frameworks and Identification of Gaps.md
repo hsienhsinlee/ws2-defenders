@@ -156,6 +156,7 @@ Gaps in each framework are identified, and gaps common to all frameworks are sur
 
 Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&CK/ATLAS/CAPEC, OWASP and Zero Trust to ensure secure, compliant, and resilient AI deployment. Executives align strategy with regulatory and risk imperatives, while CISOs operationalize security controls and threat monitoring. Architects integrate these frameworks to design robust infrastructures, and IT and SOC teams employ them for system integrity, incident response, and proactive threat hunting. Service operations ensure compliance in deployment, auditors enforce policy adherence, and researchers develop resilient, fair AI models. Practitioners follow these guidelines, contributing to continuous improvement. Together, these roles enable responsible, secure AI adoption.
 
+
 | **Role**               | **Key Focus**   |
 |---------------------------|-----------------|
 | ***Executives*** | 1. Define the organization's risk tolerance and ensure alignment with business objectives.<br>2. Oversee governance frameworks for AI and cybersecurity.<br>3. Allocate resources for implementing and maintaining secure AI systems.<br>4. Ensure compliance with regulatory and legal requirements related to AI. |
@@ -169,6 +170,34 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 | ***Auditors/Policy Makers*** | 1. Develop policies and standards for secure AI adoption.<br>2. Conduct audits to ensure compliance with established frameworks and guidelines.<br>Promote ethical and responsible AI use across sectors. |
 | ***Researchers/Data Scientists*** | 1. Develop robust AI models that can resist adversarial attacks.<br>2. Investigate vulnerabilities and propose mitigations.<br>3. Work on explainability, fairness, and trustworthiness of AI systems. |
 | ***Users/Practitioners*** | 1. Use AI systems according to organizational policies and ethical standards.<br>2. Report any suspicious behavior or potential vulnerabilities to the appropriate teams.<br>3. Provide feedback on the effectiveness and usability of AI systems for continuous improvement. |
+
+<br><br>
+
+| Activity / Role            | Executives | CISO/SSO | Service Architects | IT Architects | Security Architects | IT Operations | SOC Operations | Service Operations | Auditors/Policy Makers | Researchers / Data Scientists | Users / Practitioners |
+|---------------------------|------------|----------|-------------------|--------------|-------------------|--------------|--------------|----------------|---------------------|-------------------------|------------------|
+| AI Governance & Strategy  | A          | R        | C                 | C            | C                 | I            | I            | I              | C                   | I                         | I                |
+| Risk Management & Compliance | A      | R        | C                 | C            | R                 | I            | C            | I              | R                   | C                         | I                |
+| Security Policy Definition | C          | A        | C                 | I            | R                 | I            | C            | C              | R                   | C                         | I                |
+| AI System Architecture    | I          | C        | R                 | A            | C                 | I            | I            | C              | I                   | C                         | I                |
+| Threat Modeling & Assessment | I       | R        | C                 | C            | A                 | I            | R            | C              | C                   | C                         | I                |
+| Incident Response & Monitoring | I     | A        | I                 | I            | C                 | R            | R            | I              | I                   | I                         | I                |
+| Secure Deployment & Operations | I     | C        | A                 | R            | C                 | R            | C            | A              | I                   | I                         | I                |
+| Compliance Auditing       | C          | C        | I                 | I            | C                 | I            | I            | I              | A                   | I                         | I                |
+| AI Model Development      | I          | C        | C                 | C            | C                 | I            | I            | I              | I                   | A                         | I                |
+| AI Ethics & Fairness      | I          | C        | C                 | C            | C                 | I            | I            | I              | R                   | A                         | I                |
+| User Training & Awareness | C          | R        | C                 | I            | C                 | C            | C            | C              | I                   | I                         | A                |
+| Continuous Improvement & Feedback | C | R        | C                 | C            | C                 | C            | C            | C              | C                   | C                         | R                |
+
+---
+
+***Legend:***
+- **R** = Responsible (Performs the task/work)
+- **A** = Accountable (Ultimate authority and decision-maker)
+- **C** = Consulted (Provides input and expertise)
+- **I** = Informed (Kept in the loop)
+
+<br><br>
+
 
 ### 1.3. What Defender Frameworks are missing for Defending AI Systems
 
