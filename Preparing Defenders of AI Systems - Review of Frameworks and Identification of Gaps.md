@@ -140,7 +140,7 @@
 
 ## Abstract:
 
-This paper reviews the current frameworks used to secure AI systems, especially on how they assist defenders in addressing cybersecurity challenges specific to AI. It provides an overview of defender frameworks, mapping them to organizational roles and responsibilities to facilitate their application.  The paper also identifies gaps in these frameworks, including AI-specific architectures, vulnerabilities, adversarial attacks, and the integration of AI security into broader cybersecurity practices. These gaps highlight areas what extensions or new standards will effectively safeguard AI systems. The paper aims to provide an open extensible comprehensive guide for defenders, offering detailed framework analysis, responsibilty mapping, and needed improvements to enhance AI system security.
+This paper reviews the current frameworks used to secure AI systems, especially on how they assist defenders in addressing AI specific cybersecurity challenges. It provides an overview of defender frameworks, mapping them to organizational roles and responsibilities to facilitate their application.  The paper also identifies gaps in these frameworks, including AI-specific architectures, vulnerabilities, adversarial attacks, and the integration of AI security into broader cybersecurity practices. These gaps highlight areas what extensions or new standards will effectively safeguard AI systems. The paper aims to provide an open extensible comprehensive guide for defenders, offering detailed framework analysis, responsibilty mapping, and needed improvements to enhance AI system security.
 
 ## Summary of the technical purpose of the document.
 
@@ -216,7 +216,7 @@ MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the m
 | **Gap**               | **What is missing**   |
 |---------------------------|-----------------|
 | **Threat model for AI** | Specific adversarial techniques including the mechanisms that exploit weaknesses particular to AI systems |
-| **Incident Response or Mitigations** | Fine-gran detail on actions for playbooks in response or prevention |
+| **Incident Response or Mitigations** | Fine-grain detail on actions for playbooks in detection, response and remediation |
 | **Integration with other Cybersecurity Frameworks** | Map framework details to other frameworks for interoperability |
 | **AI Supply Chain Vulnerabilities** | Weaknesses in supply chain of data, code and models that create AI system vulnerabilities |
 | **Model Behavior Analysis** | Determining nominal behavior, monitoring and analysis of behavior of models to ensure their proper function |
