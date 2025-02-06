@@ -6,10 +6,18 @@
   - [Abstract:](#abstract)
   - [Summary of the technical purpose of the document.](#summary-of-the-technical-purpose-of-the-document)
   - [Status:](#status)
-  - [1. Introduction](#1-introduction)
-    - [1.1. Overview of Defender Frameworks](#11-overview-of-defender-frameworks)
-    - [1.2. Roles Addressed](#12-roles-addressed)
-    - [1.3. What Defender Frameworks are missing for Defending AI Systems](#13-what-defender-frameworks-are-missing-for-defending-ai-systems)
+  - [1. Preparing Defenders of AI Systems](#1-preparing-defenders-of-ai-systems)
+    - [1.1. Changing Attack Surface with AI Adoption](#11-changing-attack-surface-with-ai-adoption)
+      - [1.1.1. AI Risk examples](#111-ai-risk-examples)
+      - [1.1.2. Overview of Defender Frameworks](#112-overview-of-defender-frameworks)
+      - [1.1.3. Change needed for Defenders of AI Systems](#113-change-needed-for-defenders-of-ai-systems)
+    - [1.2. How to use this document](#12-how-to-use-this-document)
+      - [1.2.1. Overview of Defender Frameworks](#121-overview-of-defender-frameworks)
+      - [1.2.2. Scope of Preparing Defenders of AI Systems](#122-scope-of-preparing-defenders-of-ai-systems)
+        - [1.2.2.1 In Scope](#1221-in-scope)
+        - [1.2.2.2 Not In Scope](#1222-not-in-scope)
+    - [1.3. Roles Addressed](#13-roles-addressed)
+    - [1.4. What Defender Frameworks are missing for Defending AI Systems](#14-what-defender-frameworks-are-missing-for-defending-ai-systems)
   - [2. Frameworks](#2-frameworks)
     - [2.1. NIST CSF 2.0](#21-nist-csf-20)
       - [2.1.1. Overview](#211-overview)
@@ -148,7 +156,7 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 ## 1. Preparing Defenders of AI Systems
 
-### 1.1 Changing Attack Surface with AI Adoption
+### 1.1. Changing Attack Surface with AI Adoption
 
 #### 1.1.1. AI Risk examples
 
@@ -156,7 +164,7 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 #### 1.1.3. Change needed for Defenders of AI Systems
 
-### 1.2  How to use this document
+### 1.2. How to use this document
 
 #### 1.2.1. Overview of Defender Frameworks
 
