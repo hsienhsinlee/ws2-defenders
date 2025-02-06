@@ -146,9 +146,19 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 ## Status:
 
-## 1. Introduction
+## 1. Preparing Defenders of AI Systems
 
-### 1.1. Overview of Defender Frameworks
+### 1.1 Changing Attack Surface with AI Adoption
+
+#### 1.1.1. AI Risk examples
+
+#### 1.1.2. Overview of Defender Frameworks
+
+#### 1.1.3. Change needed for Defenders of AI Systems
+
+### 1.2  How to use this document
+
+#### 1.2.1. Overview of Defender Frameworks
 
 This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
 1. Overview and detail on defender frameworks
@@ -161,8 +171,13 @@ Organizational roles are categorized, and each framework is mapped to intended a
 
 Gaps in each framework are identified, and gaps common to all frameworks are surfaced in this document.  This points to extensions required to the system of frameworks in order to effectively secure AI systems.  Specific missing elements for each framework are also identified, indicating specific work that may be done to cover these gaps. 
 
+#### 1.2.2. Scope of Preparing Defenders of AI Systems
 
-### 1.2. Roles Addressed
+##### 1.2.2.1 In Scope
+
+##### 1.2.2.2 Not In Scope
+
+### 1.3. Roles Addressed
 
 Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&CK/ATLAS/CAPEC, OWASP and Zero Trust to ensure secure, compliant, and resilient AI deployment. Executives align strategy with regulatory and risk imperatives, while CISOs operationalize security controls and threat monitoring. Architects integrate these frameworks to design robust infrastructures, and IT and SOC teams employ them for system integrity, incident response, and proactive threat hunting. Service operations ensure compliance in deployment, auditors enforce policy adherence, and researchers develop resilient, fair AI models. Practitioners follow these guidelines, contributing to continuous improvement. Together, these roles enable responsible, secure AI adoption.
 
@@ -209,7 +224,7 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 <br><br>
 
 
-### 1.3. What Defender Frameworks are missing for Defending AI Systems
+### 1.4. What Defender Frameworks are missing for Defending AI Systems
 
 MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the most AI-specific guidance.  MITRE ATLAS covers adversarial tactics and techniques in detail, specifying attacker general goals against AI systems and the steps in the attack.  NIST CSF, NIST RMF, MITRE CAPEC and CISA Zero Trust Maturity Model provide more general security guidance, but could be expanded to better incorporate AI-specific risks, both for adversarial attacks and for vulnerabilities related to data, models or guardrails for AI systems.  The MIT Risk Repository offers insights for governance stakeholders, but doesn't provide enough low-level detail to inform defenders of AI systems about security measures.  Current defender frameworks require some extensions to properly deal with securing AI systems, some themes of which are repeated across frameworks.
 
