@@ -21,7 +21,7 @@
       - [1.2.1. Overview of Defender Frameworks](#121-overview-of-defender-frameworks)
       - [1.2.2. Scope of Preparing Defenders of AI Systems](#122-scope-of-preparing-defenders-of-ai-systems)
         - [1.2.2.1 In Scope](#1221-in-scope)
-        - [1.2.2.2 Not In Scope](#1222-not-in-scope)
+        - [1.2.2.2 Out of Scope](#1222-out-of-scope)
     - [1.3. Roles Addressed](#13-roles-addressed)
   - [2. Frameworks](#2-frameworks)
     - [2.1. NIST](#21-nist)
@@ -294,7 +294,23 @@ Gaps in each framework are identified, and gaps common to all frameworks are sur
 
 ##### 1.2.2.1 In Scope
 
-##### 1.2.2.2 Not In Scope
+This document is focuced on AI Security which includes:
++ AI Threat Detection & Intelligence
++ Adversarial AI Red Teaming & AI-specific SOC
++ Zero Trust AI Access control & Supply Chain
++ Automated AI Security Monitoring & Runtime Protection
++ Secure AI Model Lifecycle
++ AI Security Compliance
+
+##### 1.2.2.2 Out of Scope
+
++ Out of scop of this document is:
++ AI Data Privacy
++ AI Ethics Trust and Abuse (content, behavioral, account takeover, spam, misinformation)
++ AI Hallucination
++ Trustworthy AI
++ Other Aspects of the AI that are not included in "In Scope" section.
+
 
 ### 1.3. Roles Addressed
 
