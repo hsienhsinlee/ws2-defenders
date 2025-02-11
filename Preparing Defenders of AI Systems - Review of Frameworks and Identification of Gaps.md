@@ -301,10 +301,11 @@ This document is focuced on AI Security which includes:
 + Automated AI Security Monitoring & Runtime Protection
 + Secure AI Model Lifecycle
 + AI Security Compliance
++ Cybersecurity Frameworks Analysis and Identification of Gaps
 
 ##### 1.2.2.2 Out of Scope
 
-+ Out of scop of this document is:
+Out of scop of this document is:
 + AI Data Privacy
 + AI Ethics Trust and Abuse (content, behavioral, account takeover, spam, misinformation)
 + AI Hallucination
