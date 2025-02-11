@@ -11,13 +11,18 @@
       - [1.1.1. AI Risk examples](#111-ai-risk-examples)
       - [1.1.2. Overview of Defender Frameworks](#112-overview-of-defender-frameworks)
       - [1.1.3. Change needed for Defenders of AI Systems](#113-change-needed-for-defenders-of-ai-systems)
+        - [1.1.3.1. AI-Specific Threat Intelligence \& Adversarial Detection\*\*\*](#1131-ai-specific-threat-intelligence--adversarial-detection)
+        - [1.1.3.2. Zero Trust for AI Systems](#1132-zero-trust-for-ai-systems)
+        - [1.1.3.3. AI Model \& Data Supply Chain Security](#1133-ai-model--data-supply-chain-security)
+        - [1.1.3.4. AI-Specific Incident Response \& SOC Automation](#1134-ai-specific-incident-response--soc-automation)
+        - [1.1.3.5. Secure AI Model Deployment \& Runtime Protection](#1135-secure-ai-model-deployment--runtime-protection)
+        - [1.1.3.6. AI Security Awareness \& Red Teaming](#1136-ai-security-awareness--red-teaming)
     - [1.2. How to use this document](#12-how-to-use-this-document)
       - [1.2.1. Overview of Defender Frameworks](#121-overview-of-defender-frameworks)
       - [1.2.2. Scope of Preparing Defenders of AI Systems](#122-scope-of-preparing-defenders-of-ai-systems)
         - [1.2.2.1 In Scope](#1221-in-scope)
         - [1.2.2.2 Not In Scope](#1222-not-in-scope)
     - [1.3. Roles Addressed](#13-roles-addressed)
-    - [1.4. What Defender Frameworks are missing for Defending AI Systems](#14-what-defender-frameworks-are-missing-for-defending-ai-systems)
   - [2. Frameworks](#2-frameworks)
     - [2.1. NIST](#21-nist)
       - [2.1.1. NIST CSF 2.0](#211-nist-csf-20)
@@ -170,6 +175,106 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 #### 1.1.3. Change needed for Defenders of AI Systems
 
+MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the most AI-specific guidance.  MITRE ATLAS covers adversarial tactics and techniques in detail, specifying attacker general goals against AI systems and the steps in the attack.  NIST CSF, NIST RMF, MITRE CAPEC and CISA Zero Trust Maturity Model provide more general security guidance, but could be expanded to better incorporate AI-specific risks, both for adversarial attacks and for vulnerabilities related to data, models or guardrails for AI systems.  The MIT Risk Repository offers insights for governance stakeholders, but doesn't provide enough low-level detail to inform defenders of AI systems about security measures.  Current defender frameworks require some extensions to properly deal with securing AI systems, some themes of which are repeated across frameworks.
+
+| **Gap**               | **What is missing**   |
+|---------------------------|-----------------|
+| **Threat model for AI** | Specific adversarial techniques including the mechanisms that exploit weaknesses particular to AI systems |
+| **Incident Response or Mitigations** | Fine-grain detail on actions for playbooks in response or prevention |
+| **Integration with other Cybersecurity Frameworks** | Map framework details to other frameworks for interoperability |
+| **AI Supply Chain Vulnerabilities** | Weaknesses in supply chain of data, code and models that create AI system vulnerabilities |
+| **Model Behavior Analysis** | Determining nominal behavior, monitoring and analysis of behavior of models to ensure their proper function |
+
+In a new world dominated by AI powered ecosystems defenders of AI systems (CISOs, security architects, SOC teams, threat hunters, and AI governance experts) must adapt new strategies, frameworks, and methodologies to address evolving AI security threats.
+
+![Changes Needed For Defenders Of AI Systems](/frameworks/images/ChangesNeededForDefendersOfAISystems.png "Changes Needed For Defenders Of AI Systems")
+
+##### 1.1.3.1. AI-Specific Threat Intelligence & Adversarial Detection***
+
+**Change Needed:**
+Expand MITRE ATT&CK(ATLAS), CAPEC, and STIX 2.1 to include AI-specific attack vectors and adversarial TTPs (Tactics, Techniques, and Procedures).
+
+**Why?**
+Existing cyber threat intelligence (CTI) models lack adversarial AI attack patterns, limiting defenders' ability to proactively detect AI-targeted threats.
+
+**Solution:**
+
++ Develop AI-specific ATT&CK(ATLAS) tactics for adversarial ML threats (model poisoning, prompt injection, evasion).
++ Enhance SIEM and XDR detection with AI-focused threat telemetry.
++ Expand STIX/TAXII threat sharing to cover AI-specific Indicators of Compromise (IoCs).
+
+##### 1.1.3.2. Zero Trust for AI Systems
+
+**Change Needed:** 
+Integrate Zero Trust principles into AI security using ZTMM.
+
+**Why?** 
+
+AI models and APIs lack identity verification, access controls, and segmentation, leaving them vulnerable to unauthorized inference attacks.
+
+**Solution:**
+
++ Implement AI model segmentation and least-privilege access to AI APIs.
++ Require strong identity authentication for AI pipeline access.
++ Use continuous risk-based AI monitoring to detect anomalous AI behavior.
+  
+##### 1.1.3.3. AI Model & Data Supply Chain Security
+
+**Change Needed:**
+Develop AI Software Bill of Materials (SBOM) and secure AI model provenance tracking.
+
+**Why?** 
+Pre-trained AI models and datasets introduce hidden security risks (backdoors, poisoned datasets, hidden triggers).
+
+**Solution:**
+
++ Mandate Software Bill of Materials (SBOM) for AI models to track dependencies and provenance.
++ Implement trusted AI supply chain controls to prevent AI backdoors.
++ Require secure model validation before deployment to detect manipulation.
+  
+##### 1.1.3.4. AI-Specific Incident Response & SOC Automation
+
+**Change Needed** 
+Build AI incident response playbooks and integrate AI threat intelligence into SOC operations.
+
+**Why?** 
+AI security incidents (e.g., adversarial attacks, data poisoning) require specialized SOC workflows and AI-driven response automation.
+
+**Solution:**
+
++ Develop SOC playbooks for AI security incidents (e.g., model rollback procedures after poisoning).
++ Enable real-time adversarial attack detection in SIEM/XDR.
++ Implement SOAR automation for AI threat remediation.
+  
+##### 1.1.3.5. Secure AI Model Deployment & Runtime Protection
+
+**Change Needed:** 
+Introduce runtime security controls for AI inference (e.g., adversarial detection, model integrity checks).
+
+**Why?** 
+AI models deployed in production are vulnerable to runtime adversarial attacks (e.g., prompt injection, inference manipulation).
+
+**Solution:**
+
++ Use AI runtime integrity verification to detect unauthorized model modifications.
++ Deploy adversarial input filtering to block real-time adversarial samples.
++ Implement model access control policies to prevent unauthorized API abuse.
+  
+##### 1.1.3.6. AI Security Awareness & Red Teaming
+
+**Change Needed:** 
+Establish AI Red Teaming exercises and train defenders on adversarial AI techniques.
+
+**Why?** 
+AI security remains a knowledge gap for traditional defenders, requiring specialized training on AI attack vectors.
+
+**Solution:**
+
++ Conduct AI-specific Red Team assessments simulating adversarial AI attacks.
++ Train SOC analysts on AI security monitoring and AI adversarial techniques.
++ Integrate AI security into existing cybersecurity frameworks (NIST, OWASP, MITRE).
++ Train employees and leadership on AI security awarness and best practices.
+
 ### 1.2. How to use this document
 
 #### 1.2.1. Overview of Defender Frameworks
@@ -236,19 +341,6 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 - **I** = Informed (Kept in the loop)
 
 <br><br>
-
-
-### 1.4. What Defender Frameworks are missing for Defending AI Systems
-
-MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the most AI-specific guidance.  MITRE ATLAS covers adversarial tactics and techniques in detail, specifying attacker general goals against AI systems and the steps in the attack.  NIST CSF, NIST RMF, MITRE CAPEC and CISA Zero Trust Maturity Model provide more general security guidance, but could be expanded to better incorporate AI-specific risks, both for adversarial attacks and for vulnerabilities related to data, models or guardrails for AI systems.  The MIT Risk Repository offers insights for governance stakeholders, but doesn't provide enough low-level detail to inform defenders of AI systems about security measures.  Current defender frameworks require some extensions to properly deal with securing AI systems, some themes of which are repeated across frameworks.
-
-| **Gap**               | **What is missing**   |
-|---------------------------|-----------------|
-| **Threat model for AI** | Specific adversarial techniques including the mechanisms that exploit weaknesses particular to AI systems |
-| **Incident Response or Mitigations** | Fine-grain detail on actions for playbooks in response or prevention |
-| **Integration with other Cybersecurity Frameworks** | Map framework details to other frameworks for interoperability |
-| **AI Supply Chain Vulnerabilities** | Weaknesses in supply chain of data, code and models that create AI system vulnerabilities |
-| **Model Behavior Analysis** | Determining nominal behavior, monitoring and analysis of behavior of models to ensure their proper function |
 
 ## 2. Frameworks
 
