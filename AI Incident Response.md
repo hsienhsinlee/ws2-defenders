@@ -5,6 +5,7 @@
 ## Additional artifacts: This document is one component of a Work Product that also includes: XML schemas: (list file names or directory name) Other parts (list titles and/or file names or directory name)
 
 ## Abstract:
+This paper addresses the topic of incident response in the context of AI systems. As with other materials produced by the Coalition for Secure AI, this paper focuses on technological capabilities and gaps that are specific to the field of articifical intelligence and does not address the topic of incident response in other contexts as this has been well-researched and documented by existing frameworks (such as [NIST Computer Security Incident Handling Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
 
 ## Summary of the technical purpose of the document.
 
