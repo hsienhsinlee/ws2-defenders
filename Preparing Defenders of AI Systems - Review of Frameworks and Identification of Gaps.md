@@ -167,7 +167,7 @@
 
 ## Abstract:
 
-This paper reviews the current frameworks used to secure AI systems, especially on how they assist defenders in addressing cybersecurity challenges specific to AI. It provides an overview of defender frameworks, mapping them to organizational roles and responsibilities to facilitate their application.  The paper also identifies gaps in these frameworks, including AI-specific architectures, security controls. vulnerabilities, adversarial attacks, and the integration of AI security into broader cybersecurity practices. These gaps highlight areas where extensions or new standards will effectively safeguard AI systems. The paper aims to provide an open extensible comprehensive guide for defenders, offering detailed framework analysis, responsibilty mapping, and recommend improvements to enhance AI system security.
+This paper reviews the current frameworks used to secure AI systems, especially on how they assist defenders in addressing cybersecurity challenges specific to AI. It provides an overview of defender frameworks, mapping them to organizational roles and responsibilities to facilitate their application.  The paper also identifies gaps in these frameworks, including AI-specific architectures, vulnerabilities, adversarial attacks, and the integration of AI security into broader cybersecurity practices. These gaps highlight areas where extensions or new standards will effectively safeguard AI systems. The paper aims to provide an open extensible comprehensive guide for defenders, offering detailed framework analysis, responsibility mapping, and needed improvements to enhance AI system security.
 
 ## Summary of the technical purpose of the document.
 
@@ -183,15 +183,15 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 #### 1.1.3. Change needed for Defenders of AI Systems
 
-MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the most AI-specific guidance.  MITRE ATLAS covers adversarial tactics and techniques in detail, specifying attacker general goals against AI systems and the steps in the attack.  NIST CSF, NIST RMF, MITRE CAPEC and CISA Zero Trust Maturity Model provide more general security guidance, but could be expanded to better incorporate AI-specific risks, both for adversarial attacks and for vulnerabilities related to data, models or guardrails for AI systems.  The MIT Risk Repository offers insights for governance stakeholders, but doesn't provide enough low-level detail to inform defenders of AI systems about security measures.  Current defender frameworks require some extensions to properly deal with securing AI systems, some themes of which are repeated across frameworks.
+MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the most AI-specific guidance.  MITRE ATLAS covers adversarial tactics and techniques in detail, specifying attacker general goals against AI systems and the steps in the attack.  NIST CSF, NIST RMF, MITRE CAPEC and CISA Zero Trust Maturity Model provide more general security guidance, but could be expanded to better incorporate AI-specific risks, both for adversarial attacks and for vulnerabilities related to data, models or guardrails for AI systems.  The MIT Risk Repository offers insights for governance stakeholders, but doesn't provide enough low-level detail to inform defenders of AI systems about security measures.  Current defender frameworks require extensions to properly deal with securing AI systems, some themes of which are repeated across frameworks.
 
 | **Gap**               | **What is missing**   |
 |---------------------------|-----------------|
 | **Threat model for AI** | Specific adversarial techniques including the mechanisms that exploit weaknesses particular to AI systems |
-| **Incident Response or Mitigations** | Fine-grain detail on actions for playbooks in response or prevention |
+| **Incident Response or Mitigations** | Fine-grain detail on actions for playbooks for incident response, mitigation and prevention |
 | **Integration with other Cybersecurity Frameworks** | Map framework details to other frameworks for interoperability |
-| **AI Supply Chain Vulnerabilities** | Weaknesses in supply chain of data, code and models that create AI system vulnerabilities |
-| **Model Behavior Analysis** | Determining nominal behavior, monitoring and analysis of behavior of models to ensure their proper function |
+| **AI Supply Chain Vulnerabilities** | Weaknesses in supply chain regarding data, code and models that create AI system vulnerabilities |
+| **Model Behavior Analysis** | Determining nominal behavior, monitoring and analysis of any behavior drift in models to ensure their proper function |
 
 In a new world dominated by AI powered ecosystems defenders of AI systems (CISOs, security architects, SOC teams, threat hunters, and AI governance experts) must adapt new strategies, frameworks, and methodologies to address evolving AI security threats.
 
