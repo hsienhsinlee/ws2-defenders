@@ -218,13 +218,13 @@ Integrate Zero Trust principles into AI security using ZTMM.
 
 **Why?** 
 
-AI models and APIs lack identity verification, access controls, and segmentation, leaving them vulnerable to unauthorized inference attacks.
+AI models and APIs lack proper identity verification, access controls, and segmentation, leaving them vulnerable to unauthorized inference attacks.
 
 **Solution:**
 
 + Implement AI model segmentation and least-privilege access to AI APIs.
-+ Require strong identity authentication for AI pipeline access.
-+ Use continuous risk-based AI monitoring to detect anomalous AI behavior.
++ Require strong identity authentication and authorization for AI MLOps pipelines.
++ Use continuous risk-based monitoring to detect anomalous AI behavior.
   
 ##### 1.1.3.3. AI Model & Data Supply Chain Security
 
@@ -239,6 +239,7 @@ Pre-trained AI models and datasets introduce hidden security risks (backdoors, p
 + Mandate Software Bill of Materials (SBOM) for AI models to track dependencies and provenance.
 + Implement trusted AI supply chain controls to prevent AI backdoors.
 + Require secure model validation before deployment to detect manipulation.
++ Leverage cryptographic mechanisms such as "AI model signatures", to verify authenticity and integrity of models
   
 ##### 1.1.3.4. AI-Specific Incident Response & SOC Automation
 
@@ -246,13 +247,13 @@ Pre-trained AI models and datasets introduce hidden security risks (backdoors, p
 Build AI incident response playbooks and integrate AI threat intelligence into SOC operations.
 
 **Why?** 
-AI security incidents (e.g., adversarial attacks, data poisoning) require specialized SOC workflows and AI-driven response automation.
+AI security incidents (e.g., adversarial attacks, data poisoning) require specialized SOC workflows, forensics skills and AI-driven response automation.
 
 **Solution:**
 
 + Develop SOC playbooks for AI security incidents (e.g., model rollback procedures after poisoning).
 + Enable real-time adversarial attack detection in SIEM/XDR.
-+ Implement SOAR automation for AI threat remediation.
++ Implement SOAR automation for AI threat mitigation and remediation.
   
 ##### 1.1.3.5. Secure AI Model Deployment & Runtime Protection
 
@@ -267,6 +268,7 @@ AI models deployed in production are vulnerable to runtime adversarial attacks (
 + Use AI runtime integrity verification to detect unauthorized model modifications.
 + Deploy adversarial input filtering to block real-time adversarial samples.
 + Implement model access control policies to prevent unauthorized API abuse.
++ Implement controls around leveraging user supplied data for re-training. 
   
 ##### 1.1.3.6. AI Security Awareness & Red Teaming
 
@@ -281,7 +283,7 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 + Conduct AI-specific Red Team assessments simulating adversarial AI attacks.
 + Train SOC analysts on AI security monitoring and AI adversarial techniques.
 + Integrate AI security into existing cybersecurity frameworks (NIST, OWASP, MITRE).
-+ Train employees and leadership on AI security awarness and best practices.
++ Train employees and leadership on AI security awarness, responsible AI and best practices.
 
 ### 1.2. How to use this document
 
