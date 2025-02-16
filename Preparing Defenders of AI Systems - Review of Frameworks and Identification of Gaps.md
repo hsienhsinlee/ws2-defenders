@@ -218,13 +218,13 @@ Integrate Zero Trust principles into AI security using ZTMM.
 
 **Why?** 
 
-AI models and APIs lack identity verification, access controls, and segmentation, leaving them vulnerable to unauthorized inference attacks.
+AI models and APIs lack proper identity verification, access controls, and segmentation, leaving them vulnerable to unauthorized inference attacks.
 
 **Solution:**
 
 + Implement AI model segmentation and least-privilege access to AI APIs.
-+ Require strong identity authentication for AI pipeline access.
-+ Use continuous risk-based AI monitoring to detect anomalous AI behavior.
++ Require strong identity authentication and authorization for AI MLOps pipelines.
++ Use continuous risk-based monitoring to detect anomalous AI behavior.
   
 ##### 1.1.3.3. AI Model & Data Supply Chain Security
 
@@ -239,6 +239,7 @@ Pre-trained AI models and datasets introduce hidden security risks (backdoors, p
 + Mandate Software Bill of Materials (SBOM) for AI models to track dependencies and provenance.
 + Implement trusted AI supply chain controls to prevent AI backdoors.
 + Require secure model validation before deployment to detect manipulation.
++ Leverage cryptographic mechanisms such as "AI model signatures", to verify authenticity and integrity of models
   
 ##### 1.1.3.4. AI-Specific Incident Response & SOC Automation
 
@@ -246,13 +247,13 @@ Pre-trained AI models and datasets introduce hidden security risks (backdoors, p
 Build AI incident response playbooks and integrate AI threat intelligence into SOC operations.
 
 **Why?** 
-AI security incidents (e.g., adversarial attacks, data poisoning) require specialized SOC workflows and AI-driven response automation.
+AI security incidents (e.g., adversarial attacks, data poisoning) require specialized SOC workflows, forensics skills and AI-driven response automation.
 
 **Solution:**
 
 + Develop SOC playbooks for AI security incidents (e.g., model rollback procedures after poisoning).
 + Enable real-time adversarial attack detection in SIEM/XDR.
-+ Implement SOAR automation for AI threat remediation.
++ Implement SOAR automation for AI threat mitigation and remediation.
   
 ##### 1.1.3.5. Secure AI Model Deployment & Runtime Protection
 
@@ -267,6 +268,7 @@ AI models deployed in production are vulnerable to runtime adversarial attacks (
 + Use AI runtime integrity verification to detect unauthorized model modifications.
 + Deploy adversarial input filtering to block real-time adversarial samples.
 + Implement model access control policies to prevent unauthorized API abuse.
++ Implement controls around leveraging user supplied data for re-training. 
   
 ##### 1.1.3.6. AI Security Awareness & Red Teaming
 
@@ -281,7 +283,7 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 + Conduct AI-specific Red Team assessments simulating adversarial AI attacks.
 + Train SOC analysts on AI security monitoring and AI adversarial techniques.
 + Integrate AI security into existing cybersecurity frameworks (NIST, OWASP, MITRE).
-+ Train employees and leadership on AI security awarness and best practices.
++ Train employees and leadership on AI security awarness, responsible AI and best practices.
 
 ### 1.2. How to use this document
 
@@ -329,12 +331,12 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 | **Role**               | **Key Focus**   |
 |---------------------------|-----------------|
 | ***Executives*** | 1. Define the organization's risk tolerance and ensure alignment with business objectives.<br>2. Oversee governance frameworks for AI and cybersecurity.<br>3. Allocate resources for implementing and maintaining secure AI systems.<br>4. Ensure compliance with regulatory and legal requirements related to AI. |
-| ***CISO/SSO*** | 1. Implement and oversee security strategies specific to AI-enabled systems<br>2. Monitor for adversarial attacks, vulnerabilities, and incidents<br>3. Develop policies for handling sensitive data and mitigating privacy risks<br>4. Engage in threat modeling and risk assessments for AI systems |
+| ***CISO/SSO*** | 1. Implement and oversee security strategies specific to AI-enabled systems<br>2. Develop policies for handling sensitive data and mitigating privacy risks<br>3. Engage in threat modeling and risk assessments for AI systems |
 | ***Service Architects*** | 1. Design secure AI service architectures that mitigate risks during deployment and operation.<br>2. Ensure integration of AI systems aligns with organizational policies and goals.<br>3. Plan for scalability and resilience in AI service designs. |
 | ***IT Architects*** | 1. Align AI and IT infrastructure to organizational needs while mitigating associated risks.<br>2. Establish secure pipelines for data handling, processing, and model deployment.<br>3. Collaborate with service architects to ensure interoperability of AI systems. |
 | ***Security Architects*** | 1. Identify vulnerabilities specific to AI models and infrastructure.<br>2. Implement technical controls and mitigations for adversarial threats and attacks.<br>3. Integrate AI security measures into broader organizational cybersecurity frameworks. |
 | ***IT Operations*** |1. Maintain AI systems and ensure secure day-to-day operations.<br>2. Monitor system performance and detect anomalous behavior that might indicate security breaches.<br>3. Respond to incidents and ensure system recovery in case of attacks. |
-| ***SOC Operations*** | 1. Monitor AI systems for active threats and ongoing attacks.<br>2. Utilize tools such as MITRE ATT&CK and ATLAS to understand and mitigate AI-specific adversarial tactics.<br>3. Report and escalate AI security incidents in real time. |
+| ***SOC Operations*** | 1. Monitor AI systems for active threats and ongoing attacks.<br>2. Utilize tools such as MITRE ATT&CK and ATLAS to understand and mitigate AI-specific adversarial tactics.<br>3. Report and escalate AI security incidents in real time. <br>4. Monitor for threats, adversarial attacks, vulnerabilities, and incidents|
 | ***Service Operations*** | 1. Ensure AI services meet security, resilience, and reliability standards during deployment<br>2. Oversee compliance and adherence to operational policies.<br>3. Support pre-deployment testing and post-deployment monitoring. |
 | ***Auditors/Policy Makers*** | 1. Develop policies and standards for secure AI adoption.<br>2. Conduct audits to ensure compliance with established frameworks and guidelines.<br>Promote ethical and responsible AI use across sectors. |
 | ***Researchers/Data Scientists*** | 1. Develop robust AI models that can resist adversarial attacks.<br>2. Investigate vulnerabilities and propose mitigations.<br>3. Work on explainability, fairness, and trustworthiness of AI systems. |
@@ -345,17 +347,17 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 | Activity / Role            | Executives | CISO/SSO | Service Architects | IT Architects | Security Architects | IT Operations | SOC Operations | Service Operations | Auditors/Policy Makers | Researchers / Data Scientists | Users / Practitioners |
 |---------------------------|------------|----------|-------------------|--------------|-------------------|--------------|--------------|----------------|---------------------|-------------------------|------------------|
 | AI Governance & Strategy  | A          | R        | C                 | C            | C                 | I            | I            | I              | C                   | I                         | I                |
-| Risk Management & Compliance | A      | R        | C                 | C            | R                 | I            | C            | I              | R                   | C                         | I                |
+| Risk Management & Compliance | A      | R        | C                 | C            | C                 | I            | C            | I              | R                   | C                         | I                |
 | Security Policy Definition | C          | A        | C                 | I            | R                 | I            | C            | C              | R                   | C                         | I                |
 | AI System Architecture    | I          | C        | R                 | A            | C                 | I            | I            | C              | I                   | C                         | I                |
-| Threat Modeling & Assessment | I       | R        | C                 | C            | A                 | I            | R            | C              | C                   | C                         | I                |
+| Threat Modeling & Assessment | I       | A        | C                 | C            | R                 | I            | R            | C              | C                   | C                         | I                |
 | Incident Response & Monitoring | I     | A        | I                 | I            | C                 | R            | R            | I              | I                   | I                         | I                |
 | Secure Deployment & Operations | I     | C        | A                 | R            | C                 | R            | C            | A              | I                   | I                         | I                |
 | Compliance Auditing       | C          | C        | I                 | I            | C                 | I            | I            | I              | A                   | I                         | I                |
-| AI Model Development      | I          | C        | C                 | C            | C                 | I            | I            | I              | I                   | A                         | I                |
-| AI Ethics & Fairness      | I          | C        | C                 | C            | C                 | I            | I            | I              | R                   | A                         | I                |
+| AI Model Development      | I          | A        | C                 | C            | C                 | I            | I            | I              | I                   | R                         | I                |
+| AI Ethics & Fairness      | A          | A        | C                 | C            | R                 | I            | I            | I              | R                   | R                         | I                |
 | User Training & Awareness | C          | R        | C                 | I            | C                 | C            | C            | C              | I                   | I                         | A                |
-| Continuous Improvement & Feedback | C | R        | C                 | C            | C                 | C            | C            | C              | C                   | C                         | R                |
+| Continuous Improvement & Feedback | C | C        | R                 | C            | C                 | C            | C            | C              | R                   | C                         | C                |
 
 ---
 
