@@ -2440,6 +2440,7 @@ The AWS Generative AI Security Scoping Matrix provides deferenders with a framew
 | MIT AI Risk Repository | [MIT AI Risk Repository](https://airisk.mit.edu/) |
 | Open Cybersecurity Schema Framework (OCSF) | [OCSF](https://ocsf.io/) |
 | OWASP Top 10 for LLM Applications 2025 | [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) |
+| Amazon Generative AI Security Scoping Matrix | [Amazon Generative AI Security Scoping Matrix](https://aws.amazon.com/ai/generative-ai/security/scoping-matrix/) |
 
 ## 6. Acknowledgements
 
