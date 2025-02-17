@@ -2452,11 +2452,17 @@ The AWS Generative AI Security Scoping Matrix provides deferenders with a framew
 
 ## 6. Acknowledgements
 
-## Workstream Leads Chairs: WS Lead Chair Name ([Chair.Name@example.com](mailto:Chair.Name@example.com)), Example Corp. (mailto: link for email address; http:// link for affiliation web site) (remove "s" from Chairs if one)
+## Workstream Leads Chairs: 
+WS Lead Chair Name ([Chair.Name@example.com](mailto:Chair.Name@example.com)), [Example Corp.](http:// for affiliation web site) (remove "s" from Chairs if one)
 
-## Editors: Editor Name ([Editor.Name@example.com](mailto:Editor.Name@example.com)), Example Corp. (mailto: link for email address; http:// for affiliation web site) (remove "s" from Editors if just one)
+## Editors: 
+Editor Name ([Editor.Name@example.com](mailto:Editor.Name@example.com)), [Example Corp.](http:// for affiliation web site) (remove "s" from Editors if just one)
+
+Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)
+
 
 List of active contributors.
+Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)
 
 ## 5. Appendix
 
