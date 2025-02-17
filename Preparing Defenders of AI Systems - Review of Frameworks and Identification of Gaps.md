@@ -9,7 +9,7 @@
   - [1. Preparing Defenders of AI Systems](#1-preparing-defenders-of-ai-systems)
     - [1.1. Changing Attack Surface with AI Adoption](#11-changing-attack-surface-with-ai-adoption)
       - [1.1.1. AI Risk examples](#111-ai-risk-examples)
-      - [1.1.2. Overview of Defender Frameworks](#112-overview-of-defender-frameworks)
+      - [1.1.2. AI Defender Frameworks Overview](#112-ai-defender-frameworks-overview)
       - [1.1.3. Change needed for Defenders of AI Systems](#113-change-needed-for-defenders-of-ai-systems)
         - [1.1.3.1. AI-Specific Threat Intelligence \& Adversarial Detection\*\*\*](#1131-ai-specific-threat-intelligence--adversarial-detection)
         - [1.1.3.2. Zero Trust for AI Systems](#1132-zero-trust-for-ai-systems)
@@ -18,7 +18,7 @@
         - [1.1.3.5. Secure AI Model Deployment \& Runtime Protection](#1135-secure-ai-model-deployment--runtime-protection)
         - [1.1.3.6. AI Security Awareness \& Red Teaming](#1136-ai-security-awareness--red-teaming)
     - [1.2. How to use this document](#12-how-to-use-this-document)
-      - [1.2.1. Overview of Defender Frameworks](#121-overview-of-defender-frameworks)
+      - [1.2.1. Leveraging Defender Frameworks](#121-leveraging-defender-frameworks)
       - [1.2.2. Scope of Preparing Defenders of AI Systems](#122-scope-of-preparing-defenders-of-ai-systems)
         - [1.2.2.1 In Scope](#1221-in-scope)
         - [1.2.2.2 Out of Scope](#1222-out-of-scope)
@@ -187,7 +187,15 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 #### 1.1.1. AI Risk examples
 
-#### 1.1.2. Overview of Defender Frameworks
+#### 1.1.2. AI Defender Frameworks Overview
+
+The rapidly evolving landscape of AI systems demands a comprehensive and multi-layered approach to security, which is why understanding and implementing various defender frameworks in concert is crucial. These frameworks have emerged from different sectors - including government, industry, and academia - each bringing unique perspectives and strengths to AI security. The diversity of frameworks reflects the complex nature of AI systems and the varied threats they face, from data poisoning and model extraction to adversarial attacks and privacy breaches.
+
+Defender frameworks typically operate on multiple levels, addressing technical, operational, and governance aspects of AI security. At the technical level, frameworks provide guidance for secure model development, testing procedures, and deployment practices. Operationally, they establish protocols for monitoring, incident response, and continuous improvement. From a governance perspective, these frameworks help organizations align AI security with broader risk management strategies and compliance requirements.
+
+Modern AI security frameworks encompass various approaches to protecting AI systems. Some focus on risk management and mitigation strategies throughout the AI system lifecycle, while others emphasize regulatory compliance and security requirements specific to certain regions or industries. Additionally, frameworks developed from industry experience offer practical insights and methodologies developed through real-world implementation of AI systems at scale.
+
+Together, these frameworks create a foundation for addressing the complex challenges of securing AI systems. While each framework has its own focus and strengths, they collectively provide comprehensive guidance for protecting AI models, securing sensitive data, and ensuring responsible AI deployment. Their complementary nature reflects the understanding that AI security requires multiple perspectives and approaches to address the full spectrum of potential threats and vulnerabilities.
 
 #### 1.1.3. Change needed for Defenders of AI Systems
 
@@ -295,7 +303,7 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 
 ### 1.2. How to use this document
 
-#### 1.2.1. Overview of Defender Frameworks
+#### 1.2.1. Leveraging Defender Frameworks
 
 This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
 1. Overview and detail on defender frameworks
