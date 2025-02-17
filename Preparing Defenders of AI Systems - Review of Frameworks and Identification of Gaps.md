@@ -303,6 +303,51 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 
 ### 1.2. How to use this document
 
+This paper provides a comprehensive review and analysis of major frameworks used to secure AI systems, with a focus on helping defenders address cybersecurity challenges specific to AI. To get maximum value from this resource:
+
+**Understanding the Structure**
+
+    * Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders
+    * Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
+    * Use Section 3's takeaways and conclusions to understand how these frameworks complement each other
+
+**Practical Application**
+
+    _Assessment_
+        * Use the roles and responsibilities matrices (e.g. RACI) in the _Roles Addressed_ sections to identify relevant stakeholders in your organization
+        * Review framework summaries to determine which are most applicable to your environment, industry, geography, and/or AI use cases
+        * Map current security controls to framework recommendations
+
+    _Gap Analysis_
+        * Leverage the "What is Missing" sections to identify potential blind spots in any given framework - combine with other frameworks that may fill those gaps
+        * Compare your existing security practices against framework recommendations - leverage your current strengths and extend them to your AI solutions
+        * Prioritize areas needing additional controls or processes
+
+    _Implementation_
+        * Reference detailed framework sections for specific control guidance
+        * Use the cross-framework analysis to develop a comprehensive security strategy
+        * Apply recommendations based on your organization's AI implementation scope
+
+    _Continuous Improvement_
+        * Monitor the effectiveness of implemented controls
+        * Stay current with framework updates and emerging threats
+        * Contribute feedback and learnings to the broader AI security community and in to CoSAI
+
+**Making Framework Choices**
+
+    * Consider starting with foundational frameworks like NIST CSF 2.0 for general security governance and the AWS Generative AI Security Scoping Matrix to help scope your AI use cases and risks
+    * Add AI-specific frameworks like MITRE ATLAS for adversarial threats
+    * Layer in specialized guidance like the OWASP Top 10 for LLM Applications as needed
+    * Multiple frameworks will likely be necessary for your organization depending on their requirements
+
+**Additional Resources**
+
+    * Reference the appendices for detailed mappings between frameworks
+    * Use cited sources to dive deeper into specific areas of interest
+    * Engage with the CoSAI community for implementation support and best practices
+
+Remember that securing AI systems is an evolving challenge. This document should be treated as a living resource that provides guidance while encouraging adaptation to your specific needs and circumstances.
+
 #### 1.2.1. Leveraging Defender Frameworks
 
 This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
