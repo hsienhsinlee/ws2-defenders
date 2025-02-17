@@ -1702,7 +1702,7 @@ The Zero Trust Maturity model informs security stakeholders about their level of
 4. Access to resources is determined by dynamic policy—including the observable state of client identity, application/service, and the requesting asset—and may include other behavioral and environmental attributes.
 5. The enterprise monitors and measures the integrity and security posture of all owned and associated assets.
 6. All resource authentication and authorization are dynamic and strictly enforced before access is allowed.
-7. The enterprise works with the Organizations to catalog and inventory existing Cyber Security policies and standards. Policies are updated and created in cross pillar activities as needed to meet critical ZT Target functionality
+7. The enterprise works with the Organizations to catalog and inventory existing Cyber Security policies and standards. Policies are updated and created in cross pillar activities as needed to meet critical ZT Target functionality.
 
 Throughout, the principle that no asset nor identity has any inherent trust is reiterated; defenders should assume there is a current breach and take extra steps to establish trust.. This applies to all assets and identities within an organization.  The context of an identity's access to a resource should be rich enough to conclude that authorization is warranted, e.g. using multi-factor authentication that geolocates the identity.  These tenets guide the best practices for the different pillars the ZTA uses to specify architectural components.
 
