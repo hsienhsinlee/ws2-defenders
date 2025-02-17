@@ -150,6 +150,14 @@
           - [2.7.1.1.3. Guidance provided](#27113-guidance-provided)
         - [2.7.1.2. Detail on current framework](#2712-detail-on-current-framework)
         - [2.7.1.3. What is missing for defenders of AI systems](#2713-what-is-missing-for-defenders-of-ai-systems)
+    - [2.8. Amazon](#28-amazon)
+      - [2.8.1. The AWS Generative AI Security Scoping Matrix](#281-the-aws-generative-ai-security-scoping-matrix)
+        - [2.8.1.1. Overview](#2811-overview)
+          - [2.8.1.1.1. Scoping of AI system and/or cybersecurity purview](#28111-scoping-of-ai-system-andor-cybersecurity-purview)
+          - [2.8.1.1.2. Persona addressed](#28112-persona-addressed)
+          - [2.8.1.1.3. Guidance provided](#28113-guidance-provided)
+        - [2.8.1.2. Detail on current framework](#2812-detail-on-current-framework)
+        - [2.8.1.3. What is missing for defenders of AI systems](#2813-what-is-missing-for-defenders-of-ai-systems)
   - [3. Takeaways and Conclusion](#3-takeaways-and-conclusion)
   - [4. References](#4-references)
   - [6. Acknowledgements](#6-acknowledgements)
@@ -2324,7 +2332,7 @@ AI security requires continuous adaptation as adversaries develop new attack tec
 ### 2.8. Amazon
 
 
-#### 2.8.1. The Generative AI Security Scoping Matrix
+#### 2.8.1. The AWS Generative AI Security Scoping Matrix
 
 
 ##### 2.8.1.1. Overview
@@ -2353,7 +2361,7 @@ The AWS Generative AI Security Scoping Matrix contains 5 key security domains th
 | **Resilience** | How to architect generative AI solutions to maintain availability and meet business SLAs. |
 <br>
 
-###### 2.7.1.1.2. Persona addressed
+###### 2.8.1.1.2. Persona addressed
 
 
 ---
@@ -2366,7 +2374,7 @@ The AWS Generative AI Security Scoping Matrix contains 5 key security domains th
 
 <br><br>
 
-###### 2.7.1.1.3. Guidance provided
+###### 2.8.1.1.3. Guidance provided
 
 The AWS Generative AI Security Scoping Matrix helps defenders identify and implement appropriate security controls by providing a structured framework that aligns security measures with the organization's level of control over their AI implementation, from using public AI services to developing custom models.
 
@@ -2382,7 +2390,7 @@ The AWS Generative AI Security Scoping Matrix helps defenders identify and imple
 
 <br><br>
 
-##### 2.7.1.2. Detail on current framework
+##### 2.8.1.2. Detail on current framework
 
 The matrix defines five distinct scopes:
 
@@ -2406,7 +2414,7 @@ As organizations progress from Scope 1 to Scope 5, they experience an increase i
 The matrix serves as a valuable tool for organizations in several ways. It enables them to assess their current and planned AI implementations accurately, identifying relevant security disciplines for each scope. This assessment helps in prioritizing security efforts based on the specific risk profile of each implementation. Furthermore, the matrix guides organizations in making informed decisions about how security controls may differ when you are buying AI solutions or building them, allowing them to scale their security measures effectively as their AI implementations evolve. 
 
 
-##### 2.7.1.3. What is missing for defenders of AI systems
+##### 2.8.1.3. What is missing for defenders of AI systems
 
 The AWS Generative AI Security Scoping Matrix provides deferenders with a framework and mental model that enables them to more quickly assess the risks associated with various AI systems based on unique scopes of each AI system use case, and the security controls necessary to help mitigate and compensate for those risks.  As a result, it provides broad guidance and approaches organizations can take to understand where to focus their efforts, but it does not provide low level implementation details necessary to implement specific security controls.  Organizations will need to leverage this framework, along with others, to help ensure a comprehensive security control strategy.
 
