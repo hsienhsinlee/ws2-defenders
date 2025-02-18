@@ -9,7 +9,7 @@
   - [1. Preparing Defenders of AI Systems](#1-preparing-defenders-of-ai-systems)
     - [1.1. Changing Attack Surface with AI Adoption](#11-changing-attack-surface-with-ai-adoption)
       - [1.1.1. AI Risk examples](#111-ai-risk-examples)
-      - [1.1.2. Overview of Defender Frameworks](#112-overview-of-defender-frameworks)
+      - [1.1.2. AI Defender Frameworks Overview](#112-ai-defender-frameworks-overview)
       - [1.1.3. Change needed for Defenders of AI Systems](#113-change-needed-for-defenders-of-ai-systems)
         - [1.1.3.1. AI-Specific Threat Intelligence \& Adversarial Detection\*\*\*](#1131-ai-specific-threat-intelligence--adversarial-detection)
         - [1.1.3.2. Zero Trust for AI Systems](#1132-zero-trust-for-ai-systems)
@@ -18,7 +18,7 @@
         - [1.1.3.5. Secure AI Model Deployment \& Runtime Protection](#1135-secure-ai-model-deployment--runtime-protection)
         - [1.1.3.6. AI Security Awareness \& Red Teaming](#1136-ai-security-awareness--red-teaming)
     - [1.2. How to use this document](#12-how-to-use-this-document)
-      - [1.2.1. Overview of Defender Frameworks](#121-overview-of-defender-frameworks)
+      - [1.2.1. Leveraging Defender Frameworks](#121-leveraging-defender-frameworks)
       - [1.2.2. Scope of Preparing Defenders of AI Systems](#122-scope-of-preparing-defenders-of-ai-systems)
         - [1.2.2.1 In Scope](#1221-in-scope)
         - [1.2.2.2 Out of Scope](#1222-out-of-scope)
@@ -150,6 +150,14 @@
           - [2.7.1.1.3. Guidance provided](#27113-guidance-provided)
         - [2.7.1.2. Detail on current framework](#2712-detail-on-current-framework)
         - [2.7.1.3. What is missing for defenders of AI systems](#2713-what-is-missing-for-defenders-of-ai-systems)
+    - [2.8. Amazon](#28-amazon)
+      - [2.8.1. The AWS Generative AI Security Scoping Matrix](#281-the-aws-generative-ai-security-scoping-matrix)
+        - [2.8.1.1. Overview](#2811-overview)
+          - [2.8.1.1.1. Scoping of AI system and/or cybersecurity purview](#28111-scoping-of-ai-system-andor-cybersecurity-purview)
+          - [2.8.1.1.2. Persona addressed](#28112-persona-addressed)
+          - [2.8.1.1.3. Guidance provided](#28113-guidance-provided)
+        - [2.8.1.2. Detail on current framework](#2812-detail-on-current-framework)
+        - [2.8.1.3. What is missing for defenders of AI systems](#2813-what-is-missing-for-defenders-of-ai-systems)
   - [3. Takeaways and Conclusion](#3-takeaways-and-conclusion)
   - [4. References](#4-references)
   - [6. Acknowledgements](#6-acknowledgements)
@@ -179,7 +187,15 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 #### 1.1.1. AI Risk examples
 
-#### 1.1.2. Overview of Defender Frameworks
+#### 1.1.2. AI Defender Frameworks Overview
+
+The rapidly evolving landscape of AI systems demands a comprehensive and multi-layered approach to security, which is why understanding and implementing various defender frameworks in concert is crucial. These frameworks have emerged from different sectors - including government, industry, and academia - each bringing unique perspectives and strengths to AI security. The diversity of frameworks reflects the complex nature of AI systems and the varied threats they face, from data poisoning and model extraction to adversarial attacks and privacy breaches.
+
+Defender frameworks typically operate on multiple levels, addressing technical, operational, and governance aspects of AI security. At the technical level, frameworks provide guidance for secure model development, testing procedures, and deployment practices. Operationally, they establish protocols for monitoring, incident response, and continuous improvement. From a governance perspective, these frameworks help organizations align AI security with broader risk management strategies and compliance requirements.
+
+Modern AI security frameworks encompass various approaches to protecting AI systems. Some focus on risk management and mitigation strategies throughout the AI system lifecycle, while others emphasize regulatory compliance and security requirements specific to certain regions or industries. Additionally, frameworks developed from industry experience offer practical insights and methodologies developed through real-world implementation of AI systems at scale.
+
+Together, these frameworks create a foundation for addressing the complex challenges of securing AI systems. While each framework has its own focus and strengths, they collectively provide comprehensive guidance for protecting AI models, securing sensitive data, and ensuring responsible AI deployment. Their complementary nature reflects the understanding that AI security requires multiple perspectives and approaches to address the full spectrum of potential threats and vulnerabilities.
 
 #### 1.1.3. Change needed for Defenders of AI Systems
 
@@ -287,7 +303,52 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 
 ### 1.2. How to use this document
 
-#### 1.2.1. Overview of Defender Frameworks
+This paper provides a comprehensive review and analysis of major frameworks used to secure AI systems, with a focus on helping defenders address cybersecurity challenges specific to AI. To get maximum value from this resource:
+
+**Understanding the Structure**
+
+    * Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders
+    * Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
+    * Use Section 3's takeaways and conclusions to understand how these frameworks complement each other
+
+**Practical Application**
+
+    _Assessment_
+        * Use the roles and responsibilities matrices (e.g. RACI) in the _Roles Addressed_ sections to identify relevant stakeholders in your organization
+        * Review framework summaries to determine which are most applicable to your environment, industry, geography, and/or AI use cases
+        * Map current security controls to framework recommendations
+
+    _Gap Analysis_
+        * Leverage the "What is Missing" sections to identify potential blind spots in any given framework - combine with other frameworks that may fill those gaps
+        * Compare your existing security practices against framework recommendations - leverage your current strengths and extend them to your AI solutions
+        * Prioritize areas needing additional controls or processes
+
+    _Implementation_
+        * Reference detailed framework sections for specific control guidance
+        * Use the cross-framework analysis to develop a comprehensive security strategy
+        * Apply recommendations based on your organization's AI implementation scope
+
+    _Continuous Improvement_
+        * Monitor the effectiveness of implemented controls
+        * Stay current with framework updates and emerging threats
+        * Contribute feedback and learnings to the broader AI security community and in to CoSAI
+
+**Making Framework Choices**
+
+    * Consider starting with foundational frameworks like NIST CSF 2.0 for general security governance and the AWS Generative AI Security Scoping Matrix to help scope your AI use cases and risks
+    * Add AI-specific frameworks like MITRE ATLAS for adversarial threats
+    * Layer in specialized guidance like the OWASP Top 10 for LLM Applications as needed
+    * Multiple frameworks will likely be necessary for your organization depending on their requirements
+
+**Additional Resources**
+
+    * Reference the appendices for detailed mappings between frameworks
+    * Use cited sources to dive deeper into specific areas of interest
+    * Engage with the CoSAI community for implementation support and best practices
+
+Remember that securing AI systems is an evolving challenge. This document should be treated as a living resource that provides guidance while encouraging adaptation to your specific needs and circumstances.
+
+#### 1.2.1. Leveraging Defender Frameworks
 
 This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
 1. Overview and detail on defender frameworks
@@ -2321,7 +2382,96 @@ AI security requires continuous adaptation as adversaries develop new attack tec
 
 <br><br>
 
+### 2.8. Amazon
 
+
+#### 2.8.1. The AWS Generative AI Security Scoping Matrix
+
+
+##### 2.8.1.1. Overview
+
+The AWS Generative AI Security Scoping Matrix is a comprehensive framework developed to help organizations navigate the complex landscape of generative AI security. This structured approach categorizes AI implementations based on the level of control and ownership an organization has over their AI solutions, ranging from using public services to developing custom AI models from scratch. The matrix serves as a guide for identifying appropriate security measures, governance requirements, and risk management strategies that can vary based on the specific implementation scope. It provides organizations with a systematic way to assess their security needs and responsibilities while offering flexibility to adapt to various use cases across different industries and applications.
+
+The AWS Generative AI Security Scoping Matrix docuements 5 scopes of AI applications based on defining the followoing model use cases (aka - "scopes"):
+1. Consumer App
+2. Enterprise App
+3. Pre-built model 
+4. Fine-tuned model
+5. Self-trained model
+
+<br><br>
+
+###### 2.8.1.1.1. Scoping of AI system and/or cybersecurity purview
+
+The AWS Generative AI Security Scoping Matrix contains 5 key security domains that defenders must consider when deploying AI systems.  Each security domain contains unqiue requriements depending on the scope of the AI system deployed.
+
+| Security Domain | Description |
+|--|--|
+| **Governance and compliance** | The policies, procedures, and reporting needed to empower the business while minimizing risk. |
+| **Legal and privacy** | The specific regulatory, legal, and privacy requirements for using or creating generative AI solutions. |
+| **Risk management** | Identification of potential threats to generative AI solutions and recommended mitigations. |
+| **Controls** | The implementation of security controls that are used to mitigate risk. |
+| **Resilience** | How to architect generative AI solutions to maintain availability and meet business SLAs. |
+<br>
+
+###### 2.8.1.1.2. Persona addressed
+
+
+---
+
+***Legend:***
+- **R** = Responsible (Performs the task/work)
+- **A** = Accountable (Ultimate authority and decision-maker)
+- **C** = Consulted (Provides input and expertise)
+- **I** = Informed (Kept in the loop)
+
+<br><br>
+
+###### 2.8.1.1.3. Guidance provided
+
+The AWS Generative AI Security Scoping Matrix helps defenders identify and implement appropriate security controls by providing a structured framework that aligns security measures with the organization's level of control over their AI implementation, from using public AI services to developing custom models.
+
+
+| **Category**       | **Guidance** |
+|--------------------|--------------|
+| ***Shared Responsibility Model*** | The matrix clarifies the division of security responsibilities between the organization and the service provider. This varies significantly across the five scopes, from minimal organizational responsibility in Scope 1 (Consumer Apps) to full responsibility in Scope 5 (Self-trained Models). Understanding this division is crucial for ensuring comprehensive security coverage without gaps or redundancies. |
+| ***Scope-Based Security Controls*** | Security measures should be tailored to the specific implementation scope. The matrix outlines different security considerations for each scope, ranging from basic data protection and user management in Scope 1 to comprehensive model security, training data protection, and infrastructure security in Scope 5. This approach ensures that security investments are proportional to the complexity and risk level of the AI implementation. |
+| ***Scope-Based Risk Management*** | Each scope in the matrix presents distinct security challenges and risk profiles that require specific attention. Rather than viewing security as a progressive implementation, organizations should focus on addressing the unique risk characteristics of their chosen scope. This approach ensures that security measures are optimized for the specific implementation model, whether it's managing API access in Scope 2 or protecting proprietary model architectures in Scope 5. |
+| ***Balancing Security and Functionality*** | The framework emphasizes the need to balance robust security with operational efficiency and innovation. It provides guidance on implementing security controls that protect AI systems without unduly hindering their functionality or performance. This balance is particularly crucial in higher scopes where organizations have more control but also face greater security challenges. |
+| ***Lifecycle Security Approach*** | The matrix advocates for a comprehensive security approach that covers the entire lifecycle of AI systems. This includes securing data ingestion, model training, deployment, and ongoing operations. By addressing security at each stage, organizations can build a more resilient and trustworthy AI ecosystem, regardless of their implementation scope. |
+
+
+<br><br>
+
+##### 2.8.1.2. Detail on current framework
+
+The matrix defines five distinct scopes:
+
+***Scope 1: Consumer App***
+At Scope 1, organizations utilize publicly available generative AI services through their standard interfaces or APIs, such as general-purpose chatbots or image generators. In this most basic implementation level, users have no visibility into or control over the underlying model or its training data. The organization simply consumes the service as-is, bound by the provider's terms of service and usage restrictions. This approach offers the lowest barrier to entry but also provides minimal customization options and control over security measures. It's typically suited for non-critical use cases where organizational data sensitivity is low and the focus is primarily on managing user interactions and output filtering.
+
+***Scope 2: Enterprise App***
+At Scope 2, organizations use enterprise-grade versions of applications that contain AI services that allow for private data handling and enhanced security controls. While still utilizing pre-built models, these implementations include additional layers of protection through managed services, such as enterprise API endpoints with authentication and data handling controls, and typically can include enterprise agreements and legal commitments. Organizations at this scope can integrate the AI service with their existing security infrastructure and maintain better control over data privacy and governance. This approach balances the convenience of managed services with the need for enterprise-grade security, making it suitable for business applications that require protected data handling while still leveraging the efficiency of pre-built models.
+
+***Scope 3: Pre-trained Models***
+At Scope 3, organizations create custom applications by leveraging existing foundation models through managed API services, typically when an organization wants to consume a model within an application it is building. This approach enables deeper integration with organizational systems and allows for enhanced functionality through techniques like RAG, which combines the power of foundation models with proprietary data. While the core model remains unchanged, organizations can significantly customize the AI's behavior and responses through sophisticated prompting and context management. This implementation provides greater control over the application layer while maintaining the efficiency of using established foundation models, making it ideal for organizations that need tailored AI solutions but don't require model-level modifications.
+
+***Scope 4: Fine-tuned Models***
+At Scope 4, organizations take a significant step beyond basic model usage by fine-tuning existing foundation models with domain-specific data. This approach creates a specialized version of the base model that's optimized for particular use cases and organizational needs. The organization gains control over both the fine-tuning process and the resulting model, enabling more precise and contextually appropriate outputs. This implementation level requires deeper technical expertise and careful management of training data, but offers substantially improved performance for specialized tasks. While building upon established model architectures, this scope provides organizations with the ability to create truly customized AI solutions that align closely with specific industry requirements and professional standards.
+
+***Scope 5: Self-trained models***
+At Scope 5, organizations undertake the most comprehensive level of AI development by creating and training models entirely from scratch. This represents complete ownership and control over every aspect of the AI system, from architecture design to model training and deployment. Organizations at this scope have full authority over the entire AI stack, enabling them to develop novel solutions that may not be possible with existing models. This approach requires the highest level of technical expertise and computational resources, but offers unparalleled flexibility and potential for innovation. Such implementations are typically pursued when organizations aim to develop proprietary AI technology that can serve as a competitive advantage or commercial product in itself.
+
+As organizations progress from Scope 1 to Scope 5, they experience an increase in the level of control and customization over their AI solutions. This progression also brings greater security responsibilities and complexities. For each scope that an organization adopts, the matrix can help prioritize different security measures and risk management strategies unique to each scope.
+
+The matrix serves as a valuable tool for organizations in several ways. It enables them to assess their current and planned AI implementations accurately, identifying relevant security disciplines for each scope. This assessment helps in prioritizing security efforts based on the specific risk profile of each implementation. Furthermore, the matrix guides organizations in making informed decisions about how security controls may differ when you are buying AI solutions or building them, allowing them to scale their security measures effectively as their AI implementations evolve. 
+
+
+##### 2.8.1.3. What is missing for defenders of AI systems
+
+The AWS Generative AI Security Scoping Matrix provides deferenders with a framework and mental model that enables them to more quickly assess the risks associated with various AI systems based on unique scopes of each AI system use case, and the security controls necessary to help mitigate and compensate for those risks.  As a result, it provides broad guidance and approaches organizations can take to understand where to focus their efforts, but it does not provide low level implementation details necessary to implement specific security controls.  Organizations will need to leverage this framework, along with others, to help ensure a comprehensive security control strategy.
+
+<br><br>
 
 ## 3. Takeaways and Conclusion
 
@@ -2343,14 +2493,22 @@ AI security requires continuous adaptation as adversaries develop new attack tec
 | MIT AI Risk Repository | [MIT AI Risk Repository](https://airisk.mit.edu/) |
 | Open Cybersecurity Schema Framework (OCSF) | [OCSF](https://ocsf.io/) |
 | OWASP Top 10 for LLM Applications 2025 | [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) |
+| AWS Generative AI Security Scoping Matrix | [AWS Generative AI Security Scoping Matrix](https://aws.amazon.com/ai/generative-ai/security/scoping-matrix/) |
 
 ## 6. Acknowledgements
 
-## Workstream Leads Chairs: WS Lead Chair Name ([Chair.Name@example.com](mailto:Chair.Name@example.com)), Example Corp. (mailto: link for email address; http:// link for affiliation web site) (remove "s" from Chairs if one)
+## Workstream Leads Chairs: 
+_WS Lead Chair Name ([Chair.Name@example.com](mailto:Chair.Name@example.com)), [Example Corp.](http:// for affiliation web site) (remove "s" from Chairs if one)_
 
-## Editors: Editor Name ([Editor.Name@example.com](mailto:Editor.Name@example.com)), Example Corp. (mailto: link for email address; http:// for affiliation web site) (remove "s" from Editors if just one)
+## Editors: 
+_Editor Name ([Editor.Name@example.com](mailto:Editor.Name@example.com)), [Example Corp.](http:// for affiliation web site) (remove "s" from Editors if just one)_
 
-List of active contributors.
+Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)
+
+
+## List of active contributors:
+
+Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)
 
 ## 5. Appendix
 
