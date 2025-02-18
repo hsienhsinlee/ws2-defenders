@@ -1189,9 +1189,9 @@ From a defender's perspective, the NIST AI 100-2e2023 Framework provides a solid
 
 ##### 2.2.1.1. Overview
 
-The MITRE ATT&CK framework is a globally recognized, open-source knowledge base that documents real-world adversary tactics, techniques, and procedures (TTPs) across the cyber-attack lifecycle. It organizes adversary behaviors into tactics (higher-level description of what attackers aim to achieve) and techniques/sub-techniques (lower-level description of how they do it), mapped into an intuitive matrix that spans multiple domains, including enterprise, mobile, cloud, and industrial control systems (ICS). Originally focused on post-attack activities, it now also includes early-stage attacker actions like reconnaissance. 
+The MITRE ATT&CK framework is a globally recognized, open-source knowledge base that documents real-world adversary tactics, techniques, and procedures (TTPs) across the cyber-attack lifecycle. It organizes adversary behaviors into tactics (the high level goals attackers intend to achieve), techniques/sub-techniques (the specific methods to accomplish those goals), and procedures (the detailed steps an adversary would take to implement the technique). The TTPs are mapped into an intuitive matrix that spans multiple domains, including enterprise, mobile, cloud, and industrial control systems (ICS). Originally focused on post-attack activities, it now also includes early-stage attacker actions like reconnaissance. 
 
-ATT&CK serves as a practical tool for red teaming, behavioral analytics, threat intelligence enrichment, and defensive gap assessments, linking techniques to adversary groups, software, and mitigations. It provides a practical, data-driven guide to strengthening defenses against real-world threats.
+ATT&CK serves as a practical tool for red teaming, behavioral analytics, threat intelligence enrichment, and defensive gap assessments, linking techniques to adversary groups, software, and mitigations. It provides a practical, data-driven guide to strengthening defenses against real-world threats. Of note, entries in ATT&CK are drawn from publicly reported incidents or offensive research, so that the model is grounded in real-world threats and not theoretical techniques with limited utility. 
 
 
 ###### 2.2.1.1.1. Scoping of AI system and/or cybersecurity purview
@@ -1331,7 +1331,7 @@ While the MITRE ATT&CK framework provides a robust structure for addressing trad
 
 The MITRE Adversarial Threat Landscape for Artificial-Intelligence Systems (ATLAS) is a knowledge base designed to address threats to AI-enabled systems. It documents adversary tactics, techniques, and real-world attack observations while complementing the MITRE ATT&CK framework.
 
-While MITRE ATT&CK remains the framework for traditional cybersecurity and adversary behaviors, MITRE ATLAS extends this model into the AI domain. ATLAS focuses on the unique adversarial threats faced by AI systems, such as model poisoning, prompt injection, and evasion attacks, complementing the capabilities of ATT&CK for a holistic view of modern cyber and AI threats.
+While MITRE ATT&CK remains the framework for traditional cybersecurity and adversary behaviors, MITRE ATLAS extends this model into the AI domain. ATLAS focuses on the unique adversarial threats faced by AI systems, such as model poisoning, prompt injection, and evasion attacks, complementing the capabilities of ATT&CK for a holistic view of modern cyber and AI threats. Like ATT&CK, ATLAS focuses on real-world documented threats rather than theoretical attacks
 
 ATLAS serves as a critical tool for understanding, simulating, and mitigating threats to AI systems. It helps stakeholders (e.g., analysts, developers, and defenders) prepare for AI-specific security challenges through shared knowledge and practical tools.
 
@@ -1526,6 +1526,8 @@ ATLAS includes a set of mitigation techniques and security measures to prevent o
 ##### 2.2.2.3. What is missing for defenders of AI systems
 
 MITRE ATLAS is a strong framework for understanding adversarial tactics and techniques targeting AI systems, but it needs to evolve to cover specific adversarial techniques, AI supply chain risks, and model behavior. Furthermore, defenders of AI systems would benefit from better integration with broader cybersecurity frameworks. Addressing these gaps would enhance ATLAS's ability to support defenders in securing AI systems against increasingly sophisticated and novel threats.
+
+While ATLAS provides detail on adversarial tactics and techniques, its stated goal is a knowledge base, and does not help defenders prioritize mitigations and countermeasures. Its target audience of developers, incident responders, and security analysts means that it is not easily understood by executives and risk compliance, as it focuses on individual tactics rather than helping make decisions based on a higher level risk management framework.
 
 
 #### 2.2.3. MITRE CAPEC
@@ -1763,7 +1765,7 @@ The US Cybersecurity and Infrastructure Security Agency (CISA) published the sec
 
 ###### 2.3.1.1.1. Cybersecurity Purview
 
-Zero Trust Architecture is a security architecture that makes no specific mention of AI systems.  It provides requirements for system governance, access and use that rely on a principle of "don't trust; verify."  This notion of not trusting identities, data, network communications, workloads and even hardware until they are authenticated provides a comprehensive trusted system.  The ZTMM provides a set of levels describing the maturity of an organization's ZTA adoption, from Traditional security (no ZTA), to Initial, Advanced and Optimal ZTA maturity.  With clear best practices and a tiered system encouraging self-evaluation and improvement, the ZTMM provides a system that can characterize and systematically assist improving the security effectiveness of defenders.
+The Zero Trust Maturity Model provides guidance on how to enforce accurate, least privilege access decisions across information systems by assuming that any part of the system may be viewed as compromised. It provides requirements for system governance, access and use that rely on a principle of "don't trust; verify."  This notion of not trusting identities, data, network communications, workloads and even hardware until they are authenticated provides a comprehensive trusted system.  The ZTMM provides a set of levels describing the maturity of an organization's ZTA adoption, from Traditional security (no ZTA), to Initial, Advanced and Optimal ZTA maturity.  With clear best practices and a tiered system encouraging self-evaluation and improvement, the ZTMM provides a system that can characterize and systematically assist improving the security effectiveness of defenders.
 
 ###### 2.3.1.1.2. Persona Addressed
 
@@ -1804,7 +1806,7 @@ The Zero Trust Maturity model informs security stakeholders about their level of
 6. All resource authentication and authorization are dynamic and strictly enforced before access is allowed.
 7. The enterprise works with the Organizations to catalog and inventory existing Cyber Security policies and standards. Policies are updated and created in cross pillar activities as needed to meet critical ZT Target functionality.
 
-Throughout, the principle that no asset nor identity has any inherent trust is reiterated; defenders should assume there is a current breach and take extra steps to establish trust.. This applies to all assets and identities within an organization.  The context of an identity's access to a resource should be rich enough to conclude that authorization is warranted, e.g. using multi-factor authentication that geolocates the identity.  These tenets guide the best practices for the different pillars the ZTA uses to specify architectural components.
+Throughout, the principle that no asset nor identity has any inherent trust is reiterated; defenders should assume there is a current breach and take extra steps to establish trust. This applies to all assets and identities within an organization.  The context of an identity's access to a resource should be rich enough to conclude that authorization is warranted, e.g. using multi-factor authentication combined with network and device attestation signals.  These tenets guide the best practices for the different pillars the ZTA uses to specify architectural components.
 
 
 ###### 2.3.1.2.2. Zero Trust Pillars
@@ -1836,14 +1838,19 @@ The ZTMM identifies 3 features that cut across the pillars:  Governance, Automat
 
 ##### 2.3.1.3. What is missing for defenders of AI systems
 
+The Zero Trust Maturity Model explicitly excludes recommendations on best practices for incorporating machine learning and artificial intelligence capabilities with Zero Trust. However, the fundamental concepts introduced by Zero Trust---least privilege, assumption of breach, and continuous authentication and authorization---are relevant for developers of AI systems that have access to sensitive data sets.
+
 ***AI Data Access Patterns***
 The Zero Trust Maturity Model does not address typical deployments of AI systems, including Retrieval Augmented Generation.  AI is data driven, and vector databases are built for speed and not with Zero Trust access and encryption standards in mind.  The data access patterns for AI systems must implement the controls for proper Zero Trust Architecture, and this guidance is missing.
-***
+
 ***AI Training Data Provenance***
 If the training data for models is unknown, and the models can reproduce this data, then it is considered ungoverned data in the Zero Trust Architecture. This means that data used to train models must be known and available in order to ensure it complies with policy.  Building trust in that data requires some authentication of it, to verify that it is reputable data.
 
-***AI Access Patterns***
+***AI Authorization Patterns***
 Observing the principle of least-privileged access is often ignored in AI adoption, in order to facilitate AI access to data or tools.  The identity of AI application workloads should respect this principle by minimizing access to the least privilege among the AI user and the AI system privileges itself.  User access should not trampoline through AI system use, nor should AI systems provide more authority to users than they are otherwise allowed.
+
+***AI Agency***
+The Zero Trust Maturity Model emphasizes that no asset has inherent trust, and therefore, any access to resources must be gated through an authorization mechanism to re-validate the asset's ability to access that resource. While this approach can, and should, be applied to AI systems, there is no explicit mention of constraining the agency of AI systems to make authorization decisions in the ZTMM. The ZTMM does not call out the 
 
 ***AI Model Visibility and Analytics***
 The behavior of AI systems must be established through monitoring its use.  Since these are stochastic systems, they are prone to produce unpredictable results (hallucinations).  Behavior can change as model versions are updated, and even as prompt templates are modified.  Establishing baseline behavior for AI models is required to understand when they are producing anomalous results.
