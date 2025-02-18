@@ -18,10 +18,14 @@
         - [1.1.3.5. Secure AI Model Deployment \& Runtime Protection](#1135-secure-ai-model-deployment--runtime-protection)
         - [1.1.3.6. AI Security Awareness \& Red Teaming](#1136-ai-security-awareness--red-teaming)
     - [1.2. How to use this document](#12-how-to-use-this-document)
-      - [1.2.1. Leveraging Defender Frameworks](#121-leveraging-defender-frameworks)
-      - [1.2.2. Scope of Preparing Defenders of AI Systems](#122-scope-of-preparing-defenders-of-ai-systems)
-        - [1.2.2.1 In Scope](#1221-in-scope)
-        - [1.2.2.2 Out of Scope](#1222-out-of-scope)
+      - [1.2.1. Understanding the Structure](#121-understanding-the-structure)
+      - [1.2.2. Practical Application](#122-practical-application)
+      - [1.2.3. Making Framework Choices](#123-making-framework-choices)
+      - [1.2.4. Additional Resources](#124-additional-resources)
+      - [1.2.5. Leveraging Defender Frameworks](#125-leveraging-defender-frameworks)
+      - [1.2.6. Scope of Preparing Defenders of AI Systems](#126-scope-of-preparing-defenders-of-ai-systems)
+        - [1.2.6.1 In Scope](#1261-in-scope)
+        - [1.2.6.2 Out of Scope](#1262-out-of-scope)
     - [1.3. Roles Addressed](#13-roles-addressed)
   - [2. Frameworks](#2-frameworks)
     - [2.1. NIST](#21-nist)
@@ -161,8 +165,9 @@
   - [3. Takeaways and Conclusion](#3-takeaways-and-conclusion)
   - [4. References](#4-references)
   - [6. Acknowledgements](#6-acknowledgements)
-  - [Workstream Leads Chairs: WS Lead Chair Name (Chair.Name@example.com), Example Corp. (mailto: link for email address; http:// link for affiliation web site) (remove "s" from Chairs if one)](#workstream-leads-chairs-ws-lead-chair-name-chairnameexamplecom-example-corp-mailto-link-for-email-address-http-link-for-affiliation-web-site-remove-s-from-chairs-if-one)
-  - [Editors: Editor Name (Editor.Name@example.com), Example Corp. (mailto: link for email address; http:// for affiliation web site) (remove "s" from Editors if just one)](#editors-editor-name-editornameexamplecom-example-corp-mailto-link-for-email-address-http-for-affiliation-web-site-remove-s-from-editors-if-just-one)
+  - [Workstream Leads Chairs:](#workstream-leads-chairs)
+  - [Editors:](#editors)
+  - [List of active contributors:](#list-of-active-contributors)
   - [5. Appendix](#5-appendix)
 
 <!-- TOC end -->
@@ -305,50 +310,50 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 
 This paper provides a comprehensive review and analysis of major frameworks used to secure AI systems, with a focus on helping defenders address cybersecurity challenges specific to AI. To get maximum value from this resource:
 
-**Understanding the Structure**
+#### 1.2.1. Understanding the Structure
 
-    * Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders
-    * Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
-    * Use Section 3's takeaways and conclusions to understand how these frameworks complement each other
+* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders
+* Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
+* Use Section 3's takeaways and conclusions to understand how these frameworks complement each other
 
-**Practical Application**
+#### 1.2.2. Practical Application
 
-    _Assessment_
-        * Use the roles and responsibilities matrices (e.g. RACI) in the _Roles Addressed_ sections to identify relevant stakeholders in your organization
-        * Review framework summaries to determine which are most applicable to your environment, industry, geography, and/or AI use cases
-        * Map current security controls to framework recommendations
+***Assessment***
+* Use the roles and responsibilities matrices (e.g. RACI) in the _Roles Addressed_ sections to identify relevant stakeholders in your organization
+* Review framework summaries to determine which are most applicable to your environment, industry, geography, and/or AI use cases
+* Map current security controls to framework recommendations
 
-    _Gap Analysis_
-        * Leverage the "What is Missing" sections to identify potential blind spots in any given framework - combine with other frameworks that may fill those gaps
-        * Compare your existing security practices against framework recommendations - leverage your current strengths and extend them to your AI solutions
-        * Prioritize areas needing additional controls or processes
+***Gap Analysis***
+* Leverage the "What is Missing" sections to identify potential blind spots in any given framework - combine with other frameworks that may fill those gaps
+* Compare your existing security practices against framework recommendations - leverage your current strengths and extend them to your AI solutions
+* Prioritize areas needing additional controls or processes
 
-    _Implementation_
-        * Reference detailed framework sections for specific control guidance
-        * Use the cross-framework analysis to develop a comprehensive security strategy
-        * Apply recommendations based on your organization's AI implementation scope
+***Implementation***
+* Reference detailed framework sections for specific control guidance
+* Use the cross-framework analysis to develop a comprehensive security strategy
+* Apply recommendations based on your organization's AI implementation scope
 
-    _Continuous Improvement_
-        * Monitor the effectiveness of implemented controls
-        * Stay current with framework updates and emerging threats
-        * Contribute feedback and learnings to the broader AI security community and in to CoSAI
+***Continuous Improvement***
+* Monitor the effectiveness of implemented controls
+* Stay current with framework updates and emerging threats
+* Contribute feedback and learnings to the broader AI security community and in to CoSAI
 
-**Making Framework Choices**
+#### 1.2.3. Making Framework Choices
 
-    * Consider starting with foundational frameworks like NIST CSF 2.0 for general security governance and the AWS Generative AI Security Scoping Matrix to help scope your AI use cases and risks
-    * Add AI-specific frameworks like MITRE ATLAS for adversarial threats
-    * Layer in specialized guidance like the OWASP Top 10 for LLM Applications as needed
-    * Multiple frameworks will likely be necessary for your organization depending on their requirements
+* Consider starting with foundational frameworks like NIST CSF 2.0 for general security governance and the AWS Generative AI Security Scoping Matrix to help scope your AI use cases and risks
+* Add AI-specific frameworks like MITRE ATLAS for adversarial threats
+* Layer in specialized guidance like the OWASP Top 10 for LLM Applications as needed
+* Multiple frameworks will likely be necessary for your organization depending on their requirements
 
-**Additional Resources**
-
-    * Reference the appendices for detailed mappings between frameworks
-    * Use cited sources to dive deeper into specific areas of interest
-    * Engage with the CoSAI community for implementation support and best practices
+#### 1.2.4. Additional Resources
+    
+* Reference the appendices for detailed mappings between frameworks
+* Use cited sources to dive deeper into specific areas of interest
+* Engage with the CoSAI community for implementation support and best practices
 
 Remember that securing AI systems is an evolving challenge. This document should be treated as a living resource that provides guidance while encouraging adaptation to your specific needs and circumstances.
 
-#### 1.2.1. Leveraging Defender Frameworks
+#### 1.2.5. Leveraging Defender Frameworks
 
 This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
 1. Overview and detail on defender frameworks
@@ -361,9 +366,9 @@ Organizational roles are categorized, and each framework is mapped to intended a
 
 Gaps in each framework are identified, and gaps common to all frameworks are surfaced in this document.  This points to extensions required to the system of frameworks in order to effectively secure AI systems.  Specific missing elements for each framework are also identified, indicating specific work that may be done to cover these gaps. 
 
-#### 1.2.2. Scope of Preparing Defenders of AI Systems
+#### 1.2.6. Scope of Preparing Defenders of AI Systems
 
-##### 1.2.2.1 In Scope
+##### 1.2.6.1 In Scope
 
 This document is focuced on AI Security which includes:
 + AI Threat Detection & Intelligence
@@ -374,7 +379,7 @@ This document is focuced on AI Security which includes:
 + AI Security Compliance
 + Cybersecurity Frameworks Analysis and Identification of Gaps
 
-##### 1.2.2.2 Out of Scope
+##### 1.2.6.2 Out of Scope
 
 Out of scop of this document is:
 + AI Data Privacy
