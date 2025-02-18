@@ -1150,7 +1150,7 @@ From a defender's perspective, the NIST AI 100-2e2023 Framework provides a solid
 
 ##### 2.2.1.1. Overview
 
-The MITRE ATT&CK framework is a globally recognized, open-source knowledge base that documents real-world adversary tactics, techniques, and procedures (TTPs) across the cyber-attack lifecycle. It organizes adversary behaviors into tactics (what attackers aim to achieve) and techniques/sub-techniques (how they do it), mapped into an intuitive matrix that spans multiple domains, including enterprise, mobile, cloud, and industrial control systems (ICS). Originally focused on post-attack activities, it now also includes early-stage attacker actions like reconnaissance. 
+The MITRE ATT&CK framework is a globally recognized, open-source knowledge base that documents real-world adversary tactics, techniques, and procedures (TTPs) across the cyber-attack lifecycle. It organizes adversary behaviors into tactics (higher-level description of what attackers aim to achieve) and techniques/sub-techniques (lower-level description of how they do it), mapped into an intuitive matrix that spans multiple domains, including enterprise, mobile, cloud, and industrial control systems (ICS). Originally focused on post-attack activities, it now also includes early-stage attacker actions like reconnaissance. 
 
 ATT&CK serves as a practical tool for red teaming, behavioral analytics, threat intelligence enrichment, and defensive gap assessments, linking techniques to adversary groups, software, and mitigations. It provides a practical, data-driven guide to strengthening defenses against real-world threats.
 
@@ -1164,9 +1164,9 @@ The MITRE ATT&CK framework provides a structured approach for identifying, analy
 | **Component**       | **Description**                                                  | **Relevant ATT&CK Techniques**                     |
 |----------------------|------------------------------------------------------------------|----------------------------------------------------|
 | **Data Pipeline**    | Protect data integrity, ensure secure collection and storage.   | Data Destruction (T1485), Data Manipulation (T1565) |
-| **ML Models**        | Safeguard against adversarial attacks and model theft.          | Exploit Public-Facing Applications (T1190), Adversary-in-the-Middle (T1557) |
-| **APIs and Interfaces** | Secure endpoints and prevent injection attacks.                | Input Capture (T1056), Command and Scripting Interpreter (T1059) |
-| **Infrastructure**   | Secure cloud, edge, and on-prem systems hosting AI.             | Resource Hijacking (T1496), Cloud Service Exploitation (T1586) |
+| **ML Models**        | Safeguard against adversarial attacks and model theft.          | Exploitation for Defense Evasion (T1211) |
+| **APIs and Interfaces** | Secure endpoints and prevent injection attacks.                | Exploit Public-Facing Applications (T1190) |
+| **Infrastructure**   | Secure cloud, edge, and on-prem systems hosting AI.             | Resource Hijacking (T1496), Compromise Accounts (T1586) |
 
 
 ---
@@ -1176,8 +1176,8 @@ The MITRE ATT&CK framework provides a structured approach for identifying, analy
 | **Tactic**            | **Description**                                                                  | **Relevant Techniques**                                       |
 |------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------|
 | **Initial Access**     | Methods used to gain unauthorized access to AI systems.                         | Phishing (T1566), Supply Chain Compromise (T1195), Valid Accounts (T1078) |
-| **Defense Evasion**    | Hiding malicious activity or bypassing defenses.                                | Indicator Removal on Host (T1070), Abuse Elevation Control Mechanism (T1574) |
-| **Privilege Escalation** | Techniques to gain elevated permissions in AI systems.                         | Exploitation for Privilege Escalation (T1068), New Service (T1201) |
+| **Defense Evasion**    | Hiding malicious activity or bypassing defenses.                                | Indicator Removal (T1070), Impair Defenses (T1562) |
+| **Privilege Escalation** | Techniques to gain elevated permissions in AI systems.                         | Exploitation for Privilege Escalation (T1068), Abuse Elevation Control Mechanism (T1548) |
 | **Command and Control** | Techniques to maintain communication with compromised AI systems.               | Encrypted Channel (T1573), Multi-Hop Proxy (T1090) |
 | **Impact**             | Techniques that manipulate AI outcomes or disrupt operations.                   | Data Manipulation (T1565), Service Stop (T1489) |
 
@@ -1241,12 +1241,12 @@ AI systems operate in complex environments and are susceptible to both tradition
 |-----------------------|----------------------------------------------------------|----------------------------------------------------|
 | **Data-Related**      | Data poisoning to degrade AI model performance.          | Data Manipulation (T1565), Data Destruction (T1485) |
 |                       | Data exfiltration from AI datasets or inference systems. | Exfiltration Over Web Service (T1567), Automated Exfiltration (T1020) |
-| **Model-Specific**    | Adversarial inputs misleading AI predictions.            | Command and Scripting Interpreter (T1059), Exploit Public-Facing Applications (T1190) |
-|                       | Model theft through reverse engineering or inference.    | Credential Dumping (T1003), Application Layer Protocol (T1071) |
-| **Infrastructure**    | Resource hijacking for unauthorized use (e.g., cryptomining). | Resource Hijacking (T1496), Cloud Service Exploitation (T1586) |
-|                       | API exploitation leading to malicious actions.           | Input Capture (T1056), API Abuse (T1555) |
+| **Model-Specific**    | Adversarial inputs misleading AI predictions.            | Exploitation for Defense Evasion (T1211) |
+|                       | Model theft through reverse engineering or inference.    | Exploit Public-Facing Applications (T1190) |
+| **Infrastructure**    | Resource hijacking for unauthorized use (e.g., cryptomining). | Resource Hijacking (T1496), Compromise Accounts (T1586) |
+|                       | API exploitation leading to malicious actions.           | Exploitation of Remote Services (T1210) |
 | **Lifecycle Threats** | Reconnaissance for vulnerable AI components.             | Gather Victim Network Information (T1590) |
-|                       | Manipulation of AI outputs to disrupt operations.        | Data Manipulation (T1565), Service Stop (T1489) |
+|                       | Manipulation of AI outputs to disrupt operations.        | Service Stop (T1489), Endpoint Denial of Service (T1499) |
 
 
 ***Application of ATT&CK Tactics to AI Systems***
@@ -1255,7 +1255,7 @@ AI systems operate in complex environments and are susceptible to both tradition
 |------------------------|------------------------------------------------------------|---------------------------------------------------|
 | **Reconnaissance**     | Discovering weak points in AI workflows.                   | Gather Victim Network Information (T1590)         |
 | **Initial Access**     | Exploiting APIs or supply chain vulnerabilities.           | Exploit Public-Facing Applications (T1190)        |
-| **Execution**          | Triggering malicious actions via adversarial inputs.       | Command and Scripting Interpreter (T1059)         |
+| **Execution**          | Triggering malicious actions via adversarial inputs.       | Exploitation of Remote Services (T1210)        |
 | **Persistence**        | Maintaining access to AI systems.                         | Account Manipulation (T1098)                      |
 | **Exfiltration**       | Stealing datasets, models, or outputs.                     | Exfiltration Over Web Service (T1567)             |
 | **Impact**             | Manipulating functionality or disrupting AI operations.    | Data Manipulation (T1565), Service Stop (T1489)   |
@@ -1290,7 +1290,7 @@ While the MITRE ATT&CK framework provides a robust structure for addressing trad
 
 ##### 2.2.2.1. Overview
 
-The MITRE Adversarial Threat Landscape for AI Systems (ATLAS) is a knowledge base designed to address threats to AI-enabled systems. It documents adversary tactics, techniques, and real-world attack observations while complementing the MITRE ATT&CK framework.
+The MITRE Adversarial Threat Landscape for Artificial-Intelligence Systems (ATLAS) is a knowledge base designed to address threats to AI-enabled systems. It documents adversary tactics, techniques, and real-world attack observations while complementing the MITRE ATT&CK framework.
 
 While MITRE ATT&CK remains the framework for traditional cybersecurity and adversary behaviors, MITRE ATLAS extends this model into the AI domain. ATLAS focuses on the unique adversarial threats faced by AI systems, such as model poisoning, prompt injection, and evasion attacks, complementing the capabilities of ATT&CK for a holistic view of modern cyber and AI threats.
 
