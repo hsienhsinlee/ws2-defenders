@@ -192,6 +192,40 @@ This paper reviews the current frameworks used to secure AI systems, especially 
 
 #### 1.1.1. AI Risk examples
 
+AI systems are fundamentally altering the cybersecurity landscape by expanding attack surfaces and introducing new risks. Their reliance on extensive computational resources, novel data formats, and vast data processing capabilities, combined with their inherently non-deterministic nature, makes them both a prime target and an enabler of sophisticated cyber threats. AI systems can be primary targets or enabler of the attacks on other assets, targets, infrastructures and business processes. 
+
+##### 1.1.1.1 AI as a Target: Key Security Risks
+
+AI systems can be directly targeted through various attack vectors, including:
++ Prompt Injection Attacks. Attackers manipulate AI models by injecting indirect or direct prompts that push the system beyond its intended operational boundaries. This can lead to outputs that are misleading, harmful, biased, or in violation of compliance regulations.
++ Supply Chain Attacks on AI Models. AI models and datasets, particularly pre-trained versions sourced from third parties, may contain hidden backdoors, biases, or embedded malicious triggers that can be exploited post-deployment.
++ Data Extraction and Privacy Risks. AI systems process sensitive data, including personally identifiable information (PII), proprietary intellectual property, and authentication tokens. Adversaries can extract this information from AI models during training or inference stages.
++ AI Infrastructure Exploitation
+  + Code Execution Vulnerabilities: Attackers may manipulate AI systems to execute arbitrary code, leveraging AI computing resources for malicious purposes.
+  + Denial-of-Service (DoS) Attacks: AI systems can be overwhelmed through various DoS techniques, disrupting availability.
+  + Protocol Abuse: AI relies on distributed data processing, making it susceptible to adversarial-in-the-middle attacks and data injection threats targeting its communication protocols.
+
+##### 1.1.1.2 AI as an Enabler of Cyber Attacks on other assets, targets, infrastructures
+
+AI Systems can be leveraged to enhance precision, scalability, and automation in executing sophisticated attacks.
++ Augmenting Existing Attack Strategies
+  + Multilingual and Context-Aware Threats: AI allows attackers to craft highly localized phishing campaigns in multiple languages, bypassing traditional detection mechanisms.
+  + Adaptive Attacks: AI enhances reconnaissance capabilities, enabling tailored attack strategies against specific targets.
+  + Automation of Attack Chains: AI streamlines adversarial workflows, including automation of credential theft, reconnaissance, and social engineering.
++ AI-Driven Denial-of-Service (DoS) Attacks. Attackers can exploit AI systems to initiate and orchestrate large-scale, adaptive DoS attacks against third-party infrastructure.
++ Emerging AI-Enabled Cyber Risks
+  + Synthetic Identities & Deepfake-Based risks: AI-generated synthetic identities and deepfake technologies can bypass identity verification, authentication, and fraud detection systems.
+  + Circumventing Zero Trust Security Models: AI-generated traffic patterns and behaviors can mimic behavior of legitimate systems and users, diminishing the efficacy of Zero Trust security models.
+  + Social Engineering and Misinformation: AI-driven generation of fake text, audio, and video content enables large-scale manipulation of public opinion, reputational damage, and extortion schemes.
+
+##### 1.1.1.3 AI Risks in Business Processes
+
+AI integration into business operations introduces additional risk that organizations must address.
++ Overreliance on AI in Critical Processes. Excessive dependence on AI-driven automation in mission-critical functions can result in severe operational disruptions if the system fails or is compromised.
++ Reputational and Compliance Risks. Organizations deploying AI for customer interactions, regulatory compliance, or decision-making must consider non-deterministic nature of AI and additional risks of AI interacting on behalf of the organisation or business entity.
++ AI’s Non-Deterministic Nature. AI’s probabilistic decision-making processes can introduce significant variations in outcomes. For instance, minor data variations in AI-driven quality control in the pharmaceutical sector can impact product safety and efficacy of the final product.
++ Legal and Non-Repudiation Challenges. AI-driven decision-making raises accountability concerns, particularly in cases where AI autonomously makes business-critical or legally binding decisions.
+
 #### 1.1.2. AI Defender Frameworks Overview
 
 The rapidly evolving landscape of AI systems demands a comprehensive and multi-layered approach to security, which is why understanding and implementing various defender frameworks in concert is crucial. These frameworks have emerged from different sectors - including government, industry, and academia - each bringing unique perspectives and strengths to AI security. The diversity of frameworks reflects the complex nature of AI systems and the varied threats they face, from data poisoning and model extraction to adversarial attacks and privacy breaches.
