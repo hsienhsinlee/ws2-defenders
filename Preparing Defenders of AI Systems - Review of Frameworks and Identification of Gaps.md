@@ -30,6 +30,9 @@
         - [1.2.6.1 In Scope](#1261-in-scope)
         - [1.2.6.2 Out of Scope](#1262-out-of-scope)
     - [1.3. Roles Addressed](#13-roles-addressed)
+      - [1.3.1. Persona](#131-persona)
+      - [1.3.2. Relevant Frameworks](#132-relevant-frameworks)
+      - [1.3.3. Activities and Responsibilities](#133-activities-and-responsibilities)
   - [2. Frameworks](#2-frameworks)
     - [2.1. NIST](#21-nist)
       - [2.1.1. NIST CSF 2.0](#211-nist-csf-20)
@@ -432,6 +435,7 @@ Out of scop of this document is:
 
 Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&CK/ATLAS/CAPEC, OWASP and Zero Trust to ensure secure, compliant, and resilient AI deployment. Executives align strategy with regulatory and risk imperatives, while CISOs operationalize security controls and threat monitoring. Architects integrate these frameworks to design robust infrastructures, and IT and SOC teams employ them for system integrity, incident response, and proactive threat hunting. Service operations ensure compliance in deployment, auditors enforce policy adherence, and researchers develop resilient, fair AI models. Practitioners follow these guidelines, contributing to continuous improvement. Together, these roles enable responsible, secure AI adoption.
 
+#### 1.3.1. Persona
 
 | **Role**               | **Key Focus**   |
 |------------------------|-----------------|
@@ -448,6 +452,25 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 | ***Users/Practitioners*** | 1. Use AI systems according to organizational policies and ethical standards.<br>2. Report any suspicious behavior or potential vulnerabilities to the appropriate teams.<br>3. Provide feedback on the effectiveness and usability of AI systems for continuous improvement. |
 
 <br><br>
+
+#### 1.3.2. Relevant Frameworks
+
+| Target Audience                | Frameworks                                                                                             |
+|--------------------------------|--------------------------------------------------------------------------------------------------------|
+| **Executives**                 | NIST AI RMF, NIST CSF 2.0, Zero Trust Maturity Model (ZTMM) |
+| **CISO/SSO**                   | NIST SP 800-37 (RMF), MITRE ATT&CK, MITRE ATLAS, NIST AI RMF, Zero Trust Maturity Model (ZTMM), OWASP Top 10 for LLMs, STIX |
+| **Service Architects**         | NIST AI RMF, OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM), MITRE D3FEND, OCSF          |
+| **IT Architects**              | NIST SP 800-37 (RMF), Zero Trust Maturity Model (ZTMM), OWASP Top 10 for LLMs, MITRE D3FEND, OCSF       |
+| **Security Architects**        | MITRE ATT&CK, MITRE ATLAS, MITRE D3FEND, NIST AI AML, MITRE CAPEC, OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM) |
+| **IT Operations**              | NIST CSF 2.0, NIST SP 800-37 (RMF), OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM), OCSF |
+| **SOC Operations**             | MITRE ATT&CK, MITRE ATLAS, NIST AI AML, STIX, OCSF, OWASP Top 10 for LLMs |
+| **Service Operations**         | NIST CSF 2.0, OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM)                      |
+| **Auditors/Policy Makers**     | NIST AI RMF, NIST SP 800-37 (RMF), OWASP Top 10 for LLMs, NIST AI AML                 |
+| **Researchers/Data Scientists**| OWASP Top 10 for LLMs, NIST AI RMF, MITRE ATT&CK, MITRE ATLAS, MITRE CAPEC, NIST AI AML, NIST AI GAI                   |
+| **Users/Practitioners**        | NIST CSF 2.0, OWASP Top 10 for LLMs, NIST AI GAI                                                   |
+
+
+#### 1.3.3. Activities and Responsibilities
 
 | Activity            | Executives | CISO/SSO | Service Architects | IT Architects | Security Architects | IT Operations | SOC Operations | Service Operations | Auditors/Policy Makers | Researchers / Data Scientists | Users / Practitioners |
 |---------------------------|------------|----------|-------------------|--------------|-------------------|--------------|--------------|----------------|---------------------|-------------------------|------------------|
@@ -504,6 +527,19 @@ The NIST CSF 2.0 provides a flexible structure for scoping cybersecurity efforts
 
 ###### 2.1.1.1.2. Persona addressed
 
+***Target Audience***
+
++ **Executives:** Strategic alignment of cybersecurity with business goals.
++ **CISO/SSO:** Enterprise-wide cybersecurity governance and policy enforcement.
++ **Service Architects:** Designing secure AI systems in alignment with organizational policies.
++ **Security Architects:** Integrating security controls and risk management into AI architecture.
++ **IT Operations:** Implementing operational security controls and incident response.
++ **Service Operations:** Maintaining operational resilience and compliance in AI services.
++ **Auditors/Policy Makers:** Auditing cybersecurity policies and regulatory compliance.
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 | ------------------------------------------ | -------------- | ------------ | ---------------------- | ----------------- | ----------------------- | ----------------- | ------------------ | ---------------------- | -------------------------- | ------------------------------- | ----------------------- |
@@ -693,6 +729,18 @@ In the NIST RMF, scoping is critical to the Prepare, Categorize, and Select step
 
 ###### 2.1.2.1.2. Persona addressed
 
+***Target Audience***
+
++ **Executives:** Risk management strategy and governance alignment.
++ **CISO/SSO:** Enterprise risk management and security compliance.
++ **IT Architects:** Secure infrastructure design and risk categorization.
++ **Security Architects:** Control selection, threat modeling, and risk assessment.
++ **IT Operations:** Implementation and monitoring of security controls.
++ **Auditors/Policy Makers:** Compliance auditing and regulatory risk management.
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                  | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |------------------------------------------|------------|----------|--------------------|---------------|---------------------|---------------|---------------|--------------------|---------------------------|-----------------------------|-----------------------|
@@ -792,6 +840,18 @@ In the AI RMF, cybersecurity plays a key role in ensuring the confidentiality, i
 
 ###### 2.1.3.1.2. Persona addressed
 
+***Target Audience***
+
++ **Executives:** Strategic governance, ethical AI, risk management alignment.
++ **CISO/SSO:** Implementing AI-specific risk management policies and compliance.
++ **Service Architects:** Designing AI systems with integrated risk controls.
++ **Security Architects:** Threat modeling and security design for adversarial resilience.
++ **Auditors/Policy Makers:** Ensuring AI governance, risk, and compliance reporting.
++ **Researchers/Data Scientists:** Ethical AI development and risk mitigation research.
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                  | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |---------------------------------------|---------------|--------------|------------------------|-------------------|------------------------|------------------|------------------|------------------|----------------------|------------------------|------------------|
@@ -911,6 +971,24 @@ As an extension of the NIST AI RMF 1.0 this framework inherits most of the chara
 <br><br>
 
 ###### 2.1.4.1.2. Persona addressed
+
+***Target Audience***
+
++ **Executives:** Strategic governance, risk management, and compliance for Generative AI deployment.
++ **CISO/SSO:** Establishing AI-specific security policies, risk controls, and compliance standards for GAI systems.
++ **Service Architects:** Designing secure Generative AI services, including LLMs, with integrated risk controls.
++ **IT Architects:** Secure infrastructure design and deployment pipelines for GAI models.
++ **Security Architects:** Implementing adversarial defense against prompt injection, model inversion, membership inference, and model theft.
++ **IT Operations:** Maintaining secure deployment, operational integrity, and incident response for GAI systems.
++ **SOC Operations:** Monitoring for adversarial attacks, anomalies, and threats specific to GAI models.
++ **Service Operations:** Ensuring operational security and resilience for Generative AI services.
++ **Auditors/Policy Makers:** Auditing compliance with GAI-specific security, ethical guidelines, and regulatory requirements.
++ **Researchers/Data Scientists:** Developing secure GAI models with adversarial robustness, privacy-preserving techniques, and ethical AI design.
++ **Users/Practitioners:** Adhering to security policies, ethical guidelines, and reporting security incidents in GAI usage.
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                 | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |--------------------------------------------|---------------|--------------|----------------------|----------------|-------------------|--------------|---------------|-----------------|----------------------|----------------------|------------------|
@@ -1050,6 +1128,24 @@ The NIST AI 100-2e2023 Framework scoping provides a detailed purview of AI syste
 <br><br>
 
 ###### 2.1.5.1.2. Persona addressed
+
+***Target Audience***
+
++ **Executives:** Strategic risk management and governance for adversarial AI threats.
++ **CISO/SSO:** Implementing adversarial defense strategies, security policies, and compliance for AML.
++ **Service Architects:** Designing resilient AI systems with adversarial robustness and input validation.
++ **IT Architects:** Secure infrastructure design to protect against adversarial inputs and model theft.
++ **Security Architects:** Implementing advanced threat modeling, defense strategies, and countermeasures against adversarial attacks.
++ **IT Operations:** Securing deployment pipelines and maintaining operational integrity against adversarial threats.
++ **SOC Operations:** Real-time monitoring, detection, and incident response for adversarial attacks, using AI-specific threat intelligence.
++ **Service Operations:** Ensuring resilience and operational security against adversarial manipulation and output integrity attacks.
++ **Auditors/Policy Makers:** Auditing compliance with AML-specific security standards and adversarial defense policies.
++ **Researchers/Data Scientists:** Developing adversarially robust models, implementing adversarial training, and researching adversarial AI behaviors.
++ **Users/Practitioners:** Adhering to security policies and reporting anomalies related to adversarial AI behavior.
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                                | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |--------------------------------------------------|---------------|--------------|-----------------------|-------------------|-----------------------|-----------------|----------------|-------------------|-------------------------|----------------------------|--------------------|
@@ -1248,6 +1344,17 @@ The MITRE ATT&CK framework provides a structured approach for identifying, analy
 
 ###### 2.2.1.1.2. Persona addressed
 
+***Target Audience***
+
++ **CISO/SSO:** Strategic threat intelligence integration.
++ **Security Architects:** Adversarial AI threat modeling and defense design.
++ **SOC Operations:** Real-time threat detection, hunting, and incident response.
++ **Researchers/Data Scientists:** Adversarial AI research and TTPs (Tactics, Techniques, Procedures).
+
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                                | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |---------------------------------------------|---------------|--------------|----------------------|---------------|------------------|---------------|---------------|------------------|-----------------------|----------------------------|------------------|
@@ -1410,6 +1517,18 @@ Scoping an AI system within the ATLAS (Adversarial Threat Landscape for Artifici
 
 ###### 2.2.7.1.2. Persona addressed
 
+***Target Audience***
+
++ **CISO/SSO:** Strategic threat intelligence integration.
++ **Security Architects:** Adversarial AI threat modeling and defense design.
++ **SOC Operations:** Real-time threat detection, hunting, and incident response.
++ **Researchers/Data Scientists:** Adversarial AI research and TTPs (Tactics, Techniques, Procedures).
+
+
+<br><br>
+
+***Roles and Activities***
+
 | **Activity**                    | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |--------------------------------------|--------------|--------------|----------------------|--------------|--------------------|--------------|--------------|------------------|----------------------|------------------------|------------------|
 | Identify AI systems and assets       | I            | **A**            | R                    | C            | C                  | I            | -            | -                | -                      | C                      | -                |
@@ -1567,6 +1686,18 @@ CAPEC is not designed to scope cybersecurity of AI system. However it can be ver
 
 ###### 2.2.3.1.2. Persona addressed
 
+***Target Audience***
+
++ **CISO/SSO:** Implementing adversarial defense strategies and security controls informed by CAPEC attack patterns.
++ **Security Architects:** Advanced threat modeling, risk assessment, and security design using CAPEC AI-specific attack patterns.
++ **SOC Operations:** Real-time monitoring, detection, and incident response for adversarial AI attacks.
++ **Researchers/Data Scientists:** Investigating adversarial attack methodologies and developing adversarially robust models.
+
+
+<br><br>
+
+***Roles and Activities***
+
 | **Task/Activity**                                 | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |---------------------------------------------------|---------------|--------------|-----------------------|-------------------|----------------------|----------------|----------------|------------------|----------------------|---------------------------|---------------------|
 | Integrate CAPEC into AI Systems               | I             | **A**            | R                     | C                 | C                    | I              | I              | I                | C                      | R                         | I                   |
@@ -1645,6 +1776,18 @@ As AI security threats continue evolving, D3FEND's structured, adaptive, and mac
 
 
 ###### 2.2.4.1.2. Persona addressed
+
+***Target Audience***
+
++ **Security Architects:** Defensive countermeasure design against adversarial AI threats.
++ **SOC Operations:** Implementing and monitoring AI defensive measures.
++ **IT Operations:** Ensuring operational deployment of D3FEND countermeasures.
++ **Service Architects:** Integrating countermeasures into AI service design.
+
+
+<br><br>
+
+***Roles and Activities***
 
 | Activity  | Executives | CISO/SSO | Service Architects | IT Architects | Security Architects | IT Operations | SOC Operations | Service Operations | Auditors/Policy Makers | Researchers/Data Scientists | Users/Practitioners |
 |------------------|------------|-----------|--------------------|--------------|---------------------|--------------|---------------|-----------------|---------------------|------------------------|------------------|
@@ -1902,6 +2045,18 @@ The Structured Threat Information Expression (STIX) 2.1 framework is a robust st
 <br><br>
 
 ###### 2.4.1.1.2. Persona addressed
+
+***Target Audience***
+
++ **CISO/SSO:** Strategic threat intelligence sharing and collaboration.
++ **Security Architects:** Integrating AI-specific threat intelligence for proactive defense.
++ **SOC Operations:** Real-time AI-specific threat detection and incident response.
++ **Researchers/Data Scientists:** Utilizing threat intelligence for adversarial AI research.
+
+<br><br>
+
+***Roles and Activities***
+
 
 | **Task/Responsibility**                                    | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |------------------------------------------------------------|---------------|-------------|---------------------|--------------|-------------------|--------------|---------------|----------------|--------------------|-------------------------|--------------------|
@@ -2226,6 +2381,17 @@ OCSF enhances cybersecurity operations by providing a standardized approach to s
 
 ###### 2.6.1.1.2. Persona addressed
 
+***Target Audience***
+
++ **CISO/SSO:** Strategic alignment of security event logging and monitoring.
++ **Security Architects:** Designing structured logging and security monitoring for AI.
++ **SOC Operations:** Implementing OCSF for real-time threat detection and SIEM integration.
++ **IT Operations:** Ensuring consistent logging and monitoring for AI environments.
++ **Service Operations:** Operationalizing security monitoring for AI services.
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                          | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |--------------------------------------------|---------------|-------------|------------------------|-------------------|------------------------|-------------------|-------------------|------------------------|----------------------------|------------------------------|-------------------------|
@@ -2381,6 +2547,20 @@ To mitigate these risks, organizations must enforce strong input/output validati
 <br>
 
 ###### 2.7.1.1.2. Persona addressed
+
+***Target Audience***
+
++ **CISO/SSO:** Governance of secure AI application development.
++ **Service Architects:** Designing resilient AI services against LLM-specific vulnerabilities.
++ **Security Architects:** Implementing security controls against adversarial LLM threats.
++ **IT Architects:** Securing AI deployment pipelines and infrastructure.
++ **SOC Operations:** Monitoring and detecting AI-specific attacks (e.g., prompt injection).
++ **Researchers/Data Scientists:** Securing LLMs and ensuring adversarial robustness.
+
+
+<br><br>
+
+***Roles and Activities***
 
 | **Activity**                          | **Executives** | **CISO/SSO** | **Service Architects** | **IT Architects** | **Security Architects** | **IT Operations** | **SOC Operations** | **Service Operations** | **Auditors/Policy Makers** | **Researchers/Data Scientists** | **Users/Practitioners** |
 |--------------------------------------------------|--------------|-------------|--------------------|---------------|-------------------|--------------|--------------|-----------------|----------------------|----------------------|------------------|
