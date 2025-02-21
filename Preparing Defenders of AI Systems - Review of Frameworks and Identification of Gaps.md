@@ -2784,17 +2784,38 @@ This comprehensive approach to AI security will ensure that AI technologies can 
 ## 6. Acknowledgements
 
 ## Workstream Leads Chairs: 
-_WS Lead Chair Name ([Chair.Name@example.com](mailto:Chair.Name@example.com)), [Example Corp.](http:// for affiliation web site) (remove "s" from Chairs if one)_
+
+Josiah Hagen ([josiah_hagen@trendmicro.com](mailto:josiah_hagen@trendmicro.com)), [Trend Micro](https://www.trendmicro.com/)<br>
+Vinay Bansal ([vibansal@cisco.com](mailto:vibansal@cisco.com)), [Cisco](https://www.cisco.com/)
 
 ## Editors: 
-_Editor Name ([Editor.Name@example.com](mailto:Editor.Name@example.com)), [Example Corp.](http:// for affiliation web site) (remove "s" from Editors if just one)_
 
-Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)
+Josiah Hagen ([josiah_hagen@trendmicro.com](mailto:josiah_hagen@trendmicro.com)), [Trend Micro](https://www.trendmicro.com/)<br>
+Vinay Bansal ([vibansal@cisco.com](mailto:vibansal@cisco.com)), [Cisco](https://www.cisco.com/)<br>
+Irakle Dzneladze ([irakle.dzneladze@ca.ibm.com](mailto:irakle.dzneladze@ca.ibm.com)), [IBM](https://www.ibm.com/)<br>
+Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)<br>
+J.R. Rao ([jrrao@us.ibm.com](mailto:jrrao@us.ibm.com)),[IBM](https://www.ibm.com/)<br>
+Akila Srinivasan ([akila@anthropic.com](mailto:akila@anthropic.com)),[Anthropic](https://www.anthropic.com/)<br>
+Jiyong Jang ([jjang@us.ibm.com](mailto:jjang@us.ibm.com)),[IBM](https://www.ibm.com/)<br>
+Jason Garman ([jason@amazon.com](mailto:jason@amazon.com)), [Amazon](https://aws.amazon.com/)<br>
+Michael Rash ([rashmichael90@gmail.com](mailto:rashmichael90@gmail.com))<br>
+Vladimir Kropotov ([kropotovn@ieee.org](kropotovn@ieee.org)), [Trend Micro](https://www.trendmicro.com/)<br>
+Shrey Bagga ([sbagga@cisco.com](mailto:jsbagga@cisco.com)), [Cisco](https://www.cisco.com/)<br>
+Marina Zeldin ([marina.zeldin@dell.com](mailto:marina.zeldin@dell.com)), [Dell](https://www.dell.com/)<br>
 
 
 ## List of active contributors:
 
-Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)
+Josiah Hagen ([josiah_hagen@trendmicro.com](mailto:josiah_hagen@trendmicro.com)), [Trend Micro](https://www.trendmicro.com/)<br>
+Vinay Bansal ([vibansal@cisco.com](mailto:vibansal@cisco.com)), [Cisco](https://www.cisco.com/)<br>
+Irakle Dzneladze ([irakle.dzneladze@ca.ibm.com](mailto:irakle.dzneladze@ca.ibm.com)), [IBM](https://www.ibm.com/)<br>
+Matt Saner ([msaner@amazon.com](mailto:msaner@amazon.com)), [Amazon](https://aws.amazon.com/)<br>
+Jiyong Jang ([jjang@us.ibm.com](mailto:jjang@us.ibm.com)), [IBM](https://www.ibm.com/)<br>
+Jason Garman ([jason@amazon.com](mailto:jason@amazon.com)), [Amazon](https://aws.amazon.com/)<br>
+Michael Rash ([rashmichael90@gmail.com](mailto:rashmichael90@gmail.com))<br>
+Vladimir Kropotov ([kropotovn@ieee.org](kropotovn@ieee.org)), [Trend Micro](https://www.trendmicro.com/)<br>
+Shrey Bagga ([sbagga@cisco.com](mailto:jsbagga@cisco.com)), [Cisco](https://www.cisco.com/)<br>
+Marina Zeldin ([marina.zeldin@dell.com](mailto:marina.zeldin@dell.com)), [Dell](https://www.dell.com/)<br>
 
 ## 5. Appendix
 
