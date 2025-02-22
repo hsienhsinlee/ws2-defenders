@@ -343,13 +343,13 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 
 ### 1.3. How to use this document
 
-This paper provides a comprehensive review and analysis of major frameworks used to secure AI systems, with a focus on helping defenders address cybersecurity challenges specific to AI. To get maximum value from this resource:
+To get maximum value from this resource:
 
 #### 1.3.1. Understanding the Structure
 
-* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders
-* Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
-* Use Section 3's takeaways and conclusions to understand how these frameworks complement each other
+* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key defense mechanims. It brings the key points from the various frameworks and also outlines the gaps. 
+* Review Section 2's for detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
+
 
 #### 1.3.2. Practical Application
 
@@ -419,16 +419,16 @@ This document is focuced on AI Security which includes:
 Out of scop of this document is:
 + AI Data Privacy
 + AI Ethics Trust and Abuse (content, behavioral, account takeover, spam, misinformation)
++ AI Based Attacks 
 + AI Hallucination
 + Trustworthy AI
-+ Other Aspects of the AI that are not included in "In Scope" section.
 
 
-### 1.3. Roles Addressed
+### 1.4. Roles Addressed
 
 Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&CK/ATLAS/CAPEC, OWASP and Zero Trust to ensure secure, compliant, and resilient AI deployment. Executives align strategy with regulatory and risk imperatives, while CISOs operationalize security controls and threat monitoring. Architects integrate these frameworks to design robust infrastructures, and IT and SOC teams employ them for system integrity, incident response, and proactive threat hunting. Service operations ensure compliance in deployment, auditors enforce policy adherence, and researchers develop resilient, fair AI models. Practitioners follow these guidelines, contributing to continuous improvement. Together, these roles enable responsible, secure AI adoption.
 
-#### 1.3.1. Persona
+#### 1.4.1. Persona
 
 | **Role**               | **Key Focus**   |
 |------------------------|-----------------|
@@ -446,7 +446,7 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 
 <br><br>
 
-#### 1.3.2. Relevant Frameworks
+#### 1.4.2. Relevant Frameworks
 
 | Target Audience                | Frameworks                                                                                             |
 |--------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -463,7 +463,7 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 | **Users/Practitioners**        | NIST CSF 2.0, OWASP Top 10 for LLMs, NIST AI GAI                                                   |
 
 
-#### 1.3.3. Activities and Responsibilities
+#### 1.4.3. Activities and Responsibilities
 
 | Activity            | Executives | CISO/SSO | Service Architects | IT Architects | Security Architects | IT Operations | SOC Operations | Service Operations | Auditors/Policy Makers | Researchers / Data Scientists | Users / Practitioners |
 |---------------------------|------------|----------|-------------------|--------------|-------------------|--------------|--------------|----------------|---------------------|-------------------------|------------------|
@@ -491,9 +491,9 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 
 <br><br>
 
-### 1.4. Takeaways and Conclusion
+### 1.5. Takeaways and Conclusion
 
-#### 1.4.1. Key Takeaways:
+#### 1.5.1. Key Takeaways:
 
 1. **Framework Adaptation**: 
    - Existing frameworks like MITRE ATT&CK, NIST, and the AWS Generative AI Security Scoping Matrix provide a strong foundation but require specific adaptations to address AI-specific threats, such as adversarial attacks, prompt injection, and data poisoning. These adaptations should include developing AI-specific adversarial tactics and techniques to handle challenges unique to AI systems.
@@ -513,7 +513,7 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 6. **Dynamic Risk Management**: 
    - The rapid evolution of AI technology and associated threats necessitates continuous updates and adaptations to existing frameworks. Risk management strategies must be dynamic, incorporating real-time threat intelligence and adaptive security measures to counter new and emerging threats effectively.
 
-#### 1.4.2. Conclusion:
+#### 1.5.2. Conclusion:
 
 To effectively defend AI systems, it is essential to address the identified gaps by enhancing existing frameworks with AI-specific threat models and integrating AI security into broader cybersecurity practices. This entails several key actions and considerations:
 
