@@ -493,8 +493,6 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 
 ### 1.4. Takeaways and Conclusion
 
-The exploration of frameworks for preparing defenders of AI systems reveals significant insights and critical gaps that need addressing to enhance AI system security. Here are the updated takeaways and conclusion based on the paper:
-
 #### 1.4.1. Key Takeaways:
 
 1. **Framework Adaptation**: 
