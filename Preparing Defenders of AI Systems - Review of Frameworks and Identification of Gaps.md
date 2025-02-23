@@ -26,13 +26,13 @@
       - [1.3.6. Scope of Preparing Defenders of AI Systems](#136-scope-of-preparing-defenders-of-ai-systems)
         - [1.3.6.1 In Scope](#1361-in-scope)
         - [1.3.6.2 Out of Scope](#1362-out-of-scope)
-    - [1.3. Roles Addressed](#13-roles-addressed)
-      - [1.3.1. Persona](#131-persona)
-      - [1.3.2. Relevant Frameworks](#132-relevant-frameworks)
-      - [1.3.3. Activities and Responsibilities](#133-activities-and-responsibilities)
-    - [1.4. Takeaways and Conclusion](#14-takeaways-and-conclusion)
-      - [1.4.1. Key Takeaways:](#141-key-takeaways)
-      - [1.4.2. Conclusion:](#142-conclusion)
+    - [1.4. Roles Addressed](#14-roles-addressed)
+      - [1.4.1. Persona](#141-persona)
+      - [1.4.2. Relevant Frameworks](#142-relevant-frameworks)
+      - [1.4.3. Activities and Responsibilities](#143-activities-and-responsibilities)
+    - [1.5. Takeaways and Conclusion](#15-takeaways-and-conclusion)
+      - [1.5.1. Key Takeaways:](#151-key-takeaways)
+      - [1.5.2. Conclusion:](#152-conclusion)
   - [2. Deep Dive in Frameworks](#2-deep-dive-in-frameworks)
     - [2.1. NIST](#21-nist)
       - [2.1.1. NIST CSF 2.0](#211-nist-csf-20)
@@ -347,9 +347,9 @@ To get maximum value from this resource:
 
 #### 1.3.1. Understanding the Structure
 
-* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key defense mechanims. It brings the key points from the various frameworks and also outlines the gaps. 
-* Review Section 2's for detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
-
+* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders
+* Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
+* Use Section 3's takeaways and conclusions to understand how these frameworks complement each other
 
 #### 1.3.2. Practical Application
 
