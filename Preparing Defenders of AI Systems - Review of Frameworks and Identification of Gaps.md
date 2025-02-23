@@ -347,9 +347,8 @@ To get maximum value from this resource:
 
 #### 1.3.1. Understanding the Structure
 
-* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders
+* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders. Use Section 1.5 to understand some of the key takeaways and conclusions from the paper
 * Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
-* Use Section 3's takeaways and conclusions to understand how these frameworks complement each other
 
 #### 1.3.2. Practical Application
 
