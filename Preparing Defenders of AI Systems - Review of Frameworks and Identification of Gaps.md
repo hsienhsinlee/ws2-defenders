@@ -191,7 +191,7 @@ Key gaps identified across the reviewed frameworks include the lack of AI-specif
 
 ### 1.2. Changing Attack Surface with AI Adoption
 
-#### 1.2.1. AI Risk examples
+#### 1.2.1. AI Risk Scenarios
 
 AI systems are fundamentally altering the cybersecurity landscape by expanding attack surfaces and introducing new risks. Their reliance on extensive computational resources, novel data formats, and vast data processing capabilities, combined with their inherently non-deterministic nature, makes them both a prime target and an enabler of sophisticated cyber threats. AI systems can be primary targets or enabler of the attacks on other assets, targets, infrastructures and business processes. 
 
@@ -229,9 +229,9 @@ AI integration into business operations introduces additional risk that organiza
 
 #### 1.2.2. AI Defender Frameworks Overview
 
-The rapidly evolving landscape of AI systems demands a comprehensive and multi-layered approach to security, which is why understanding and implementing various defender frameworks in concert is crucial. These frameworks have emerged from different sectors - including government, industry, and academia - each bringing unique perspectives and strengths to AI security. The diversity of frameworks reflects the complex nature of AI systems and the varied threats they face, from data poisoning and model extraction to adversarial attacks and privacy breaches.
+The rapidly evolving landscape of AI systems demands a comprehensive and multi-layered approach to security, which necessitates a thorough understanding and cordinated implemention of various defender frameworks. These frameworks have emerged from different sectors - including government, industry, and academia - each bringing unique perspectives and strengths to AI security. The diversity of frameworks reflects the complex nature of AI systems and the varied threats they face, from data poisoning and model extraction to adversarial attacks and privacy breaches.
 
-Defender frameworks typically operate on multiple levels, addressing technical, operational, and governance aspects of AI security. At the technical level, frameworks provide guidance for secure model development, testing procedures, and deployment practices. Operationally, they establish protocols for monitoring, incident response, and continuous improvement. From a governance perspective, these frameworks help organizations align AI security with broader risk management strategies and compliance requirements.
+Defender frameworks operate at multiple levels, addressing technical, operational, and governance aspects of AI security. At the technical level, frameworks provide guidance for secure model development, testing procedures, and deployment practices. Operationally, they establish protocols for monitoring, incident response, and continuous improvement. From a governance perspective, these frameworks help organizations align AI security with broader risk management strategies and compliance requirements.
 
 Modern AI security frameworks encompass various approaches to protecting AI systems. Some focus on risk management and mitigation strategies throughout the AI system lifecycle, while others emphasize regulatory compliance and security requirements specific to certain regions or industries. Additionally, frameworks developed from industry experience offer practical insights and methodologies developed through real-world implementation of AI systems at scale.
 
