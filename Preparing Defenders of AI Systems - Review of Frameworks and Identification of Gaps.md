@@ -2695,15 +2695,23 @@ The AWS Generative AI Security Scoping Matrix contains 5 key security domains th
 
 ###### 2.8.1.1.2. Persona addressed
 
+The AWS Generative AI Security Scoping Matrix is designed to provide value to many different stakeholders within an organization.  
 
----
+***Target Audience***
 
-***Legend:***
-- **R** = Responsible (Performs the task/work)
-- **A** = Accountable (Ultimate authority and decision-maker)
-- **C** = Consulted (Provides input and expertise)
-- **I** = Informed (Kept in the loop)
-- **"-"** = No direct involvement
++ **Executives:** Use the matrix to understand the unique security implications across differnt AI use cases and make informed decisions about AI adoption strategies based on risk appetite and control requirements.
++ **CISO/SSO:** Evaluate security controls and develop governance frameworks tailored to different AI deployment models and implementation scopes.
++ **Procurement:** Create evaluation criteria for AI model or solution purchasing to determine how security requirements will be met depending on scope.
++ **Legal:** Understand the EULA, Terms & Conditions, and other contractual implications, including data privacy agreements based on the implelention scope.
++ **Service Architects:** Design secure AI services by selecting appropriate security patterns and controls based on the implementation scope.
++ **IT Architects:** Plan infrastructure security and implement controls aligned with the specific needs of each AI service scope.
++ **Security Architects:** Define security requirements and design defense-in-depth strategies appropriate for each AI implementation scope.
++ **IT Operations:** Implement and maintain security controls appropriate for different AI service scopes while monitoring overall security posture.
++ **SOC Operations:** Monitor AI systems and respond to threats based on scope-specific security requirements and risk profiles.
++ **Service Operations:** Operate AI services within defined security parameters while maintaining scope-specific controls and monitoring.
++ **Auditors/Policy Makers:** Validate that security controls align with implementation scope and ensure compliance requirements are met for each AI service tier.
++ **Researchers/Data Scientists:** Implement appropriate controls during model development and follow security best practices based on the chosen implementation scope.
++ **Users/Practitioners:** Follow security procedures and usage policies appropriate for the AI service scope while reporting any security issues through defined channels.
 
 <br><br>
 
