@@ -4,28 +4,28 @@
   - [OASIS Open Project : Coalition for Secure AI (CoSAI) - Workstream 2: Preparing Defenders for a Changing Cybersecurity Landscape](#oasis-open-project--coalition-for-secure-ai-cosai---workstream-2-preparing-defenders-for-a-changing-cybersecurity-landscape)
   - [1. Preparing Defenders of AI Systems](#1-preparing-defenders-of-ai-systems)
     - [1.1. Executive Summary](#11-executive-summary)
-    - [1.2. Changing Attack Surface with AI Adoption](#12-changing-attack-surface-with-ai-adoption)
-      - [1.2.1. AI Risk examples](#121-ai-risk-examples)
-        - [1.2.1.1 AI as a Target: Key Security Risks](#1211-ai-as-a-target-key-security-risks)
-        - [1.2.1.2 AI as an Enabler of Cyber Attacks on other assets, targets, infrastructures](#1212-ai-as-an-enabler-of-cyber-attacks-on-other-assets-targets-infrastructures)
-        - [1.2.1.3 AI Risks in Business Processes](#1213-ai-risks-in-business-processes)
-      - [1.2.2. AI Defender Frameworks Overview](#122-ai-defender-frameworks-overview)
-      - [1.2.3. Change needed for Defenders of AI Systems](#123-change-needed-for-defenders-of-ai-systems)
-        - [1.2.3.1. AI-Specific Threat Intelligence \& Adversarial Detection\*\*\*](#1231-ai-specific-threat-intelligence--adversarial-detection)
-        - [1.2.3.2. Zero Trust for AI Systems](#1232-zero-trust-for-ai-systems)
-        - [1.2.3.3. AI Model \& Data Supply Chain Security](#1233-ai-model--data-supply-chain-security)
-        - [1.2.3.4. AI-Specific Incident Response \& SOC Automation](#1234-ai-specific-incident-response--soc-automation)
-        - [1.2.3.5. Secure AI Model Deployment \& Runtime Protection](#1235-secure-ai-model-deployment--runtime-protection)
-        - [1.2.3.6. AI Security Awareness \& Red Teaming](#1236-ai-security-awareness--red-teaming)
-    - [1.3. How to use this document](#13-how-to-use-this-document)
-      - [1.3.1. Understanding the Structure](#131-understanding-the-structure)
-      - [1.3.2. Practical Application](#132-practical-application)
-      - [1.3.3. Making Framework Choices](#133-making-framework-choices)
-      - [1.3.4. Additional Resources](#134-additional-resources)
-      - [1.3.5. Leveraging Defender Frameworks](#135-leveraging-defender-frameworks)
-      - [1.3.6. Scope of Preparing Defenders of AI Systems](#136-scope-of-preparing-defenders-of-ai-systems)
-        - [1.3.6.1 In Scope](#1361-in-scope)
-        - [1.3.6.2 Out of Scope](#1362-out-of-scope)
+    - [1.2. How to use this document](#12-how-to-use-this-document)
+      - [1.2.1. Understanding the Structure](#121-understanding-the-structure)
+      - [1.2.2. Practical Application](#122-practical-application)
+      - [1.2.3. Making Framework Choices](#123-making-framework-choices)
+      - [1.2.4. Additional Resources](#124-additional-resources)
+      - [1.2.5. Leveraging Defender Frameworks](#125-leveraging-defender-frameworks)
+      - [1.2.6. Scope of Preparing Defenders of AI Systems](#126-scope-of-preparing-defenders-of-ai-systems)
+        - [1.2.6.1 In Scope](#1261-in-scope)
+        - [1.2.6.2 Out of Scope](#1262-out-of-scope)
+    - [1.3. Changing Attack Surface with AI Adoption](#13-changing-attack-surface-with-ai-adoption)
+      - [1.3.1. AI Risk examples](#131-ai-risk-examples)
+        - [1.3.1.1 AI as a Target: Key Security Risks](#1311-ai-as-a-target-key-security-risks)
+        - [1.3.1.2 AI as an Enabler of Cyber Attacks on other assets, targets, infrastructures](#1312-ai-as-an-enabler-of-cyber-attacks-on-other-assets-targets-infrastructures)
+        - [1.3.1.3 AI Risks in Business Processes](#1313-ai-risks-in-business-processes)
+      - [1.3.2. AI Defender Frameworks Overview](#132-ai-defender-frameworks-overview)
+      - [1.3.3. Change needed for Defenders of AI Systems](#133-change-needed-for-defenders-of-ai-systems)
+        - [1.3.3.1. AI-Specific Threat Intelligence \& Adversarial Detection\*\*\*](#1331-ai-specific-threat-intelligence--adversarial-detection)
+        - [1.3.3.2. Zero Trust for AI Systems](#1332-zero-trust-for-ai-systems)
+        - [1.3.3.3. AI Model \& Data Supply Chain Security](#1333-ai-model--data-supply-chain-security)
+        - [1.3.3.4. AI-Specific Incident Response \& SOC Automation](#1334-ai-specific-incident-response--soc-automation)
+        - [1.3.3.5. Secure AI Model Deployment \& Runtime Protection](#1335-secure-ai-model-deployment--runtime-protection)
+        - [1.3.3.6. AI Security Awareness \& Red Teaming](#1336-ai-security-awareness--red-teaming)
     - [1.4. Roles Addressed](#14-roles-addressed)
       - [1.4.1. Persona](#141-persona)
       - [1.4.2. Relevant Frameworks](#142-relevant-frameworks)
@@ -189,168 +189,16 @@ Organizations of all sizes are rapidly integrating artificial intelligence into 
 
 Key gaps identified across the reviewed frameworks include the lack of AI-specific threat intelligence, inadequate controls for adversarial attacks, and insufficient integration of AI risks within traditional cybersecurity practices. These include areas such as adversarial AI/ML, supply chain vulnerabilities, and incident response tailored to AI systems require targeted enhancements. To address these deficiencies, the paper outlines actionable recommendations—ranging from integrating AI-tailored threat models and expanding Zero Trust principles to securing the AI supply chain and establishing dedicated AI incident response playbooks.
 
-### 1.2. Changing Attack Surface with AI Adoption
-
-#### 1.2.1. AI Risk Scenarios
-
-AI systems are fundamentally altering the cybersecurity landscape by expanding attack surfaces and introducing new risks. Their reliance on extensive computational resources, novel data formats, and vast data processing capabilities, combined with their inherently non-deterministic nature, makes them both a prime target and an enabler of sophisticated cyber threats. AI systems can be primary targets or enabler of the attacks on other assets, targets, infrastructures and business processes. 
-
-##### 1.2.1.1 AI as a Target: Key Security Risks
-
-AI systems can be directly targeted through various attack vectors, including:
-+ Prompt Injection Attacks. Attackers manipulate AI models by injecting indirect or direct prompts that push the system beyond its intended operational boundaries. This can lead to outputs that are misleading, harmful, biased, or in violation of compliance regulations.
-+ Supply Chain Attacks on AI Models. AI models and datasets, particularly pre-trained versions sourced from third parties, may contain hidden backdoors, biases, or embedded malicious triggers that can be exploited post-deployment.
-+ Data Extraction and Privacy Risks. AI systems process sensitive data, including personally identifiable information (PII), proprietary intellectual property, and authentication tokens. Adversaries can extract this information from AI models during training or inference stages.
-+ AI Infrastructure Exploitation
-  + Code Execution Vulnerabilities: Attackers may manipulate AI systems to execute arbitrary code, leveraging AI computing resources for malicious purposes.
-  + Denial-of-Service (DoS) Attacks: AI systems can be overwhelmed through various DoS techniques, disrupting availability.
-  + Protocol Abuse: AI relies on distributed data processing, making it susceptible to adversarial-in-the-middle attacks and data injection threats targeting its communication protocols.
-
-##### 1.2.1.2 AI as an Enabler of Cyber Attacks on other assets, targets, infrastructures
-
-AI Systems can be leveraged to enhance precision, scalability, and automation in executing sophisticated attacks.
-+ Augmenting Existing Attack Strategies
-  + Multilingual and Context-Aware Threats: AI allows attackers to craft highly localized phishing campaigns in multiple languages, bypassing traditional detection mechanisms.
-  + Adaptive Attacks: AI enhances reconnaissance capabilities, enabling tailored attack strategies against specific targets.
-  + Automation of Attack Chains: AI streamlines adversarial workflows, including automation of credential theft, reconnaissance, and social engineering.
-+ AI-Driven Denial-of-Service (DoS) Attacks. Attackers can exploit AI systems to initiate and orchestrate large-scale, adaptive DoS attacks against third-party infrastructure.
-+ Emerging AI-Enabled Cyber Risks
-  + Synthetic Identities & Deepfake-Based risks: AI-generated synthetic identities and deepfake technologies can bypass identity verification, authentication, and fraud detection systems.
-  + Circumventing Zero Trust Security Models: AI-generated traffic patterns and behaviors can mimic behavior of legitimate systems and users, diminishing the efficacy of Zero Trust security models.
-  + Social Engineering and Misinformation: AI-driven generation of fake text, audio, and video content enables large-scale manipulation of public opinion, reputational damage, and extortion schemes.
-
-##### 1.2.1.3 AI Risks in Business Processes
-
-AI integration into business operations introduces additional risk that organizations must address.
-+ Overreliance on AI in Critical Processes. Excessive dependence on AI-driven automation in mission-critical functions can result in severe operational disruptions if the system fails or is compromised.
-+ Reputational and Compliance Risks. Organizations deploying AI for customer interactions, regulatory compliance, or decision-making must consider non-deterministic nature of AI and additional risks of AI interacting on behalf of the organisation or business entity.
-+ AI's Non-Deterministic Nature. AI's probabilistic decision-making processes can introduce significant variations in outcomes. For instance, minor data variations in AI-driven quality control in the pharmaceutical sector can impact product safety and efficacy of the final product.
-+ Legal and Non-Repudiation Challenges. AI-driven decision-making raises accountability concerns, particularly in cases where AI autonomously makes business-critical or legally binding decisions.
-
-#### 1.2.2. AI Defender Frameworks Overview
-
-The rapidly evolving landscape of AI systems demands a comprehensive and multi-layered approach to security, which necessitates a thorough understanding and cordinated implemention of various defender frameworks. These frameworks have emerged from different sectors - including government, industry, and academia - each bringing unique perspectives and strengths to AI security. The diversity of frameworks reflects the complex nature of AI systems and the varied threats they face, from data poisoning and model extraction to adversarial attacks and privacy breaches.
-
-Defender frameworks operate at multiple levels, addressing technical, operational, and governance aspects of AI security. At the technical level, frameworks provide guidance for secure model development, testing procedures, and deployment practices. Operationally, they establish protocols for monitoring, incident response, and continuous improvement. From a governance perspective, these frameworks help organizations align AI security with broader risk management strategies and compliance requirements.
-
-Modern AI security frameworks encompass various approaches to protecting AI systems. Some focus on risk management and mitigation strategies throughout the AI system lifecycle, while others emphasize regulatory compliance and security requirements specific to certain regions or industries. Additionally, frameworks developed from industry experience offer practical insights and methodologies developed through real-world implementation of AI systems at scale.
-
-Together, these frameworks create a foundation for addressing the complex challenges of securing AI systems. While each framework has its own focus and strengths, they collectively provide comprehensive guidance for protecting AI models, securing sensitive data, and ensuring responsible AI deployment. Their complementary nature reflects the understanding that AI security requires multiple perspectives and approaches to address the full spectrum of potential threats and vulnerabilities.
-
-#### 1.2.3. Change needed for Defenders of AI Systems
-
-MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the most AI-specific guidance.  MITRE ATLAS covers adversarial tactics and techniques in detail, specifying attacker general goals against AI systems and the steps in the attack.  NIST CSF, NIST RMF, MITRE CAPEC and CISA Zero Trust Maturity Model provide more general security guidance, but could be expanded to better incorporate AI-specific risks, both for adversarial attacks and for vulnerabilities related to data, models or guardrails for AI systems.  The MIT Risk Repository offers insights for governance stakeholders, but doesn't provide enough low-level detail to inform defenders of AI systems about security measures.  Current defender frameworks require extensions to properly deal with securing AI systems, some themes of which are repeated across frameworks.
-
-| **Gap**               | **What is missing**   |
-|---------------------------|-----------------|
-| **Threat model for AI** | Specific adversarial techniques including the mechanisms that exploit weaknesses particular to AI systems |
-| **Incident Response or Mitigations** | Fine-grain detail on actions for playbooks for incident response, mitigation and prevention |
-| **Integration with other Cybersecurity Frameworks** | Map framework details to other frameworks for interoperability |
-| **AI Supply Chain Vulnerabilities** | Weaknesses in supply chain regarding data, code and models that create AI system vulnerabilities |
-| **Model Behavior Analysis** | Determining nominal behavior, monitoring and analysis of any behavior drift in models to ensure their proper function |
-
-In a new world dominated by AI powered ecosystems defenders of AI systems (CISOs, security architects, SOC teams, threat hunters, and AI governance experts) must adapt new strategies, frameworks, and methodologies to address evolving AI security threats.
-
-![Changes Needed For Defenders Of AI Systems](/frameworks/images/ChangesNeededForDefendersOfAISystems.png "Changes Needed For Defenders Of AI Systems")
-
-##### 1.2.3.1. AI-Specific Threat Intelligence & Adversarial Detection***
-
-**Change Needed:**
-Expand MITRE ATT&CK(ATLAS), CAPEC, and STIX 2.1 to include AI-specific attack vectors and adversarial TTPs (Tactics, Techniques, and Procedures).
-
-**Why?**
-Existing cyber threat intelligence (CTI) models lack adversarial AI attack patterns, limiting defenders' ability to proactively detect AI-targeted threats.
-
-**Solution:**
-
-+ Develop AI-specific ATT&CK(ATLAS) tactics for adversarial ML threats (model poisoning, prompt injection, evasion).
-+ Enhance SIEM and XDR detection with AI-focused threat telemetry.
-+ Expand STIX/TAXII threat sharing to cover AI-specific Indicators of Compromise (IoCs).
-
-##### 1.2.3.2. Zero Trust for AI Systems
-
-**Change Needed:** 
-Integrate Zero Trust principles into AI security using ZTMM.
-
-**Why?** 
-
-AI models and APIs lack proper identity verification, access controls, and segmentation, leaving them vulnerable to unauthorized inference attacks.
-
-**Solution:**
-
-+ Implement AI model segmentation and least-privilege access to AI APIs.
-+ Require strong identity authentication and authorization for AI MLOps pipelines.
-+ Use continuous risk-based monitoring to detect anomalous AI behavior.
-  
-##### 1.2.3.3. AI Model & Data Supply Chain Security
-
-**Change Needed:**
-Develop AI Software Bill of Materials (SBOM) and secure AI model provenance tracking.
-
-**Why?** 
-Pre-trained AI models and datasets introduce hidden security risks (backdoors, poisoned datasets, hidden triggers).
-
-**Solution:**
-
-+ Mandate Software Bill of Materials (SBOM) for AI models to track dependencies and provenance.
-+ Implement trusted AI supply chain controls to prevent AI backdoors.
-+ Require secure model validation before deployment to detect manipulation.
-+ Leverage cryptographic mechanisms such as "AI model signatures", to verify authenticity and integrity of models
-  
-##### 1.2.3.4. AI-Specific Incident Response & SOC Automation
-
-**Change Needed** 
-Build AI incident response playbooks and integrate AI threat intelligence into SOC operations.
-
-**Why?** 
-AI security incidents (e.g., adversarial attacks, data poisoning) require specialized SOC workflows, forensics skills and AI-driven response automation.
-
-**Solution:**
-
-+ Develop SOC playbooks for AI security incidents (e.g., model rollback procedures after poisoning).
-+ Enable real-time adversarial attack detection in SIEM/XDR.
-+ Implement SOAR automation for AI threat mitigation and remediation.
-  
-##### 1.2.3.5. Secure AI Model Deployment & Runtime Protection
-
-**Change Needed:** 
-Introduce runtime security controls for AI inference (e.g., adversarial detection, model integrity checks).
-
-**Why?** 
-AI models deployed in production are vulnerable to runtime adversarial attacks (e.g., prompt injection, inference manipulation).
-
-**Solution:**
-
-+ Use AI runtime integrity verification to detect unauthorized model modifications.
-+ Deploy adversarial input filtering to block real-time adversarial samples.
-+ Implement model access control policies to prevent unauthorized API abuse.
-+ Implement controls around leveraging user supplied data for re-training. 
-  
-##### 1.2.3.6. AI Security Awareness & Red Teaming
-
-**Change Needed:** 
-Establish AI Red Teaming exercises and train defenders on adversarial AI techniques.
-
-**Why?** 
-AI security remains a knowledge gap for traditional defenders, requiring specialized training on AI attack vectors.
-
-**Solution:**
-
-+ Conduct AI-specific Red Team assessments simulating adversarial AI attacks.
-+ Train SOC analysts on AI security monitoring and AI adversarial techniques.
-+ Integrate AI security into existing cybersecurity frameworks (NIST, OWASP, MITRE).
-+ Train employees and leadership on AI security awarness, responsible AI and best practices.
-
-### 1.3. How to use this document
+### 1.2. How to use this document
 
 To get maximum value from this resource:
 
-#### 1.3.1. Understanding the Structure
+#### 1.2.1. Understanding the Structure
 
 * Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders. Use Section 1.5 to understand some of the key takeaways and conclusions from the paper
 * Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
 
-#### 1.3.2. Practical Application
+#### 1.2.2. Practical Application
 
 ***Assessment***
 * Use the roles and responsibilities matrices (e.g. RACI) in the _Roles Addressed_ sections to identify relevant stakeholders in your organization
@@ -372,14 +220,14 @@ To get maximum value from this resource:
 * Stay current with framework updates and emerging threats
 * Contribute feedback and learnings to the broader AI security community and in to CoSAI
 
-#### 1.3.3. Making Framework Choices
+#### 1.2.3. Making Framework Choices
 
 * Consider starting with foundational frameworks like NIST CSF 2.0 for general security governance and the AWS Generative AI Security Scoping Matrix to help scope your AI use cases and risks
 * Add AI-specific frameworks like MITRE ATLAS for adversarial threats
 * Layer in specialized guidance like the OWASP Top 10 for LLM Applications as needed
 * Multiple frameworks will likely be necessary for your organization depending on their requirements
 
-#### 1.3.4. Additional Resources
+#### 1.2.4. Additional Resources
     
 * Reference the appendices for detailed mappings between frameworks
 * Use cited sources to dive deeper into specific areas of interest
@@ -387,7 +235,7 @@ To get maximum value from this resource:
 
 Remember that securing AI systems is an evolving challenge. This document should be treated as a living resource that provides guidance while encouraging adaptation to your specific needs and circumstances.
 
-#### 1.3.5. Leveraging Defender Frameworks
+#### 1.2.5. Leveraging Defender Frameworks
 
 This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
 1. Overview and detail on defender frameworks
@@ -400,9 +248,9 @@ Organizational roles are categorized, and each framework is mapped to intended a
 
 Gaps in each framework are identified, and gaps common to all frameworks are surfaced in this document.  This points to extensions required to the system of frameworks in order to effectively secure AI systems.  Specific missing elements for each framework are also identified, indicating specific work that may be done to cover these gaps. 
 
-#### 1.3.6. Scope of Preparing Defenders of AI Systems
+#### 1.2.6. Scope of Preparing Defenders of AI Systems
 
-##### 1.3.6.1 In Scope
+##### 1.2.6.1 In Scope
 
 This document is focuced on AI Security which includes:
 + AI Threat Detection & Intelligence
@@ -413,7 +261,7 @@ This document is focuced on AI Security which includes:
 + AI Security Compliance
 + Cybersecurity Frameworks Analysis and Identification of Gaps
 
-##### 1.3.6.2 Out of Scope
+##### 1.2.6.2 Out of Scope
 
 Out of scop of this document is:
 + AI Data Privacy
@@ -422,6 +270,157 @@ Out of scop of this document is:
 + AI Hallucination
 + Trustworthy AI
 
+### 1.3. Changing Attack Surface with AI Adoption
+
+#### 1.3.1. AI Risk Scenarios
+
+AI systems are fundamentally altering the cybersecurity landscape by expanding attack surfaces and introducing new risks. Their reliance on extensive computational resources, novel data formats, and vast data processing capabilities, combined with their inherently non-deterministic nature, makes them both a prime target and an enabler of sophisticated cyber threats. AI systems can be primary targets or enabler of the attacks on other assets, targets, infrastructures and business processes. 
+
+##### 1.3.1.1 AI as a Target: Key Security Risks
+
+AI systems can be directly targeted through various attack vectors, including:
++ Prompt Injection Attacks. Attackers manipulate AI models by injecting indirect or direct prompts that push the system beyond its intended operational boundaries. This can lead to outputs that are misleading, harmful, biased, or in violation of compliance regulations.
++ Supply Chain Attacks on AI Models. AI models and datasets, particularly pre-trained versions sourced from third parties, may contain hidden backdoors, biases, or embedded malicious triggers that can be exploited post-deployment.
++ Data Extraction and Privacy Risks. AI systems process sensitive data, including personally identifiable information (PII), proprietary intellectual property, and authentication tokens. Adversaries can extract this information from AI models during training or inference stages.
++ AI Infrastructure Exploitation
+  + Code Execution Vulnerabilities: Attackers may manipulate AI systems to execute arbitrary code, leveraging AI computing resources for malicious purposes.
+  + Denial-of-Service (DoS) Attacks: AI systems can be overwhelmed through various DoS techniques, disrupting availability.
+  + Protocol Abuse: AI relies on distributed data processing, making it susceptible to adversarial-in-the-middle attacks and data injection threats targeting its communication protocols.
+
+##### 1.3.1.2 AI as an Enabler of Cyber Attacks on other assets, targets, infrastructures
+
+AI Systems can be leveraged to enhance precision, scalability, and automation in executing sophisticated attacks.
++ Augmenting Existing Attack Strategies
+  + Multilingual and Context-Aware Threats: AI allows attackers to craft highly localized phishing campaigns in multiple languages, bypassing traditional detection mechanisms.
+  + Adaptive Attacks: AI enhances reconnaissance capabilities, enabling tailored attack strategies against specific targets.
+  + Automation of Attack Chains: AI streamlines adversarial workflows, including automation of credential theft, reconnaissance, and social engineering.
++ AI-Driven Denial-of-Service (DoS) Attacks. Attackers can exploit AI systems to initiate and orchestrate large-scale, adaptive DoS attacks against third-party infrastructure.
++ Emerging AI-Enabled Cyber Risks
+  + Synthetic Identities & Deepfake-Based risks: AI-generated synthetic identities and deepfake technologies can bypass identity verification, authentication, and fraud detection systems.
+  + Circumventing Zero Trust Security Models: AI-generated traffic patterns and behaviors can mimic behavior of legitimate systems and users, diminishing the efficacy of Zero Trust security models.
+  + Social Engineering and Misinformation: AI-driven generation of fake text, audio, and video content enables large-scale manipulation of public opinion, reputational damage, and extortion schemes.
+
+##### 1.3.1.3 AI Risks in Business Processes
+
+AI integration into business operations introduces additional risk that organizations must address.
++ Overreliance on AI in Critical Processes. Excessive dependence on AI-driven automation in mission-critical functions can result in severe operational disruptions if the system fails or is compromised.
++ Reputational and Compliance Risks. Organizations deploying AI for customer interactions, regulatory compliance, or decision-making must consider non-deterministic nature of AI and additional risks of AI interacting on behalf of the organisation or business entity.
++ AI's Non-Deterministic Nature. AI's probabilistic decision-making processes can introduce significant variations in outcomes. For instance, minor data variations in AI-driven quality control in the pharmaceutical sector can impact product safety and efficacy of the final product.
++ Legal and Non-Repudiation Challenges. AI-driven decision-making raises accountability concerns, particularly in cases where AI autonomously makes business-critical or legally binding decisions.
+
+#### 1.3.2. AI Defender Frameworks Overview
+
+The rapidly evolving landscape of AI systems demands a comprehensive and multi-layered approach to security, which necessitates a thorough understanding and cordinated implemention of various defender frameworks. These frameworks have emerged from different sectors - including government, industry, and academia - each bringing unique perspectives and strengths to AI security. The diversity of frameworks reflects the complex nature of AI systems and the varied threats they face, from data poisoning and model extraction to adversarial attacks and privacy breaches.
+
+Defender frameworks operate at multiple levels, addressing technical, operational, and governance aspects of AI security. At the technical level, frameworks provide guidance for secure model development, testing procedures, and deployment practices. Operationally, they establish protocols for monitoring, incident response, and continuous improvement. From a governance perspective, these frameworks help organizations align AI security with broader risk management strategies and compliance requirements.
+
+Modern AI security frameworks encompass various approaches to protecting AI systems. Some focus on risk management and mitigation strategies throughout the AI system lifecycle, while others emphasize regulatory compliance and security requirements specific to certain regions or industries. Additionally, frameworks developed from industry experience offer practical insights and methodologies developed through real-world implementation of AI systems at scale.
+
+Together, these frameworks create a foundation for addressing the complex challenges of securing AI systems. While each framework has its own focus and strengths, they collectively provide comprehensive guidance for protecting AI models, securing sensitive data, and ensuring responsible AI deployment. Their complementary nature reflects the understanding that AI security requires multiple perspectives and approaches to address the full spectrum of potential threats and vulnerabilities.
+
+#### 1.3.3. Change needed for Defenders of AI Systems
+
+MITRE ATLAS, NIST AI RMF, NIST AI AML provide defenders of AI systems with the most AI-specific guidance.  MITRE ATLAS covers adversarial tactics and techniques in detail, specifying attacker general goals against AI systems and the steps in the attack.  NIST CSF, NIST RMF, MITRE CAPEC and CISA Zero Trust Maturity Model provide more general security guidance, but could be expanded to better incorporate AI-specific risks, both for adversarial attacks and for vulnerabilities related to data, models or guardrails for AI systems.  The MIT Risk Repository offers insights for governance stakeholders, but doesn't provide enough low-level detail to inform defenders of AI systems about security measures.  Current defender frameworks require extensions to properly deal with securing AI systems, some themes of which are repeated across frameworks.
+
+| **Gap**               | **What is missing**   |
+|---------------------------|-----------------|
+| **Threat model for AI** | Specific adversarial techniques including the mechanisms that exploit weaknesses particular to AI systems |
+| **Incident Response or Mitigations** | Fine-grain detail on actions for playbooks for incident response, mitigation and prevention |
+| **Integration with other Cybersecurity Frameworks** | Map framework details to other frameworks for interoperability |
+| **AI Supply Chain Vulnerabilities** | Weaknesses in supply chain regarding data, code and models that create AI system vulnerabilities |
+| **Model Behavior Analysis** | Determining nominal behavior, monitoring and analysis of any behavior drift in models to ensure their proper function |
+
+In a new world dominated by AI powered ecosystems defenders of AI systems (CISOs, security architects, SOC teams, threat hunters, and AI governance experts) must adapt new strategies, frameworks, and methodologies to address evolving AI security threats.
+
+![Changes Needed For Defenders Of AI Systems](/frameworks/images/ChangesNeededForDefendersOfAISystems.png "Changes Needed For Defenders Of AI Systems")
+
+##### 1.3.3.1. AI-Specific Threat Intelligence & Adversarial Detection***
+
+**Change Needed:**
+Expand MITRE ATT&CK(ATLAS), CAPEC, and STIX 2.1 to include AI-specific attack vectors and adversarial TTPs (Tactics, Techniques, and Procedures).
+
+**Why?**
+Existing cyber threat intelligence (CTI) models lack adversarial AI attack patterns, limiting defenders' ability to proactively detect AI-targeted threats.
+
+**Solution:**
+
++ Develop AI-specific ATT&CK(ATLAS) tactics for adversarial ML threats (model poisoning, prompt injection, evasion).
++ Enhance SIEM and XDR detection with AI-focused threat telemetry.
++ Expand STIX/TAXII threat sharing to cover AI-specific Indicators of Compromise (IoCs).
+
+##### 1.3.3.2. Zero Trust for AI Systems
+
+**Change Needed:** 
+Integrate Zero Trust principles into AI security using ZTMM.
+
+**Why?** 
+
+AI models and APIs lack proper identity verification, access controls, and segmentation, leaving them vulnerable to unauthorized inference attacks.
+
+**Solution:**
+
++ Implement AI model segmentation and least-privilege access to AI APIs.
++ Require strong identity authentication and authorization for AI MLOps pipelines.
++ Use continuous risk-based monitoring to detect anomalous AI behavior.
+  
+##### 1.3.3.3. AI Model & Data Supply Chain Security
+
+**Change Needed:**
+Develop AI Software Bill of Materials (SBOM) and secure AI model provenance tracking.
+
+**Why?** 
+Pre-trained AI models and datasets introduce hidden security risks (backdoors, poisoned datasets, hidden triggers).
+
+**Solution:**
+
++ Mandate Software Bill of Materials (SBOM) for AI models to track dependencies and provenance.
++ Implement trusted AI supply chain controls to prevent AI backdoors.
++ Require secure model validation before deployment to detect manipulation.
++ Leverage cryptographic mechanisms such as "AI model signatures", to verify authenticity and integrity of models
+  
+##### 1.3.3.4. AI-Specific Incident Response & SOC Automation
+
+**Change Needed** 
+Build AI incident response playbooks and integrate AI threat intelligence into SOC operations.
+
+**Why?** 
+AI security incidents (e.g., adversarial attacks, data poisoning) require specialized SOC workflows, forensics skills and AI-driven response automation.
+
+**Solution:**
+
++ Develop SOC playbooks for AI security incidents (e.g., model rollback procedures after poisoning).
++ Enable real-time adversarial attack detection in SIEM/XDR.
++ Implement SOAR automation for AI threat mitigation and remediation.
+  
+##### 1.3.3.5. Secure AI Model Deployment & Runtime Protection
+
+**Change Needed:** 
+Introduce runtime security controls for AI inference (e.g., adversarial detection, model integrity checks).
+
+**Why?** 
+AI models deployed in production are vulnerable to runtime adversarial attacks (e.g., prompt injection, inference manipulation).
+
+**Solution:**
+
++ Use AI runtime integrity verification to detect unauthorized model modifications.
++ Deploy adversarial input filtering to block real-time adversarial samples.
++ Implement model access control policies to prevent unauthorized API abuse.
++ Implement controls around leveraging user supplied data for re-training. 
+  
+##### 1.3.3.6. AI Security Awareness & Red Teaming
+
+**Change Needed:** 
+Establish AI Red Teaming exercises and train defenders on adversarial AI techniques.
+
+**Why?** 
+AI security remains a knowledge gap for traditional defenders, requiring specialized training on AI attack vectors.
+
+**Solution:**
+
++ Conduct AI-specific Red Team assessments simulating adversarial AI attacks.
++ Train SOC analysts on AI security monitoring and AI adversarial techniques.
++ Integrate AI security into existing cybersecurity frameworks (NIST, OWASP, MITRE).
++ Train employees and leadership on AI security awarness, responsible AI and best practices.
 
 ### 1.4. Roles Addressed
 
