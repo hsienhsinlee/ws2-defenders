@@ -177,7 +177,7 @@
 
 <!-- TOC end -->
 
-# Preparing Defenders of AI Systems:  Review of Frameworks and Identification of Gaps
+# Preparing Defenders of AI Systems:  Review of Frameworks and Identification of Gaps, V1.0 -- DRAFT
 
 ## OASIS Open Project : [Coalition for Secure AI (CoSAI)](https://github.com/cosai-oasis) - [Workstream 2: Preparing Defenders for a Changing Cybersecurity Landscape](https://github.com/cosai-oasis/ws2-defenders)
 
