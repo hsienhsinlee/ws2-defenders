@@ -193,6 +193,8 @@ It provides an in-depth review of AI Defender Frameworks, outlining key strategi
 
 Key gaps identified in the existing frameworks include the lack of AI-specific threat intelligence, insufficient controls against adversarial attacks, and the underintegration of AI risks into traditional cybersecurity practices. In particular, areas such as adversarial AI/ML, AI supply chain vulnerabilities, and AI-specific incident response require significant enhancement. To address these challenges, the paper provides actionable recommendations—such as integrating AI-specific threat models, expanding Zero Trust principles for AI, securing the AI supply chain, improving interoperability between defender frameworks and developing AI-specific incident response protocols.
 
+**NOTE**: In recognition of the rapidly evolving nature of AI and cybersecurity, this document is intended as a living resource. The Coalition for Secure AI (CoSAI) commits to continually updating its content to reflect emerging technologies, new threat vectors, and evolving best practices, ensuring that our guidance remains current and actionable for all stakeholders.
+
 ### 1.2. How to use this document
 
 To get maximum value from this resource:
