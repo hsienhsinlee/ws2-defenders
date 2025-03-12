@@ -191,84 +191,11 @@ For security leaders navigating this evolving landscape, this whitepaper offers 
 
 ## 2. How to use this document
 
-To get maximum value from this resource:
+To maximize the value of this document, begin with Section 1, the Executive Summary, to grasp the overall context. Then, delve into Section 3, Changing Attack Surface with AI Adoption, to understand the context of this document. Leverage Section 3.1. AI Risk Scenarios to get grasp of the risks posed by AI, Section 3.2. AI Defender Frameworks Overview to see the frameworks considered, and Section 3.3, Change needed for Defenders of AI Systems, to understand the shifting landscape and necessary adaptations for AI security.  Leverage the roles and responsibilities matrices (e.g., RACI) to identify relevant stakeholders within your organization and map your existing security controls to framework recommendations in Section 4, Roles Addressed. Then, use Section 5, Takeaways and Conclusion, to glean prescriptive actions and learn the work that CoSAI plans in order to better prepare defenders of AI Systems.
 
-### 2.1. Understanding the Structure
+Use Appendix 6.1: Deep Dive in Frameworks for detailed analyses of frameworks like NIST, MITRE, and CISA to determine which are most applicable to your specific environment, industry, and AI use cases. The deep dive analyses also map frameworks to organizational roles and responsibilities, and identifies gaps in these frameworks for defenders of AI systems. It assists in applying these frameworks through gap analysis, implementation guidance, and continuous improvement strategies.
 
-* Begin with Section 1, which provides context on the changing attack surface with AI adoption and outlines key changes needed for defenders. Use Section 1.5 to understand some of the key takeaways and conclusions from the paper
-* Review Section 2's detailed analysis of each major framework (NIST, MITRE, CISA, etc.)
-
-### 2.2. Practical Application
-
-***Assessment***
-* Use the roles and responsibilities matrices (e.g. RACI) in the _Roles Addressed_ sections to identify relevant stakeholders in your organization
-* Review framework summaries to determine which are most applicable to your environment, industry, geography, and/or AI use cases
-* Map current security controls to framework recommendations
-
-***Gap Analysis***
-* Leverage the "What is Missing" sections to identify potential blind spots in any given framework - combine with other frameworks that may fill those gaps
-* Compare your existing security practices against framework recommendations - leverage your current strengths and extend them to your AI solutions
-* Prioritize areas needing additional controls or processes
-
-***Implementation***
-* Reference detailed framework sections for specific control guidance
-* Use the cross-framework analysis to develop a comprehensive security strategy
-* Apply recommendations based on your organization's AI implementation scope
-
-***Continuous Improvement***
-* Monitor the effectiveness of implemented controls
-* Stay current with framework updates and emerging threats
-* Contribute feedback and learnings to the broader AI security community and in to CoSAI
-
-### 2.3. Making Framework Choices
-
-* Consider starting with foundational frameworks like NIST CSF 2.0 for general security governance and the AWS Generative AI Security Scoping Matrix to help scope your AI use cases and risks
-* Add AI-specific frameworks like MITRE ATLAS for adversarial threats
-* Layer in specialized guidance like the OWASP Top 10 for LLM Applications as needed
-* Multiple frameworks will likely be necessary for your organization depending on their requirements
-
-### 2.4. Additional Resources
-    
-* Reference the appendices for detailed mappings between frameworks
-* Use cited sources to dive deeper into specific areas of interest
-* Engage with the CoSAI community for implementation support and best practices
-
-Remember that securing AI systems is an evolving challenge. This document should be treated as a living resource that provides guidance while encouraging adaptation to your specific needs and circumstances.
-
-### 2.5. Leveraging Defender Frameworks
-
-This work reviews the body of knowledge preparing defenders of AI systems, including many of the framework standards used for cybersecurity.  It makes three contributions to guide securing AI systems:
-1. Overview and detail on defender frameworks
-2. Mapping frameworks to organizational roles and responsibilities
-3. Identifying the gaps in these frameworks
-
-For each framework from the defenders corpus we provide an overview identifying the source, purpose and audience of the material.  An overview of the material and its scope for general or specific cybersecurity topics including defense of AI systems is presented.  Further detail on the framework is provided, especially for practioners, summarized to capture the key concepts in and uses for the framework.  This material is intended to give defenders a systematic guide to understand how each framework is applicable to their work.
-
-Organizational roles are categorized, and each framework is mapped to intended audiences and stakeholders.  This document presents a high-level mapping, and the framework detail mapping breaks down responsibilities further.  For each, a RACI matrix is used to map roles to the actions specified for the framework, indicating who is responsible, accountable, consulted and informed.  This mapping assists defenders in understanding the responsibilities associated for each framework, which roles are responsible and how.
-
-Gaps in each framework are identified, and gaps common to all frameworks are surfaced in this document.  This points to extensions required to the system of frameworks in order to effectively secure AI systems.  Specific missing elements for each framework are also identified, indicating specific work that may be done to cover these gaps. 
-
-### 2.6. Scope of Preparing Defenders of AI Systems
-
-#### 2.6.1 In Scope
-
-This document is focuced on AI Security which includes:
-+ AI Threat Detection & Intelligence
-+ Adversarial AI Red Teaming & AI-specific SOC
-+ Zero Trust AI Access control & Supply Chain
-+ Automated AI Security Monitoring & Runtime Protection
-+ Secure AI Model Lifecycle
-+ AI Security Compliance
-+ Cybersecurity Frameworks Analysis and Identification of Gaps
-
-#### 2.6.2 Out of Scope
-
-Out of scop of this document is:
-+ AI Data Privacy
-+ AI Ethics Trust and Abuse (content, behavioral, account takeover, spam, misinformation)
-+ AI Based Attacks 
-+ AI Hallucination
-+ Trustworthy AI
+While the document focuses on the security aspects of AI systems, it explicitly excludes topics like AI Data Privacy, AI Ethics Trust and Abuse (content, behavioral, account takeover, spam, misinformation), AI Based Attacks, AI Hallucination, and Trustworthy AI. For further support, consult the appendices for framework mappings, referenced sources for deeper dives, and engage with the CoSAI community for implementation support and best practices.
 
 ## 3. Changing Attack Surface with AI Adoption
 
