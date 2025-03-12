@@ -138,7 +138,7 @@
           - [6.1.7.1.3. Persona addressed](#61713-persona-addressed)
           - [6.1.7.1.4. Guidance provided](#61714-guidance-provided)
           - [6.1.7.1.5. Detail on current framework](#61715-detail-on-current-framework)
-          - [6.1.7.1.5. What is missing for defenders of AI systems](#61715-what-is-missing-for-defenders-of-ai-systems)
+          - [6.1.7.1.6. What is missing for defenders of AI systems](#61716-what-is-missing-for-defenders-of-ai-systems)
       - [6.1.8. Amazon](#618-amazon)
         - [6.1.8.1. The AWS Generative AI Security Scoping Matrix](#6181-the-aws-generative-ai-security-scoping-matrix)
           - [6.1.8.1.1. Overview](#61811-overview)
@@ -2377,7 +2377,9 @@ The Open Cybersecurity Schema Framework (OCSF) directly addresses these issues b
 
 
 ###### 6.1.6.1.2. Scoping of AI system and/or cybersecurity purview
+
 <br><br>
+
 ***OCSF Scoping in AI Systems***
 
 OCSF enables AI-driven security analytics by providing structured, standardized security event data. This table outlines key AI use cases and how OCSF supports them.
@@ -2393,6 +2395,7 @@ OCSF enables AI-driven security analytics by providing structured, standardized 
 | **Compliance & Security Auditing**         | Helps AI-driven tools analyze logs for policy violations and regulatory compliance.          | 1. AI-driven automated compliance scanning (e.g., SOC 2, GDPR). <br> 2. AI-based security policy enforcement using NLP models. |
 
 <br><br>
+
 ***OCSF Scoping in Cybersecurity***
 
 OCSF enhances cybersecurity operations by providing a standardized approach to security event logging, threat detection, and compliance enforcement. This table outlines key cybersecurity domains and how OCSF supports them.
@@ -2643,7 +2646,7 @@ OWASP Top 10 for LLM Applications (2025) document for each risk follows a consis
 Document aligns security best practices with MITRE ATLAS tactics and provides detailed mitigation measures using "Zero Trust Model for AI", "RBAC and OAuth-Based Access Controls", "Adversarial Robustness Training", "Watermarking and Secure AI Supply Chain Management​".
 
 
-###### 6.1.7.1.5. What is missing for defenders of AI systems
+###### 6.1.7.1.6. What is missing for defenders of AI systems
 
 AI security requires continuous adaptation as adversaries develop new attack techniques. The OWASP Top 10 for LLM Applications must expand its scope by integrating MITRE ATLAS threat intelligence, red teaming methodologies, and AI-specific security controls. By addressing gaps in AI supply chain security, adversarial attack prevention, and incident reporting, defenders can better protect LLM applications in enterprise, cloud, and military environments.
 
