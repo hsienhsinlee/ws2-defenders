@@ -165,15 +165,30 @@
 
 ## 1. Executive Summary
 
-As organizations of all sizes rapidly integrate artificial intelligence (AI) into their operations, securing AI systems and applications has become an urgent cybersecurity priority. This document provides a detailed review of existing frameworks designed to safeguard AI assets, including NIST CSF 2.0, NIST RMF, various versions of NIST AI RMF, MITRE ATT&CK, MITRE ATLAS, MITRE CAPEC, OWASP Top 10 for LLM Applications, and MIT AI Risk Repository. It assesses their applicability in defending AI-specific assets, mapping these frameworks to organizational roles and responsibilities. The paper highlights the strengths and limitations of current approaches in addressing the unique risks posed by AI technologies, pointing to additional work in preparing defenders of AI systems.
+At the intersection of innovation and security lies a critical challenge for today's enterprises: how to harness the transformative power of generative AI while establishing robust security frameworks to protect these valuable assets. As AI systems move from experimental projects to core operational infrastructure, organizations face a security landscape that traditional governance models were never designed to address.
 
-The document begins by offering a guide on how to effectively use this resource, including an explanation of the structure, practical applications, and framework selection. It also outlines the scope of preparing defenders for AI systems, defining what is in and out of scope.
+This whitepaper examines the evolving relationship between AI advancement and preparing defenders for a changing risk landscape, offering security leaders a practical roadmap through this complex terrain. Our analysis reveals that while existing frameworks provide valuable foundations, they leave significant gaps when applied to AI's unique security challenges.
 
-It provides an in-depth review of AI Defender Frameworks, outlining key strategies for securing AI systems from different defender framework perspectives. The paper emphasizes the need for a tailored approach to address AI-specific threats, summarizing the specific security benefits provided by each framework.  The document also evaluates the roles of various stakeholders and their responsibilities in AI security, aligning them with relevant frameworks and providing a roadmap for organizations to enhance their AI defenses.
+### The Three Domains of AI Security
 
-Key gaps identified in the existing frameworks include the lack of AI-specific threat intelligence, insufficient controls against adversarial attacks, and the underintegration of AI risks into traditional cybersecurity practices. In particular, areas such as adversarial AI/ML, AI supply chain vulnerabilities, and AI-specific incident response require significant enhancement. To address these challenges, the paper provides actionable recommendations—such as integrating AI-specific threat models, expanding Zero Trust principles for AI, securing the AI supply chain, improving interoperability between defender frameworks and developing AI-specific incident response protocols.
+Our research identifies three interconnected security domains that demand specialized attention:
 
-**NOTE**: In recognition of the rapidly evolving nature of AI and cybersecurity, this document is intended as a living resource. The Coalition for Secure AI (CoSAI) commits to continually updating its content to reflect emerging technologies, new threat vectors, and evolving best practices, ensuring that our guidance remains current and actionable for all stakeholders.
+| **Security Domain**     |  **Details**    |
+|-------------------------|------------------------|
+| **AI Model Security**   | Beyond traditional cybersecurity concerns, AI models face sophisticated adversarial attacks designed to manipulate their behavior through techniques like prompt injection, data poisoning, and model inversion. These attacks can bypass carefully constructed guardrails, extract sensitive information, or force harmful outputs. Defending against these threats requires specialized approaches including robust input validation, adversarial training, and continuous monitoring for behavioral anomalies. |
+| **AI Platform Security** | AI Platform Security
+The infrastructure supporting AI systems presents distinctive vulnerabilities across training environments, inference endpoints, and deployment pipelines. Threats range from unauthorized API access to compute resource hijacking. Effective defense requires specialized monitoring for high-performance computing resources, secure model registry implementation, and runtime protection mechanisms capable of detecting attacks in real-time. |
+| **AI Security Governance** | As AI systems make increasingly consequential decisions, governance mechanisms must evolve to establish appropriate boundaries, audit trails, and access controls. This includes defining security perimeters around AI capabilities, monitoring for unauthorized actions, and creating specialized incident response playbooks for AI-specific threats.|
+
+### Bridging the Gaps: From Frameworks to Implementation
+
+Our analysis of established security frameworks—including NIST, MITRE ATT&CK/ATLAS, and OWASP —reveals both valuable guidance and significant gaps in addressing these AI-specific security domains. The most pressing challenge for organizations is bridging the divide between theoretical frameworks and practical implementation.
+
+While we acknowledge the broader discourse around AI ethics, transparency, and safety, this whitepaper maintains a deliberate focus on security. By narrowing our scope to the defender's perspective, we provide actionable guidance for security practitioners charged with protecting AI assets while enabling responsible innovation.  We provide defenders a resource for understanding which frameworks apply to their role, refining the scope further with specific responsibilities each framework indicates for their role.
+
+For security leaders navigating this evolving landscape, this whitepaper offers a comprehensive examination of current approaches, critical gaps, and practical steps forward in securing the enterprise AI journey.
+
+**NOTE**: In recognition of the rapidly evolving nature of AI and cybersecurity, this document is intended as a living resource. The Coalition for Secure AI (CoSAI) commits to continually updating its content to reflect emerging technologies, new threat vectors, and evolving best practices, ensuring that our guidance remains current and actionable for all stakeholders.  This v1.0 DRAFT was published Mar 12, 2025.
 
 ## 2. How to use this document
 
