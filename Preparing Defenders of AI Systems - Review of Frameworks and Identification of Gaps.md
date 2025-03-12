@@ -351,27 +351,31 @@ AI security remains a knowledge gap for traditional defenders, requiring special
 
 ## 4. Roles Addressed
 
-Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&CK/ATLAS/CAPEC, OWASP and Zero Trust to ensure secure, compliant, and resilient AI deployment. Executives align strategy with regulatory and risk imperatives, while CISOs operationalize security controls and threat monitoring. Architects integrate these frameworks to design robust infrastructures, and IT and SOC teams employ them for system integrity, incident response, and proactive threat hunting. Service operations ensure compliance in deployment, auditors enforce policy adherence, and researchers develop resilient, fair AI models. Practitioners follow these guidelines, contributing to continuous improvement. Together, these roles enable responsible, secure AI adoption.
+Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&CK/ATLAS/CAPEC, OWASP and CISA’s Zero Trust Maturity Model to ensure secure, compliant, and resilient AI deployment. Executives align strategy with regulatory and risk imperatives, while CISOs operationalize security controls and threat monitoring. Architects integrate these frameworks to design robust infrastructures, and IT and SOC teams employ them for system integrity, incident response, and proactive threat hunting. Service operations ensure compliance in deployment, auditors enforce policy adherence, and researchers develop resilient, fair AI models. Practitioners follow these guidelines, contributing to continuous improvement. Together, these roles enable responsible, secure AI adoption.
 
-### 4.1. Persona
+### 4.1. Roles Mapped to Frameworks
 
-| **Role**               | **Key Focus**   |
-|------------------------|-----------------|
-| ***Executives*** | 1. Define the organization's risk tolerance and ensure alignment with business objectives.<br>2. Oversee governance frameworks for AI and cybersecurity.<br>3. Allocate resources for implementing and maintaining secure AI systems.<br>4. Ensure compliance with regulatory and legal requirements related to AI. |
-| ***CISO/SSO*** | 1. Implement and oversee security strategies specific to AI-enabled systems<br>2. Develop policies for handling sensitive data and mitigating privacy risks<br>3. Engage in threat modeling and risk assessments for AI systems |
-| ***Service Architects*** | 1. Design secure AI service architectures that mitigate risks during deployment and operation.<br>2. Ensure integration of AI systems aligns with organizational policies and goals.<br>3. Plan for scalability and resilience in AI service designs. |
-| ***IT Architects*** | 1. Align AI and IT infrastructure to organizational needs while mitigating associated risks.<br>2. Establish secure pipelines for data handling, processing, and model deployment.<br>3. Collaborate with service architects to ensure interoperability of AI systems. |
-| ***Security Architects*** | 1. Identify vulnerabilities specific to AI models and infrastructure.<br>2. Implement technical controls and mitigations for adversarial threats and attacks.<br>3. Integrate AI security measures into broader organizational cybersecurity frameworks. |
-| ***IT Operations*** |1. Maintain AI systems and ensure secure day-to-day operations.<br>2. Monitor system performance and detect anomalous behavior that might indicate security breaches.<br>3. Respond to incidents and ensure system recovery in case of attacks. |
-| ***SOC Operations*** | 1. Monitor AI systems for active threats and ongoing attacks.<br>2. Utilize tools such as MITRE ATT&CK and ATLAS to understand and mitigate AI-specific adversarial tactics.<br>3. Report and escalate AI security incidents in real time. <br>4. Monitor for threats, adversarial attacks, vulnerabilities, and incidents|
-| ***Service Operations*** | 1. Ensure AI services meet security, resilience, and reliability standards during deployment<br>2. Oversee compliance and adherence to operational policies.<br>3. Support pre-deployment testing and post-deployment monitoring. |
-| ***Auditors/Policy Makers*** | 1. Develop policies and standards for secure AI adoption.<br>2. Conduct audits to ensure compliance with established frameworks and guidelines.<br>Promote ethical and responsible AI use across sectors. |
-| ***Researchers/Data Scientists*** | 1. Develop robust AI models that can resist adversarial attacks.<br>2. Investigate vulnerabilities and propose mitigations.<br>3. Work on explainability, fairness, and trustworthiness of AI systems. |
-| ***Users/Practitioners*** | 1. Use AI systems according to organizational policies and ethical standards.<br>2. Report any suspicious behavior or potential vulnerabilities to the appropriate teams.<br>3. Provide feedback on the effectiveness and usability of AI systems for continuous improvement. |
+This table identifies the different organizational roles, their primary mission in securing AI systems, and prioritizes the defender frameworks for their consideration.
+
+| **Role**               | **Description** |  **Frameworks**    |
+|------------------------|-----------------|--------------------|
+| ***Executives*** | Establish and maintain secure, compliant AI governance aligned with business goals. | NIST AI RMF, NIST CSF 2.0, CISA ZTMM, MIT AI Risk Repository |
+| ***CISO/SSO*** | Establish and manage security, privacy, and risk strategies for AI systems. | NIST SP 800-37 (RMF), MITRE ATT&CK, MITRE ATLAS, NIST AI RMF, CISA ZTMM, OWASP Top 10 for LLMs, STIX |
+| ***Service Architects*** | Design secure, scalable, and resilient AI architectures aligned with organizational goals. | NIST AI RMF, OWASP Top 10 for LLMs, CISA ZTMM, MITRE D3FEND, OCSF |
+| ***IT Architects*** | Align AI infrastructure, ensure secure data pipelines, and facilitate system interoperability. | NIST SP 800-37 (RMF), CISA ZTMM, OWASP Top 10 for LLMs, MITRE D3FEND, OCSF |
+| ***Security Architects*** | Identify and mitigate AI-specific vulnerabilities within organizational cybersecurity frameworks. | MITRE ATT&CK, MITRE ATLAS, MITRE D3FEND, NIST AI AML, MITRE CAPEC, OWASP Top 10 for LLMs, CISA ZTMM |
+| ***IT Operations*** | Ensure secure, monitored, and responsive operation of AI systems. | NIST CSF 2.0, NIST SP 800-37 (RMF), OWASP Top 10 for LLMs, CISA ZTMM, OCSF |
+| ***SOC Operations*** | Continuously monitor, assess, and respond to AI security threats and incidents. | MITRE ATT&CK, MITRE ATLAS, NIST AI AML, STIX, OCSF, OWASP Top 10 for LLMs |
+| ***Service Operations*** | Ensure secure, compliant, and resilient AI service deployment and monitoring. | NIST CSF 2.0, OWASP Top 10 for LLMs, CISA ZTMM |
+| ***Auditors/Policy Makers*** | Establish policies, ensure compliance, and promote ethical AI adoption. | NIST AI RMF, NIST SP 800-37 (RMF), OWASP Top 10 for LLMs, NIST AI AML, MIT AI Risk Repository |
+| ***Researchers/Data Scientists*** | Advance the resilience, fairness, explainability and trustworthiness AI models with consideration for security implications. | OWASP Top 10 for LLMs, NIST AI RMF, MITRE ATT&CK, MITRE ATLAS, MITRE CAPEC, NIST AI AML, NIST AI GAI, MIT AI Risk Repository |
+| ***Users/Practitioners*** | Ensure compliant AI use, report issues, and provide feedback for improvement. | NIST CSF 2.0, OWASP Top 10 for LLMs, NIST AI GAI, MIT AI Risk Repository |
 
 <br><br>
 
 ### 4.2. Relevant Frameworks
+
+Throughout this document, we use RACI matrices to characterize the responsibilities for different roles within an organization.  In decreasing responsibility order, it specifies whether someone is Accountable, Responsible, Consulted or Informed for a particular activity.  A RACI matrix is provided for each defender framework in the appendix, while this table maps the level of responsibility for each general AI security activity to the corresponding organizational roles.
 
 | Target Audience                | Frameworks                                                                                             |
 |--------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -399,7 +403,7 @@ Key stakeholders in AI systems apply frameworks such as NIST RMF/CSF, MITRE ATT&
 | Threat Modeling & Assessment | I       | **A**        | C                 | C            | R                 | I            | R            | C              | C                   | C                         | I                |
 | Incident Response & Monitoring | I     | **A**        | I                 | I            | C                 | R            | R            | I              | I                   | I                         | I                |
 | Secure Deployment & Operations | I     | C        | **A**                 | R            | C                 | R            | C            | R              | I                   | I                         | I                |
-| Compliance Auditing       | C          | C        | I                 | I            | C                 | I            | I            | I              | **A**                   | I                         | I                |
+| Compliance Auditing       | R          | C        | I                 | I            | C                 | I            | I            | I              | **A**                   | I                         | I                |
 | AI Model Development      | I          | **A**        | C                 | C            | C                 | I            | I            | I              | I                   | R                         | I                |
 | AI Ethics & Fairness      | **A**          | **A**        | C                 | C            | R                 | I            | I            | I              | R                   | R                         | I                |
 | User Training & Awareness | C          | R        | C                 | I            | C                 | C            | C            | C              | I                   | I                         | **A**                |
