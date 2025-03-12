@@ -373,26 +373,9 @@ This table identifies the different organizational roles, their primary mission 
 
 <br><br>
 
-### 4.2. Relevant Frameworks
+### 4.2. Activities and Responsibilities
 
 Throughout this document, we use RACI matrices to characterize the responsibilities for different roles within an organization.  In decreasing responsibility order, it specifies whether someone is Accountable, Responsible, Consulted or Informed for a particular activity.  A RACI matrix is provided for each defender framework in the appendix, while this table maps the level of responsibility for each general AI security activity to the corresponding organizational roles.
-
-| Target Audience                | Frameworks                                                                                             |
-|--------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Executives**                 | NIST AI RMF, NIST CSF 2.0, Zero Trust Maturity Model (ZTMM) |
-| **CISO/SSO**                   | NIST SP 800-37 (RMF), MITRE ATT&CK, MITRE ATLAS, NIST AI RMF, Zero Trust Maturity Model (ZTMM), OWASP Top 10 for LLMs, STIX |
-| **Service Architects**         | NIST AI RMF, OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM), MITRE D3FEND, OCSF          |
-| **IT Architects**              | NIST SP 800-37 (RMF), Zero Trust Maturity Model (ZTMM), OWASP Top 10 for LLMs, MITRE D3FEND, OCSF       |
-| **Security Architects**        | MITRE ATT&CK, MITRE ATLAS, MITRE D3FEND, NIST AI AML, MITRE CAPEC, OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM) |
-| **IT Operations**              | NIST CSF 2.0, NIST SP 800-37 (RMF), OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM), OCSF |
-| **SOC Operations**             | MITRE ATT&CK, MITRE ATLAS, NIST AI AML, STIX, OCSF, OWASP Top 10 for LLMs |
-| **Service Operations**         | NIST CSF 2.0, OWASP Top 10 for LLMs, Zero Trust Maturity Model (ZTMM)                      |
-| **Auditors/Policy Makers**     | NIST AI RMF, NIST SP 800-37 (RMF), OWASP Top 10 for LLMs, NIST AI AML                 |
-| **Researchers/Data Scientists**| OWASP Top 10 for LLMs, NIST AI RMF, MITRE ATT&CK, MITRE ATLAS, MITRE CAPEC, NIST AI AML, NIST AI GAI                   |
-| **Users/Practitioners**        | NIST CSF 2.0, OWASP Top 10 for LLMs, NIST AI GAI                                                   |
-
-
-### 4.3. Activities and Responsibilities
 
 | Activity            | Executives | CISO/SSO | Service Architects | IT Architects | Security Architects | IT Operations | SOC Operations | Service Operations | Auditors/Policy Makers | Researchers / Data Scientists | Users / Practitioners |
 |---------------------------|------------|----------|-------------------|--------------|-------------------|--------------|--------------|----------------|---------------------|-------------------------|------------------|
