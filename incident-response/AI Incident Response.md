@@ -82,7 +82,20 @@ This paper addresses the topic of incident response in the context of AI systems
 | LLM Tools and Frameworks      | Execution (TA1007), Manipulation (TA1005)            | Tool Abuse (AT1090), Agent Manipulation (AT1091), API Abuse (AT1100)                                                | Compromise integrated tools or frameworks for unauthorized actions or misaligned outputs.       |
 | Application Interfaces        | Manipulation (TA1005), Initial Access (TA1008)       | Prompt Injection (AT1070), UI Redress Attacks (AT1110), Input Manipulation (AT1060)                                 | Exploit user interfaces to inject malicious prompts or hijack interactions.                     |
 
+<br>
+
 #### 5.1.3. Mitigations
+
+| Component   | Threat Summary  | Key Mitigations |
+|-------------|-----------------|-----------------|
+| Infrastructure             | Susceptible to adversarial inference (evasion) and information leakage.                | Execution prevention, network segmentation, runtime isolation.                                      |
+| LLM Models                 | Vulnerable to poisoning, inversion, and extraction through crafted inputs.             | Model hardening, differential privacy, adversarial training, rate limiting.                         |
+| Information Sources        | Can be manipulated to inject biased or malicious context.                              | Input filtering, data source whitelisting, validation pipelines.                                    |
+| Generated Output & Feedback| Exposed to prompt injection, feedback loops, and output drift.                         | Prompt hardening, anomaly detection, output filtering, audit logging.                               |
+| LLM Tools and Frameworks   | May be exploited through plugin misuse or agent misalignment.                          | Least privilege tool execution, command tracing, policy enforcement.                                |
+| Application Interfaces     | Entry point for prompt injection, redress, and social engineering.                     | UI input validation, safe prompt templates, user guidance and training.                             |
+
+<br>
 
 
 #### 5.1.4. Case Studies
@@ -115,8 +128,22 @@ This paper addresses the topic of incident response in the context of AI systems
 | Memory Storage                | Poisoning (TA1003), Extraction (TA1004)              | Data Poisoning (AT1050), Model Inversion (AT1040), Extraction (AT1005)                                              | Poison or exfiltrate persistent memory to manipulate long-term model behavior or extract info.  |
 | Memory Retrieval Mechanisms   | Reconnaissance (TA1002), Manipulation (TA1005)       | Reconnaissance (AT1002), Prompt Injection (AT1070), Feedback Loop Attacks (AT1081)                                  | Target memory query mechanisms to infer stored data or manipulate what the model recalls.       |
 
+<br>
+
 #### 5.2.3. Mitigations
 
+| Component   | Threat Summary  | Key Mitigations |
+|-------------|-----------------|-----------------|
+| Infrastructure             | Susceptible to model evasion or extraction via timing or side-channel inference.       | Network segmentation, execution prevention, endpoint isolation.                                     |
+| LLM Models                 | Exposed to model poisoning, inversion, or extraction via repeated queries.             | Model hardening, differential privacy, adversarial training, query throttling.                      |
+| Information Sources        | Manipulated to feed malicious or biased context to the model.                         | Data validation and whitelisting, content filtering, input sanitation.                              |
+| Generated Output & Feedback| Vulnerable to prompt injection, feedback loop manipulation, and hallucination chaining.| Output filtering, feedback auditing, semantic plausibility checks.                                  |
+| LLM Tools and Frameworks   | May be misused via prompt exploits or agent misrouting.                               | Tool permission restrictions, traceable execution, least-privilege configuration.                   |
+| Application Interfaces     | Entry point for prompt injection, UI redress, and social engineering attacks.         | Prompt hardening, input validation, secure UI design, user education.                               |
+| Memory Storage             | Exposed to poisoning or exfiltration of long-term stored information.                 | Session expiration, access controls, integrity and consistency checks.                              |
+| Memory Retrieval Mechanisms| Exploitable to retrieve sensitive history or bias model outputs.                      | Query filtering, access monitoring, memory auditing, anonymization.                                 |
+
+<br>
 
 #### 5.2.4. Case Studies
 
@@ -145,8 +172,22 @@ This paper addresses the topic of incident response in the context of AI systems
 | Memory Store                  | Extraction (TA1004), Manipulation (TA1005)           | Model Inversion (AT1040), Feedback Loop Attacks (AT1081), Data Poisoning (AT1050)                                   | Manipulate memory for long-term influence or to exfiltrate retrieved content.                   |
 | Generated Output and Feedback | Manipulation (TA1005), Influence Operations (TA1006) | Prompt Injection (AT1070), Output Manipulation (AT1080), Feedback Loop Attacks (AT1081)                             | Alter model behavior using malicious feedback loops or prompt chaining attacks.                 |
 
+<br>
+
 #### 5.3.3. Mitigations
 
+| Component   | Threat Summary  | Key Mitigations |
+|-------------|-----------------|-----------------|
+| Infrastructure         | Susceptible to timing attacks or inference evasion during LLM-query execution.         | Network segmentation, isolated compute environments, endpoint protection.                           |
+| LLM Model              | Targeted by model extraction, inversion, or poisoning via crafted queries.             | Model hardening, differential privacy, API rate limiting and token control.                         |
+| Retrieval System       | Can be manipulated to feed biased or malicious documents into context.                | Context validation, use of vetted retrievers, document scoring and source whitelisting.            |
+| Vector Database        | Susceptible to adversarial embedding poisoning and semantic leakage.                  | Integrity checks, rate-limited embedding operations, access control.                                |
+| Document Store         | Can be used to inject hostile or misleading documents into retrieval context.         | Document validation, ingestion pipeline verification, source authenticity checks.                   |
+| Query Interface        | Entry point for prompt injection, unauthorized queries, or redress attacks.           | Input sanitation and prompt control, UI hardening, throttling and access validation.               |
+| Memory Store           | Exploitable for long-term poisoning or sensitive history retrieval.                   | Memory expiration policies, anonymization, access logging.                                          |
+| Generated Output & Feedback | Subject to hallucination amplification or feedback loop manipulation.             | Post-generation filtering, output feedback audits, semantic anomaly detection.                     |
+
+<br>
 
 #### 5.3.4. Case Studies
 
@@ -175,9 +216,23 @@ This paper addresses the topic of incident response in the context of AI systems
 | Observation and Feedback System | Manipulation (TA1005), Influence Operations (TA1006) | Prompt Injection (AT1070), Output Manipulation (AT1080), Observation Poisoning (AT1120)                             | Influence observational input or feedback loops to derail agent behavior or learning.           |
 | Human Interaction Interface      | Initial Access (TA1008), Manipulation (TA1005)       | UI Redress Attacks (AT1110), Prompt Injection (AT1070), Input Manipulation (AT1060)                                 | Use social engineering or UI manipulation to inject commands or override human alignment interfaces. |
 
+<br>
+
 
 #### 5.4.3. Mitigations
 
+| Component   | Threat Summary  | Key Mitigations |
+|-------------|-----------------|-----------------|
+| Infrastructure             | Susceptible to side-channel attacks, resource abuse, or unauthorized agent deployments. | Endpoint protection, network segmentation, execution isolation.                                     |
+| LLM Core Model             | Targeted by model poisoning, extraction, or inversion via reasoning paths.              | Model hardening, differential privacy, adversarial training techniques.                             |
+| Agent Framework/Executor   | Vulnerable to tool abuse or action redirection via manipulated reasoning outputs.       | Action permission boundaries, tool sandboxing, execution auditing.                                  |
+| Planning Module            | Susceptible to prompt chaining and decision manipulation via nested reasoning loops.    | Prompt input validation, chain-of-thought validation, recursive output monitoring.                  |
+| Toolset / Env Interfaces   | May be hijacked for unintended actions or remote access.                                | Tool invocation restrictions, API access control, least privilege configurations.                   |
+| Memory System              | Long-term poisoning or recall manipulation can skew agent behavior across sessions.     | Session-bound memory, validation and trimming, expiration and anonymization.                        |
+| Observation/Feedback Loop  | Can be manipulated via fake observations or altered action-reaction patterns.           | Feedback auditing, observability tooling, semantic plausibility filters.                            |
+| Human Interaction Interface| Entry point for prompt injection, social engineering, and agent hijack attempts.        | UI redress defense, prompt hardening, secure templates, user education.                             |
+
+<br>
 
 #### 5.4.4. Case Studies
 
@@ -208,8 +263,25 @@ This paper addresses the topic of incident response in the context of AI systems
 | Observation and Feedback Loop     | Manipulation (TA1005), Influence Operations (TA1006) | Observation Poisoning (AT1120), Prompt Injection (AT1070), Output Manipulation (AT1080)                             | Alter observational input and feedback loops to misalign model trajectory.                      |
 | Human Interaction Interface       | Initial Access (TA1008), Manipulation (TA1005)       | Prompt Injection (AT1070), Input Manipulation (AT1060), UI Redress Attacks (AT1110)                                 | Inject social or prompt-based manipulation through the user interface layer.                    |
 
+<br>
+
 
 #### 5.5.3. Mitigations
+
+| Component   | Threat Summary  | Key Mitigations |
+|-------------|-----------------|-----------------|
+| Infrastructure               | Exploitable via timing attacks, agent sprawl, or network leakage.                      | Endpoint protection, network segmentation, execution isolation.                                     |
+| LLM Core Model               | Targeted by model extraction, inversion, or poisoning during planning and retrieval.   | Model hardening, differential privacy, API rate limiting.                                           |
+| Retriever-Augmented Planner  | Reasoning logic can be manipulated through adversarial context or recursive chaining.  | Chain-of-thought validation, prompt control, planning traceability.                                 |
+| Retriever System             | Vulnerable to poisoning or malicious document retrieval influencing planning.          | Source filtering, ranked retrieval, integrity checks on context.                                    |
+| Vector Database              | Adversaries may tamper with embeddings or exfiltrate stored semantic vectors.          | Access control, vector integrity checks, rate limiting.                                             |
+| Document Loader              | Entry point for injecting manipulated or fake content into the retrieval system.       | Document validation, ingestion pipelines with verification, content whitelisting.                   |
+| Toolset and Action Executor  | Tools may be hijacked via prompt injection or faulty planning outcomes.               | Tool access control, execution auditing, scoped permissions.                                        |
+| Memory Store                 | Exposed to long-term poisoning or exfiltration of previously retrieved content.        | Session-bound memory, auto-expiration policies, access logs.                                        |
+| Observation and Feedback Loop| Can be manipulated to reinforce hallucinated or adversarial outcomes.                 | Semantic plausibility filtering, feedback auditing, monitoring outputs.                             |
+| Human Interaction Interface  | Susceptible to prompt injection, redress attacks, or social engineering.              | Prompt template validation, UI hardening, user education and guidance.                              |
+
+<br>
 
 
 #### 5.5.4. Case Studies
