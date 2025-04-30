@@ -4,6 +4,7 @@
   - [OASIS Open Project : Coalition for Secure AI (CoSAI) - Workstream 2: Preparing Defenders for a Changing Cybersecurity Landscape](#oasis-open-project--coalition-for-secure-ai-cosai---workstream-2-preparing-defenders-for-a-changing-cybersecurity-landscape)
   - [1. Abstract](#1-abstract)
   - [2. Executive Summary](#2-executive-summary)
+    - [2.1. What is Incident Response in Context of AI](#21-what-is-incident-response-in-context-of-ai)
   - [3. How To Use This Document](#3-how-to-use-this-document)
   - [4. Incident Response Frameworks and Guidelines](#4-incident-response-frameworks-and-guidelines)
     - [4.1. NIST SP 800-61r2 Computer Security Incident Handling Guide](#41-nist-sp-800-61r2-computer-security-incident-handling-guide)
@@ -36,7 +37,9 @@
       - [5.5.2. ATLAS Techniques and Tactics](#552-atlas-techniques-and-tactics)
       - [5.5.3. Mitigations](#553-mitigations)
       - [5.5.4. Case Studies](#554-case-studies)
-  - [6. Levels of Defence Surface](#6-levels-of-defence-surface)
+  - [6. Levels of Defense Surface](#6-levels-of-defense-surface)
+    - [6.1. Defense Surface](#61-defense-surface)
+    - [6.2. Development Stack](#62-development-stack)
   - [7. Incident Detection Methods](#7-incident-detection-methods)
   - [8. Monitoring and Telemetry](#8-monitoring-and-telemetry)
   - [9. Incident Response Playbooks](#9-incident-response-playbooks)
@@ -56,7 +59,7 @@
 This paper addresses the topic of incident response in the context of AI systems. As with other materials produced by the Coalition for Secure AI, this paper focuses on technological capabilities and gaps that are specific to the field of articifical intelligence and does not address the topic of incident response in other contexts as this has been well-researched and documented by existing frameworks (such as [NIST Computer Security Incident Handling Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf). When AI systems are attacked and compromised, what are the specific steps that a defender should take to maximize auditability, resiliency, recovery, and hardening against the (successful) exploitation workflow? What proactive steps should a defender take to minimize the possibility of successful exploitation to begin with? Does the notion of a forensic investigation carry weight in AI Incident Response? Given that AI systems can put downward pressure on "explainability", does this tend to impact the effectiveness of IR activities? To what extent do agentic AI architectures complicate incident response, and are there specific steps to minimize or account for this complexity? These are examples of the types of questions that this paper will address.
 
 ## 2. Executive Summary
-### 2.1 What is Incident Response in Context of AI
+### 2.1. What is Incident Response in Context of AI
 
 Incident response in context of AI includes analysis of context of AI-enabled application, including user prompts, system prompts, configuration. The key security issue with AI systems is that the executable instructions and user supplied data are in the same blob. Thus in any security incident we need to focus on identifying attack points where this could have possibly been exploited. Further, AI systems are typicially non-deterministic systems, thus a simple code validation and verification does not work, the AI system can generate different outputs for the same inputs. Small variations in input data can lead to larger changes in the AI system output that could lead to potential bypass scenarios of implemented verification rules and restrictions.
 All of this context creates additional set of requirements for logging and recording of AI system states. We also need completely new logic for interpreting security events occuring in the system. For example in chat bot scenarios all prompts (user and system) as well as AI system output must be logged in order to facilitate effective Incident Response process. We also need to be able to understand how these prompts led to specific AI system responses.
@@ -429,7 +432,37 @@ The NIST SP 800-61r2 Computer Security Incident Handling Guide provides structur
 
 #### 5.5.4. Case Studies
 
-## 6. Levels of Defence Surface
+## 6. Levels of Defense Surface
+
+### 6.1. Defense Surface
+
+<br>
+
+<p align="center">
+  <img src="./images/agentic-RAG-layers.png" alt="Agentic RAG Levels of Defense Surface" style="width:80%; height:auto;">
+</p>
+
+<br>
+
+| ***Level***                      | ***Description and Security Considerations***                                                                                             |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| **1. User**                      | End-users initiate queries and receive responses. Attackers may exploit social engineering, prompt injection, or feedback manipulation.   |
+| **2. Apps / CLI**                | Interfaces like web UIs, chat apps, or CLI tools mediate user interaction. Requires input validation and UI hardening.                    |
+| **3. Data Sources**              | Document repositories, APIs, or third-party feeds. Poisoned/unvetted data can corrupt retrieval and generation.                           |
+| **4. Network Protocols**         | Transport layer (e.g., TCP, HTTP, gRPC) for internal and external communication. Needs encryption and rate-limiting.                           |
+| **5. Cloud Infrastructure**      | Underlying compute, storage, and orchestration platform. Risk of API exposure and misconfiguration.                                       |
+| **6. Network Ingress/Egress**    | Controls external/internal traffic. Must apply firewalling, segmentation, and flow logging.                                               |
+| **7. AuthN / AuthZ Layer**       | Governs identity and permissions for users, agents, and tools. Critical for preventing privilege misuse or agent takeover.                |
+| **8. Indexing / Embedding**      | Processes documents into chunks and embeddings or graphs. Targeted for data poisoning or injection.                                       |
+| **9. Data Store (Vector/Graph DB)** | Stores semantic vectors or knowledge graphs. Susceptible to poisoning, exfiltration, or unauthorized writes.                           |
+| **10. RAG**                      | Retrieves context to augment prompts. Poisoned context leads to flawed generation and decision-making.                                    |
+| **11. Tools**                    | External APIs, web search, code execution, etc. Can be misused for unintended actions or data exfiltration.                               |
+| **12. Memory**                   | Stores persistent interaction history and planning states. Poisoning memory alters long-term behavior.                                    |
+| **13. Agent**                    | Coordinates planning, retrieval, memory, and tool use. Susceptible to reasoning attacks and prompt hijacking.                             |
+| **14. LLM**                      | Generates natural language and decisions. Must be protected from prompt injection, model extraction, and inference abuse.                 |
+
+
+### 6.2. Development Stack
 
 ## 7. Incident Detection Methods
 
