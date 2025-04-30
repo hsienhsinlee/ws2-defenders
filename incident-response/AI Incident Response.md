@@ -39,7 +39,7 @@
       - [5.5.4. Case Studies](#554-case-studies)
   - [6. Levels of Defense Surface](#6-levels-of-defense-surface)
     - [6.1. Defense Surface](#61-defense-surface)
-    - [6.2. Development Stack](#62-development-stack)
+    - [6.2. Technology Stack](#62-technology-stack)
   - [7. Incident Detection Methods](#7-incident-detection-methods)
   - [8. Monitoring and Telemetry](#8-monitoring-and-telemetry)
   - [9. Incident Response Playbooks](#9-incident-response-playbooks)
@@ -461,8 +461,29 @@ The NIST SP 800-61r2 Computer Security Incident Handling Guide provides structur
 | **13. Agent**                    | Coordinates planning, retrieval, memory, and tool use. Susceptible to reasoning attacks and prompt hijacking.                             |
 | **14. LLM**                      | Generates natural language and decisions. Must be protected from prompt injection, model extraction, and inference abuse.                 |
 
+<br>
 
-### 6.2. Development Stack
+### 6.2. Technology Stack
+
+<br>
+
+<p align="center">
+  <img src="./images/Technology Stack.png" alt="Technology Stack" style="width:100%; height:auto;">
+</p>
+
+<br>
+
+| ***Stack Area***        | ***Description***             | ***Potential Security Risks***    |
+|-------------------------|-------------------------------|-----------------------------------|
+| **LLMs**               | Core large language models that generate responses, decisions, and plans based on input prompts.         | Prompt injection, model extraction via probing, adversarial reasoning or output manipulation. |
+| **Embedding**          | Converts documents and queries into vector representations for similarity-based retrieval.               | Embedding poisoning, semantic drift, sensitive data leakage via vector queries.               |
+| **Frameworks**         | Orchestration libraries enabling agent behavior, prompt chaining, tool use, and memory integration.       | Tool invocation abuse, insecure chaining, uncontrolled agent autonomy, insufficient isolation.|
+| **Data Extraction**    | Pipelines that extract and preprocess content (text, structured, semi-structured) for indexing.           | Injection via malformed content, malicious payloads, evasion of parsing or sanitization.      |
+| **Open LLM Access**    | APIs and endpoints that connect to remote LLM inference services or expose hosted open-source models.     | API key leakage, quota abuse, unauthorized model access or fine-tuning, man-in-the-middle risks.|
+| **Evaluation**         | Systems for benchmarking agent output quality, behavior logging, and safety observation.                  | Leakage of sensitive data, insufficient adversarial testing, evaluation blind spots.           |
+| **Vector Databases**   | Databases that store embeddings and allow semantic search or nearest-neighbor retrieval.                  | Poisoned vectors, unauthorized read/write, inference attacks through crafted query vectors.    |
+
+<br>
 
 ## 7. Incident Detection Methods
 
