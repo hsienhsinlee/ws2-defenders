@@ -164,7 +164,7 @@ The NIST SP 800-61r2 Computer Security Incident Handling Guide provides structur
 
 #### 5.1.4. Case Studies
 
-
+[https://sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack/](https://sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack/)
 
 
 ### 5.2. LLM Architecture with Memory
