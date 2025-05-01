@@ -439,7 +439,7 @@ The NIST SP 800-61r2 Computer Security Incident Handling Guide provides structur
 <br>
 
 <p align="center">
-  <img src="./images/agentic-RAG-layers.png" alt="Agentic RAG Levels of Defense Surface" style="width:80%; height:auto;">
+  <img src="./images/agentic-rag-layers.png" alt="Agentic RAG Levels of Defense Surface" style="width:80%; height:auto;">
 </p>
 
 <br>
