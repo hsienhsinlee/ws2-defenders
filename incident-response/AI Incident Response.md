@@ -44,8 +44,12 @@
       - [7.2.1. NIST SP 800-61r2 Computer Security Incident Handling Guide](#721-nist-sp-800-61r2-computer-security-incident-handling-guide)
         - [7.2.1.1. Key Concept](#7211-key-concept)
         - [7.2.1.2. Key Recommendations](#7212-key-recommendations)
-        - [7.2.1.3. Takeaways for AI Incident Response](#7213-takeaways-for-ai-incident-response)
       - [7.2.2. OASIS CACAO Security Playbooks Version 2.0](#722-oasis-cacao-security-playbooks-version-20)
+        - [7.2.2.1. Key Components](#7221-key-components)
+        - [7.2.2.2. Key Features](#7222-key-features)
+        - [7.2.2.3. Playbook Types](#7223-playbook-types)
+        - [7.2.2.4. RACI Matrix in a SOC Context](#7224-raci-matrix-in-a-soc-context)
+        - [7.2.2.4. Sample CACAO Playbook: Detect AI Model Training Data Poisoning](#7224-sample-cacao-playbook-detect-ai-model-training-data-poisoning)
     - [7.3. Categories of attacks and how to apply AI playbooks](#73-categories-of-attacks-and-how-to-apply-ai-playbooks)
     - [7.4. Creating an AI Incident Response Plan](#74-creating-an-ai-incident-response-plan)
     - [7.5. Performing Forensics for an AI system](#75-performing-forensics-for-an-ai-system)
@@ -472,22 +476,26 @@ All of this context creates additional set of requirements for logging and recor
 
 #### 7.2.1. NIST SP 800-61r2 Computer Security Incident Handling Guide
 
-The NIST SP 800-61r2 Computer Security Incident Handling Guide provides structured guidance for establishing and operating incident response capabilities. Although the document predates the wide adoption of AI systems, its foundational concepts can be effectively extended to AI environments, especially those powered by Large Language Models (LLMs) and other generative AI (GenAI) technologies ([NIST SP 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)).
+***Reference:*** [NIST SP 800-61r3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf)
 
+The NIST SP 800-61 Revision 3 (2025) modernizes incident response by embedding it within the broader context of cybersecurity risk management through alignment with the NIST Cybersecurity Framework (CSF) 2.0. Unlike its predecessor, which focused on procedural guidance, this version adopts a flexible, outcome-driven approach using the six CSF Functions—Govern, Identify, Protect, Detect, Respond, and Recover—to guide organizations in managing, mitigating, and learning from cybersecurity incidents. The framework emphasizes continuous improvement, cross-functional coordination, and real-time learning across incident stages, integrating threat intelligence, asset visibility, and policy enforcement into an adaptive lifecycle. For AI systems and GenAI applications, the framework is especially applicable as it supports incident response for AI-specific threats such as prompt injection, model inversion, hallucinations, data leakage, adversarial misuse of toolchains (e.g., LangChain agents), and retrieval augmentation abuse. It enables organizations to adapt incident handling playbooks, define AI-relevant response roles, log and monitor AI inputs/outputs, and apply continuous learning to secure model behavior and data exposure. Through its flexible and modular structure, SP 800-61r3 provides a resilient foundation for defending dynamic, intelligent, and increasingly autonomous AI ecosystems.
 
 <br>
 
 ##### 7.2.1.1. Key Concept
 
-| ***NIST SP 800-61r2 Concept***         | ***Adaptation for AI Systems / LLMs***                                                                 |
-|----------------------------------|--------------------------------------------------------------------------------------------------|
-| **Incident Definition**          | Extend to include AI-specific incidents like prompt injection, model manipulation, data exfiltration via outputs, or misuse of AI APIs. |
-| **Incident Response Lifecycle**  | Applied to AI pipelines: preparation, detection/analysis, containment, eradication, recovery, and post-incident learning—especially in LLM toolchains and RAG systems. |
-| **Attack Vectors**               | Expanded to include:<br>• Prompt Injection<br>• Jailbreaking<br>• Model Inversion<br>• Data Poisoning<br>• Tool misuse within orchestration frameworks (e.g., LangChain) |
-| **Preparation**                  | Integrate AI system monitoring, logging of model inputs/outputs, prompt history, model versioning, and guardrail deployment. |
-| **Detection & Analysis**         | Employ logs, telemetry, and guardrail metrics to detect anomalies in LLM responses or misuse of toolchains. Automate triage of flagged sessions using LLM-as-a-judge models. |
-| **Containment Strategies**       | Filter or block unsafe prompts and outputs. Disable affected AI tools or restrict functionality. Use input/output sanitization. |
-| **Post-Incident Activity**       | Include root cause analysis on model behavior, training data audit, retraining with filtered data, and policy revision on usage constraints. |
+SP 800-61r3 shifts from static procedural guidance to a flexible, CSF 2.0-aligned risk management profile, suitable for dynamic, evolving technologies like AI systems.
+
+It replaces the old linear IR lifecycle with a model mapped to the six CSF 2.0 Functions: Govern, Identify, Protect, Detect, Respond, and Recover — all of which are critical for GenAI environments where risks emerge through prompt injection, model behavior, data flow, and tool orchestration.
+
+| CSF Function | AI-Specific Considerations |
+|--------------|-----------------------------|
+| **Govern (GV)** | Establish AI-specific IR policies: include prompt injection, misuse of RAG pipelines, and training data exposures. Ensure third-party responsibilities (e.g., model vendors or SaaS orchestration) are contractually defined. |
+| **Identify (ID)** | Inventory LLM tools, APIs, model endpoints, and external connectors. Capture attack surfaces such as embeddings, memory modules, toolchains (LangChain, ReAct). Threat modeling must include jailbreaking and adversarial prompts. |
+| **Protect (PR)** | Implement robust input/output guardrails, system prompts, and behavioral constraints. Ensure LLM telemetry, prompt logs, and PII filters are enabled. Validate training pipelines to prevent data poisoning or unintentional PII ingestion. |
+| **Detect (DE)** | Continuously monitor prompt patterns, output anomalies, and system behavior. Correlate logs from LLM APIs, tool executions, and chat sessions. Integrate LLM-as-a-Judge metrics and fine-tuned filters to detect AI-targeted abuse. |
+| **Respond (RS)** | Coordinate across AI/ML teams, SREs, legal, and security to investigate and contain AI-specific incidents like data leakage or unauthorized tool invocation. Update response plans to reflect LLM threats and recovery protocols. |
+| **Recover (RC)** | Restore compromised AI services, rollback fine-tuned models or agent states, redact unsafe memory or embeddings. Update RAG sources and retrain if training data was involved in the breach. Conduct post-mortems with AI-specific lens. |
 
 <br>
 
@@ -498,25 +506,214 @@ The NIST SP 800-61r2 Computer Security Incident Handling Guide provides structur
 | **Establish IR policy & procedures**    | Include AI-specific incident types and response playbooks for AI misuse, such as unauthorized API use, hallucinations, or data leakage. |
 | **Communication protocols**             | Define rules for disclosure and response involving model vendors (e.g., OpenAI, Anthropic), data controllers, and regulators (for privacy breaches). |
 | **Team structure**                      | Ensure inclusion of AI/ML engineers, data scientists, legal advisors, and system architects alongside traditional CSIRTs. |
+| **Shared Responsibility**       | Contracts must clearly define incident roles/responsibilities across cloud services, model providers, and orchestration tools. |
+| **Telemetry & Forensics**      | Log prompt/response pairs, tool execution traces, embeddings, and system prompts for investigation. |
 | **Automated detection**                 | Leverage metrics from LLM guardrails, behavioral scoring, and RAG pipeline telemetry to detect attacks (e.g., prompt-based exfiltration). |
+| **Incident Response Playbooks** | Define specific playbooks for GenAI issues: misuse of agents, hallucination of critical data, unauthorized RAG retrieval. |
 | **Information sharing**                 | Coordinate with external AI incident hubs (like responsible AI research communities or regulatory bodies) for emerging attack techniques. |
-
-##### 7.2.1.3. Takeaways for AI Incident Response
-
-| ***Key Area***                        | ***AI-Specific Implementation***                                                                                   |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------|
-| **Integrate telemetry**         | Log inputs, outputs, tool usage, and RAG pipeline activities for forensic analysis and anomaly detection.    |
-| **Establish AI-specific guardrails** | Use LLM-as-a-judge, system prompts, and rules-based filters to block harmful or non-compliant interactions.  |
-| **Create incident response runbooks for AI** | Develop procedures for handling prompt injection, model rollback, data source sanitization, and containment. |
-| **Coordinate across disciplines** | Form cross-functional IR teams including cybersecurity, AI/ML, legal, compliance, and data governance roles. |
+| **Continuous Improvement (ID.IM)** | Post-incident lessons should inform prompt engineering updates, model fine-tuning policies, and toolchain governance. |
 
 <br>
 
 #### 7.2.2. OASIS CACAO Security Playbooks Version 2.0
 
-([OASIS CACAO Security Playbooks Version 2.0](https://docs.oasis-open.org/cacao/security-playbooks/v2.0/cs01/security-playbooks-v2.0-cs01.html))
+***Reference:*** ([OASIS CACAO Security Playbooks Version 2.0](https://docs.oasis-open.org/cacao/security-playbooks/v2.0/cs01/security-playbooks-v2.0-cs01.html))
 
+The Collaborative Automated Course of Action Operations (CACAO) Security Playbooks Version 2.0 specification defines a standardized schema and taxonomy for representing cybersecurity playbooks. These playbooks are structured workflows that define sequences of security actions—detection, prevention, mitigation, remediation, etc.—which can be executed manually or automatically across different tools and systems. CACAO enables the creation, sharing, and execution of these playbooks across organizational and technological boundaries, improving collaboration, incident response, and cyber defense automation.
 
+<br>
+
+##### 7.2.2.1. Key Components
+
+- ***Playbooks:*** - Represent orchestrated actions in response to threats (e.g., investigate, notify, isolate).<br>
+- ***Workflows:*** - Structured steps including conditional logic, parallel actions, and sub-playbook invocation.<br>
+- ***Commands:*** - Encapsulate specific executable operations (e.g., Bash, PowerShell, OpenC2, Yara).<br>
+- ***Agents & Targets:*** - Define who executes the actions and the affected systems/entities.<br>
+- ***Authentication Info:*** - Standardizes credentials used for automation.<br>
+- ***Data Markings & Digital Signatures:*** - Ensure access control, trust, and data integrity.<br>
+- ***Versioning:*** - Built-in mechanism to track and revoke playbooks with strict creator ownership rules.<br>
+- ***Extension Support:*** - Allows future customization and modular augmentation.<br>
+
+##### 7.2.2.2. Key Features
+
+| Feature                      | Description                                                                                     |
+|-----------------------------|-------------------------------------------------------------------------------------------------|
+| **Workflow Logic**          | Enables orchestration of actions using structured steps including conditions and parallelism.  |
+| **Playbook Types**          | Supports 8 defined types (e.g., detection, mitigation, engagement) for diverse response needs. |
+| **Activity Vocabulary**     | Defines granular actions tied to playbook types, enhancing clarity and automation.              |
+| **Command Abstraction**     | Supports multiple command formats (e.g., Bash, PowerShell, OpenC2, Jupyter Notebooks).          |
+| **Agents and Targets**      | Identifies executors and affected entities, enhancing contextual execution.                    |
+| **Authentication Info**     | Separates auth definitions from agents/targets, enabling reuse and secure handling.             |
+| **Versioning**              | Built-in lifecycle control, allowing updates and revocations of playbooks by original creator.  |
+| **Data Markings**           | Provides TLP, IEP, and custom markings to enforce usage and sharing policies.                   |
+| **Digital Signatures**      | Supports JSON Signature Scheme for integrity, non-repudiation, and trust validation.            |
+| **Playbook Referencing**    | Allows modular composition via playbook-to-playbook invocation.                                |
+| **STIX Integration**        | Leverages STIX 2.1 objects (e.g., Identity, Relationship) for compatibility with CTI platforms. |
+| **Extension Mechanism**     | Allows for custom extensions to augment schema without breaking compatibility.                 |
+| **Impact, Severity, Priority** | Supports scoring playbooks for operational context and automated triage.                   |
+
+<br>
+
+##### 7.2.2.3. Playbook Types
+
+| Playbook Type    | Description                                                                                          |
+|------------------|------------------------------------------------------------------------------------------------------|
+| **Attack**       | Orchestrates penetration testing or adversary emulation steps; used by red teams or simulation tools.|
+| **Detection**    | Focuses on identifying known threats, behaviors, or indicators using logs, telemetry, or threat intel.|
+| **Engagement**   | Defines deception or denial tactics to disrupt adversaries or gather intelligence (e.g., honeypots). |
+| **Investigation**| Gathers evidence and context around a threat or anomaly to understand scope and impact.              |
+| **Mitigation**   | Reduces the impact of a threat (e.g., isolate systems, block IPs) without fully resolving the issue.  |
+| **Notification** | Disseminates alerts or threat info to internal or external stakeholders.                             |
+| **Prevention**   | Implements measures to stop anticipated threats before they occur (e.g., hardening, patching).       |
+| **Remediation**  | Restores affected systems to normal state after an incident (e.g., restore backups, remove malware).  |
+
+<br>
+
+***Playbook Type vs Activity Matrix***
+
+| Activity Type                  | Notification | Detection | Investigation | Prevention | Mitigation | Remediation | Attack | Engagement |
+|-------------------------------|--------------|-----------|----------------|------------|------------|-------------|--------|------------|
+| compose-content           | **M**            |           |                |            |            |             |        |            |
+| deliver-content               | S            |           |                |            |            |             |        |            |
+| identify-audience             | S            |           |                |            |            |             |        |            |
+| identify-channel              | S            |           |                |            |            |             |        |            |
+| scan-system                   |              | S         | S              | S          |            |             |        |            |
+| match-indicator              |              | **M**     |                |            |            |             |        |            |
+| analyze-collected-data        |              |           | S              |            |            |             |        |            |
+| identify-indicators           |              |           | **M**          |            |            |             |        |            |
+| scan-vulnerabilities          |              |           |                | S          |            |             | O      |            |
+| configure-systems             |              |           |                | **M**      |            |             |        |            |
+| restrict-access               |              |           |                |            | S          |             |        |            |
+| disconnect-system             |              |           |                |            | O          |             |        |            |
+| eliminate-risk                |              |           |                |            | **M**      |             |        |            |
+| revert-system                 |              |           |                |            |            | O           |        |            |
+| restore-data                  |              |           |                |            |            | O           |        |            |
+| restore-capabilities          |              |           |                |            |            | **M**       |        |            |
+| map-network                   |              |           |                |            |            |             | O      |            |
+| identify-steps                |              |           |                |            |            |             | O      |            |
+| step-sequence                 |              |           |                |            |            |             | **M**  |            |
+| prepare-engagement            |              |           |                |            |            |             |        | **M**      |
+| execute-operation             |              |           |                |            |            |             |        | **M**      |
+| analyze-engagement-results    |              |           |                |            |            |             |        | **M**      |
+
+---
+
+***Legend:***
+- **M** = MUST use
+- **S** = SHOULD use
+- **O** = MAY use
+
+<br>
+
+##### 7.2.2.4. RACI Matrix in a SOC Context
+
+| Task / Role                                | Security Architects | SOC Operations | IT Operations | Service Architects | Developers | Product Managers |
+|--------------------------------------------|---------------------|----------------|----------------|--------------------|------------|------------------|
+| Define Playbook Structure                  | R, A                | C              | C              | C                  | -          | -                |
+| Implement Workflow Steps                   | C                   | R, A           | I              | -                  | C          | -                |
+| Integrate Playbooks into SOAR              | C                   | R              | C              | -                  | I          | -                |
+| Maintain Authentication Details            | I                   | R              | A              | -                  | -          | -                |
+| Versioning and Revocation Control          | A                   | C              | -              | -                  | -          | -                |
+| Define Severity, Impact, and Priority      | C                   | R              | C              | -                  | -          | A                |
+| Share Playbooks Across Trust Groups        | R                   | A              | -              | -                  | -          | C                |
+| Apply Digital Signatures and Data Markings | R                   | C              | I              | -                  | -          | -                |
+
+---
+
+***Legend:***
+- **R** = Responsible (Performs the task/work)
+- **A** = Accountable (Ultimate authority and decision-maker)
+- **C** = Consulted (Provides input and expertise)
+- **I** = Informed (Kept in the loop)
+- **"-"** = No direct involvement
+
+##### 7.2.2.4. Sample CACAO Playbook: Detect AI Model Training Data Poisoning
+
+```json
+{
+  "type": "playbook",
+  "spec_version": "cacao-2.0",
+  "id": "playbook--ai-training-poison-detect-001",
+  "name": "Detect AI Training Data Poisoning",
+  "description": "This playbook detects anomalies and potential poisoning attempts in datasets used for training machine learning models.",
+  "playbook_types": ["detection"],
+  "playbook_activities": ["scan-system", "match-indicator", "identify-indicators"],
+  "created_by": "identity--ai-defender-org",
+  "created": "2025-05-12T10:00:00.000Z",
+  "modified": "2025-05-12T10:00:00.000Z",
+  "priority": 2,
+  "severity": 75,
+  "impact": 60,
+  "industry_sectors": ["technology", "finance"],
+  "labels": ["ai", "ml", "data-poisoning", "model-integrity"],
+  "workflow_start": "start--001",
+  "workflow": {
+    "start--001": {
+      "type": "start",
+      "name": "Start Detection",
+      "on_completion": "action--dataset-scan"
+    },
+    "action--dataset-scan": {
+      "type": "action",
+      "name": "Scan Training Data",
+      "description": "Run checks for distribution shift or label anomalies in training datasets.",
+      "commands": [
+        {
+          "type": "jupyter-nb",
+          "command": "notebooks/detect_data_anomalies.ipynb",
+          "playbook_activity": "scan-system"
+        }
+      ],
+      "on_completion": "action--validate-indicators"
+    },
+    "action--validate-indicators": {
+      "type": "action",
+      "name": "Validate Poisoning Indicators",
+      "description": "Compare results to known poisoning patterns (e.g., backdoor signatures).",
+      "commands": [
+        {
+          "type": "manual",
+          "command": "Review anomaly scores and confirm poisoning likelihood.",
+          "playbook_activity": "match-indicator"
+        }
+      ],
+      "on_completion": "end--001"
+    },
+    "end--001": {
+      "type": "end",
+      "name": "End Detection"
+    }
+  },
+  "playbook_variables": {
+    "__training_data_path__": {
+      "type": "string",
+      "description": "Path to the training dataset",
+      "value": "/mnt/data/training_set.csv"
+    },
+    "__anomaly_threshold__": {
+      "type": "float",
+      "description": "Threshold above which a data point is considered anomalous",
+      "value": 0.85
+    }
+  }
+}
+```
+<br>
+
+***CACAO Workflow Step Types***
+
+| Step Type         | Description                                                                                   |
+|-------------------|-----------------------------------------------------------------------------------------------|
+| `start`           | Marks the beginning of a workflow. Only one `start` step is allowed per playbook.             |
+| `end`             | Terminates the workflow. Only one `end` step is required per playbook.                        |
+| `action`          | Executes a set of commands such as scripts, queries, or manual steps.                         |
+| `playbook-action` | Invokes another playbook, allowing modular reuse of common workflows.                         |
+| `parallel`        | Executes multiple steps concurrently; each must complete before workflow proceeds.            |
+| `if`              | Evaluates a condition and branches to the next step based on true/false outcomes.             |
+| `while`           | Loops through the associated step(s) as long as the condition evaluates to true.              |
+| `switch`          | Directs execution based on the result of a multi-case condition, similar to switch-case logic.|
+
+<br>
 
 ### 7.3. Categories of attacks and how to apply AI playbooks
 
