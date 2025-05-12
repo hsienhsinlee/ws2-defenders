@@ -16,26 +16,31 @@
         - [4.3.1.2. ATLAS Techniques and Tactics](#4312-atlas-techniques-and-tactics)
         - [4.3.1.3. Mitigations](#4313-mitigations)
         - [4.3.1.4. Case Studies](#4314-case-studies)
+        - [4.3.1.5. Sample Playbook](#4315-sample-playbook)
       - [4.3.2. LLM Architecture with Memory](#432-llm-architecture-with-memory)
         - [4.3.2.1. Overview](#4321-overview)
         - [4.3.2.2. ATLAS Techniques and Tactics](#4322-atlas-techniques-and-tactics)
         - [4.3.2.3. Mitigations](#4323-mitigations)
         - [4.3.2.4. Case Studies](#4324-case-studies)
+        - [4.3.2.5. Sample Playbook](#4325-sample-playbook)
       - [4.3.3. RAG Architecture](#433-rag-architecture)
         - [4.3.3.1. Overview](#4331-overview)
         - [4.3.3.2. ATLAS Techniques and Tactics](#4332-atlas-techniques-and-tactics)
         - [4.3.3.3. Mitigations](#4333-mitigations)
         - [4.3.3.4. Case Studies](#4334-case-studies)
+        - [4.3.3.5. Sample Playbook](#4335-sample-playbook)
       - [4.3.4. Agentic Architecture](#434-agentic-architecture)
         - [4.3.4.1. Overview](#4341-overview)
         - [4.3.4.2. ATLAS Techniques and Tactics](#4342-atlas-techniques-and-tactics)
         - [4.3.4.3. Mitigations](#4343-mitigations)
         - [4.3.4.4. Case Studies](#4344-case-studies)
+        - [4.3.4.5. Sample Playbook](#4345-sample-playbook)
       - [4.3.5. Agentic RAG Architecture](#435-agentic-rag-architecture)
         - [4.3.5.1. Overview](#4351-overview)
         - [4.3.5.2. ATLAS Techniques and Tactics](#4352-atlas-techniques-and-tactics)
         - [4.3.5.3. Mitigations](#4353-mitigations)
         - [4.3.5.4. Case Studies](#4354-case-studies)
+        - [4.3.5.5. Sample Playbook](#4355-sample-playbook)
   - [5. Monitoring and Telemetry](#5-monitoring-and-telemetry)
   - [6. Incident Detection Methods](#6-incident-detection-methods)
   - [7. Incident Response Playbooks](#7-incident-response-playbooks)
@@ -196,6 +201,86 @@ All of this context creates additional set of requirements for logging and recor
 
 [https://sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack/](https://sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack/)
 
+##### 4.3.1.5. Sample Playbook
+
+```json
+{
+  "type": "playbook",
+  "id": "playbook--prompt-injection-basic-llm",
+  "name": "Prompt Injection Detection and Response - Basic LLM",
+  "playbook_types": ["incident-response"],
+  "created_by": "Security Orchestration Team",
+  "description": "Detect and respond to prompt injection attacks in a user-facing Basic LLM architecture.",
+  "created": "2024-04-30T12:00:00Z",
+  "modified": "2024-04-30T12:00:00Z",
+  "workflow_start": "start-node",
+  "workflow": {
+    "start-node": {
+      "type": "start",
+      "next_step": "detect-anomalous-output"
+    },
+    "detect-anomalous-output": {
+      "type": "action",
+      "name": "Detect Anomalous LLM Output",
+      "description": "Monitor LLM responses for indicators of prompt injection (e.g., bypassed instructions, out-of-scope responses).",
+      "action_type": "detection",
+      "implemented_by": {
+        "type": "software",
+        "name": "LLM Output Monitor"
+      },
+      "next_step": "is-output-suspicious"
+    },
+    "is-output-suspicious": {
+      "type": "decision",
+      "name": "Is the LLM Output Suspicious?",
+      "conditions": {
+        "yes": "log-incident",
+        "no": "end-node"
+      }
+    },
+    "log-incident": {
+      "type": "action",
+      "name": "Log Prompt Injection Incident",
+      "action_type": "record",
+      "description": "Log the incident in the SIEM for future analysis.",
+      "next_step": "sanitize-input"
+    },
+    "sanitize-input": {
+      "type": "action",
+      "name": "Sanitize Suspicious Input",
+      "action_type": "containment",
+      "description": "Remove or neutralize suspicious prompt content before reprocessing.",
+      "next_step": "alert-security"
+    },
+    "alert-security": {
+      "type": "action",
+      "name": "Alert Security Team",
+      "action_type": "notification",
+      "description": "Notify SOC analysts of prompt injection attempt with full context.",
+      "next_step": "block-user-if-malicious"
+    },
+    "block-user-if-malicious": {
+      "type": "decision",
+      "name": "Is User Malicious?",
+      "conditions": {
+        "yes": "block-user",
+        "no": "end-node"
+      }
+    },
+    "block-user": {
+      "type": "action",
+      "name": "Block Malicious User",
+      "action_type": "containment",
+      "description": "Blacklist user ID or IP for persistent abuse.",
+      "next_step": "end-node"
+    },
+    "end-node": {
+      "type": "end"
+    }
+  }
+}
+```
+
 
 #### 4.3.2. LLM Architecture with Memory
 
@@ -251,6 +336,71 @@ All of this context creates additional set of requirements for logging and recor
 <br>
 
 ##### 4.3.2.4. Case Studies
+
+##### 4.3.2.5. Sample Playbook
+
+```json
+{
+  "type": "playbook",
+  "id": "playbook--memory-poisoning-llm-memory",
+  "name": "Memory Poisoning Detection and Response – LLM with Memory",
+  "playbook_types": ["incident-response"],
+  "created_by": "AI Security Engineering Team",
+  "description": "Detect and respond to memory poisoning attempts in LLM systems that utilize persistent conversational memory.",
+  "created": "2024-04-30T12:00:00Z",
+  "modified": "2024-04-30T12:00:00Z",
+  "workflow_start": "start-node",
+  "workflow": {
+    "start-node": {
+      "type": "start",
+      "next_step": "monitor-memory-for-influence-patterns"
+    },
+    "monitor-memory-for-influence-patterns": {
+      "type": "action",
+      "name": "Monitor Memory for Influence Patterns",
+      "description": "Continuously scan memory updates for adversarial prompts or long-term context manipulation attempts.",
+      "action_type": "detection",
+      "implemented_by": {
+        "type": "software",
+        "name": "Memory Analyzer"
+      },
+      "next_step": "is-memory-suspicious"
+    },
+    "is-memory-suspicious": {
+      "type": "decision",
+      "name": "Is Memory Content Suspicious?",
+      "conditions": {
+        "yes": "flag-session-and-freeze-memory",
+        "no": "end-node"
+      }
+    },
+    "flag-session-and-freeze-memory": {
+      "type": "action",
+      "name": "Flag Session and Freeze Memory",
+      "description": "Mark session for investigation and prevent memory access by the LLM until cleared.",
+      "action_type": "containment",
+      "next_step": "alert-ai-security"
+    },
+    "alert-ai-security": {
+      "type": "action",
+      "name": "Alert AI Security Team",
+      "description": "Notify AI security engineers with full context of the suspected poisoning.",
+      "action_type": "notification",
+      "next_step": "review-and-clean-memory"
+    },
+    "review-and-clean-memory": {
+      "type": "action",
+      "name": "Review and Clean Poisoned Memory",
+      "description": "Manual or automated review of flagged memory with rollback or pruning of malicious content.",
+      "action_type": "remediation",
+      "next_step": "end-node"
+    },
+    "end-node": {
+      "type": "end"
+    }
+  }
+}
+```
 
 #### 4.3.3. RAG Architecture
 
@@ -319,6 +469,78 @@ All of this context creates additional set of requirements for logging and recor
 
 ##### 4.3.3.4. Case Studies
 
+##### 4.3.3.5. Sample Playbook
+
+```json
+{
+  "type": "playbook",
+  "id": "playbook--rag-ingestion-poisoning",
+  "name": "Document Ingestion Poisoning Detection – RAG Architecture",
+  "playbook_types": ["incident-response"],
+  "created_by": "AI Security Operations Team",
+  "description": "Detect and contain poisoning attempts in RAG pipelines during document ingestion and embedding.",
+  "created": "2024-04-30T12:00:00Z",
+  "modified": "2024-04-30T12:00:00Z",
+  "workflow_start": "start-node",
+  "workflow": {
+    "start-node": {
+      "type": "start",
+      "next_step": "monitor-new-ingestion"
+    },
+    "monitor-new-ingestion": {
+      "type": "action",
+      "name": "Monitor New Document Ingestion",
+      "description": "Scan newly ingested documents for signs of embedded attacks, irrelevant content, or adversarial prompts.",
+      "action_type": "detection",
+      "implemented_by": {
+        "type": "software",
+        "name": "RAG Ingestion Scanner"
+      },
+      "next_step": "is-document-suspicious"
+    },
+    "is-document-suspicious": {
+      "type": "decision",
+      "name": "Is Document Suspicious?",
+      "conditions": {
+        "yes": "quarantine-document",
+        "no": "proceed-with-indexing"
+      }
+    },
+    "quarantine-document": {
+      "type": "action",
+      "name": "Quarantine Suspicious Document",
+      "description": "Prevent document from being embedded or indexed in the vector store until reviewed.",
+      "action_type": "containment",
+      "next_step": "alert-threat-analyst"
+    },
+    "alert-threat-analyst": {
+      "type": "action",
+      "name": "Alert Threat Analyst",
+      "description": "Send alert with metadata, content hash, and ingestion source to SOC for review.",
+      "action_type": "notification",
+      "next_step": "review-and-remove"
+    },
+    "review-and-remove": {
+      "type": "action",
+      "name": "Review and Remove Malicious Content",
+      "description": "Analyst reviews and confirms whether to remove or sanitize the document before reinjection.",
+      "action_type": "remediation",
+      "next_step": "end-node"
+    },
+    "proceed-with-indexing": {
+      "type": "action",
+      "name": "Proceed with Document Indexing",
+      "description": "Continue embedding and indexing if document is clean.",
+      "action_type": "allow",
+      "next_step": "end-node"
+    },
+    "end-node": {
+      "type": "end"
+    }
+  }
+}
+```
+
 #### 4.3.4. Agentic Architecture
 
 <br>
@@ -381,6 +603,78 @@ All of this context creates additional set of requirements for logging and recor
 <br>
 
 ##### 4.3.4.4. Case Studies
+
+##### 4.3.4.5. Sample Playbook
+
+```json
+{
+  "type": "playbook",
+  "id": "playbook--agentic-tool-abuse",
+  "name": "Unauthorized Tool Invocation – Agentic Architecture",
+  "playbook_types": ["incident-response"],
+  "created_by": "AI Security Operations Team",
+  "description": "Detect and contain unauthorized or anomalous tool invocations by autonomous agents in an agentic architecture.",
+  "created": "2024-04-30T12:00:00Z",
+  "modified": "2024-04-30T12:00:00Z",
+  "workflow_start": "start-node",
+  "workflow": {
+    "start-node": {
+      "type": "start",
+      "next_step": "monitor-tool-usage"
+    },
+    "monitor-tool-usage": {
+      "type": "action",
+      "name": "Monitor Tool Invocation Logs",
+      "description": "Continuously analyze tool usage by agents to detect anomalies or out-of-scope access.",
+      "action_type": "detection",
+      "implemented_by": {
+        "type": "software",
+        "name": "Agent Tool Monitor"
+      },
+      "next_step": "is-usage-suspicious"
+    },
+    "is-usage-suspicious": {
+      "type": "decision",
+      "name": "Is Tool Usage Suspicious?",
+      "conditions": {
+        "yes": "quarantine-agent",
+        "no": "end-node"
+      }
+    },
+    "quarantine-agent": {
+      "type": "action",
+      "name": "Quarantine Agent",
+      "description": "Suspend the agent’s current session to prevent further unauthorized tool invocations.",
+      "action_type": "containment",
+      "next_step": "alert-ai-engineer"
+    },
+    "alert-ai-engineer": {
+      "type": "action",
+      "name": "Alert AI Engineering Team",
+      "description": "Notify responsible team with session trace and tool usage context for review.",
+      "action_type": "notification",
+      "next_step": "review-tool-permissions"
+    },
+    "review-tool-permissions": {
+      "type": "action",
+      "name": "Review Tool Access Scope",
+      "description": "Evaluate whether agent access to tools is overly permissive and requires tightening.",
+      "action_type": "remediation",
+      "next_step": "update-policies"
+    },
+    "update-policies": {
+      "type": "action",
+      "name": "Update Tool Invocation Policies",
+      "description": "Apply least privilege policies or rule updates to restrict future agent tool actions.",
+      "action_type": "configuration",
+      "next_step": "end-node"
+    },
+    "end-node": {
+      "type": "end"
+    }
+  }
+}
+```
 
 #### 4.3.5. Agentic RAG Architecture
 
@@ -461,6 +755,78 @@ All of this context creates additional set of requirements for logging and recor
 
 
 ##### 4.3.5.4. Case Studies
+
+##### 4.3.5.5. Sample Playbook
+
+```json
+{
+  "type": "playbook",
+  "id": "playbook--agentic-rag-context-manipulation",
+  "name": "Planning Manipulation via Retrieved Context – Agentic RAG Architecture",
+  "playbook_types": ["incident-response"],
+  "created_by": "AI Security Response Team",
+  "description": "Detect and mitigate adversarial manipulation of autonomous agent planning logic via poisoned RAG-retrieved context.",
+  "created": "2024-04-30T12:00:00Z",
+  "modified": "2024-04-30T12:00:00Z",
+  "workflow_start": "start-node",
+  "workflow": {
+    "start-node": {
+      "type": "start",
+      "next_step": "monitor-retrieved-context"
+    },
+    "monitor-retrieved-context": {
+      "type": "action",
+      "name": "Monitor Retrieved Context in Planning Loop",
+      "description": "Inspect retrieval outputs passed to agent reasoning loop for signs of injected instructions or semantic drift.",
+      "action_type": "detection",
+      "implemented_by": {
+        "type": "software",
+        "name": "Context Sanitizer"
+      },
+      "next_step": "is-context-suspicious"
+    },
+    "is-context-suspicious": {
+      "type": "decision",
+      "name": "Is Retrieved Context Suspicious?",
+      "conditions": {
+        "yes": "suspend-agent-and-log",
+        "no": "end-node"
+      }
+    },
+    "suspend-agent-and-log": {
+      "type": "action",
+      "name": "Suspend Agent Session and Log Incident",
+      "description": "Pause agent execution and log context injection metadata for analysis.",
+      "action_type": "containment",
+      "next_step": "alert-ai-security"
+    },
+    "alert-ai-security": {
+      "type": "action",
+      "name": "Alert AI Security Team",
+      "description": "Notify engineering team with full planning trace, retrieved documents, and agent reasoning path.",
+      "action_type": "notification",
+      "next_step": "validate-source-integrity"
+    },
+    "validate-source-integrity": {
+      "type": "action",
+      "name": "Validate Source Integrity",
+      "description": "Trace poisoned context back to indexed source and verify document authenticity and ingestion pipeline.",
+      "action_type": "remediation",
+      "next_step": "retrain-agent-or-prune-memory"
+    },
+    "retrain-agent-or-prune-memory": {
+      "type": "action",
+      "name": "Retrain Agent or Prune Memory",
+      "description": "Remove corrupted memory traces or retrain/refine planning logic if manipulation affected agent behavior.",
+      "action_type": "remediation",
+      "next_step": "end-node"
+    },
+    "end-node": {
+      "type": "end"
+    }
+  }
+}
+```
 
 ## 5. Monitoring and Telemetry
 
