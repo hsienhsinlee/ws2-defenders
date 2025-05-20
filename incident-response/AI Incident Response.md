@@ -315,6 +315,8 @@ All of this context creates additional set of requirements for logging and recor
 
 ##### 4.3.3.4. Case Studies
 
+Financial Transaction Hijacking with M365 Copilot as an Insider: https://atlas.mitre.org/studies/AML.CS0026, https://labs.zenity.io/p/techniques-from-zenitys-genai-attacks-matrix-incorporated-into-mitre-atlas-to-track-emerging-ai-thr
+
 #### 4.3.4. Agentic Architecture
 
 <br>
