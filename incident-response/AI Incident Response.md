@@ -55,8 +55,22 @@
         - [7.2.2.3. Playbook Types](#7223-playbook-types)
         - [7.2.2.4. RACI Matrix in a SOC Context](#7224-raci-matrix-in-a-soc-context)
         - [7.2.2.4. Sample CACAO Playbook: Detect AI Model Training Data Poisoning](#7224-sample-cacao-playbook-detect-ai-model-training-data-poisoning)
-    - [7.3. Categories of attacks and how to apply AI playbooks](#73-categories-of-attacks-and-how-to-apply-ai-playbooks)
+    - [7.3. Categories of AI Attacks](#73-categories-of-ai-attacks)
+      - [7.3.1. Data-Level Incidents](#731-data-level-incidents)
+      - [7.3.2. Model-Level Incidents](#732-model-level-incidents)
+      - [7.3.3. Deployment-Level Incidents](#733-deployment-level-incidents)
+      - [7.3.4. Output-Level Incidents](#734-output-level-incidents)
     - [7.4. Creating an AI Incident Response Plan](#74-creating-an-ai-incident-response-plan)
+      - [7.4.1. Foundations of an AI Incident Response Plan](#741-foundations-of-an-ai-incident-response-plan)
+      - [7.4.2. Pre-Incident Preparation](#742-pre-incident-preparation)
+      - [7.4.3. Incident Response Workflow for AI Systems](#743-incident-response-workflow-for-ai-systems)
+        - [7.4.3.1. Preparation Phase](#7431-preparation-phase)
+        - [7.4.3.2. Detection and Analysis Phase](#7432-detection-and-analysis-phase)
+        - [7.4.3.3. Containment, Eradication, and Recovery Phase](#7433-containment-eradication-and-recovery-phase)
+        - [7.4.3.4. Post-Incident Activity Phase](#7434-post-incident-activity-phase)
+        - [7.4.3.5. NIST Alignment Matrix](#7435-nist-alignment-matrix)
+      - [7.4.4. Training and Simulation](#744-training-and-simulation)
+      - [7.4.5. Integration Roadmap with Enterprise Security](#745-integration-roadmap-with-enterprise-security)
     - [7.5. Performing Forensics for an AI system](#75-performing-forensics-for-an-ai-system)
     - [7.6. Containment and Mitigations](#76-containment-and-mitigations)
     - [7.7. Communication to Govt/Regulatory agencies](#77-communication-to-govtregulatory-agencies)
@@ -1375,9 +1389,136 @@ The Collaborative Automated Course of Action Operations (CACAO) Security Playboo
 
 <br>
 
-### 7.3. Categories of attacks and how to apply AI playbooks
+### 7.3. Categories of AI Attacks
+
+AI security incidents can be categorized into four primary domains based on the attack vector and impact area:
+
+#### 7.3.1. Data-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Data Poisoning**            | Deliberate contamination of training data to induce specific model behaviors      | Injecting fake reviews into a dataset to make an AI model favor specific products artificially |
+| **Data Leakage**              | Unauthorized access to or exfiltration of sensitive training data                 | Hackers gaining access to confidential medical records used to train an AI model              |
+| **Data Integrity Violations** | Tampering with AI system inputs to manipulate outcomes                            | Modifying sensor data in a self-driving car to make it misinterpret road signs                 |
+
+#### 7.3.2. Model-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Model Theft/Extraction**    | Unauthorized duplication or stealing of model weights and architecture            | Reverse engineering a proprietary chatbot's model to replicate its behavior                   |
+| **Model Inversion**           | Extracting private training data from model responses                             | Using an AI model's outputs to reconstruct sensitive user data, like medical histories         |
+| **Backdoor Attacks**          | Hidden functionality implanted in models that activates under specific conditions | Adding a secret trigger phrase to make an AI classify harmful content as safe                 |
+
+#### 7.3.3. Deployment-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Prompt Injection**          | Manipulating model inputs to bypass safeguards or alter system behavior           | Sending a specially crafted prompt to make an AI assistant disclose restricted information     |
+| **Jailbreaking**              | Circumventing model safety measures to access restricted functionality            | Using creative prompts to make a chatbot generate unethical or harmful content                |
+| **Unauthorized Access**       | Gaining privileged access to AI infrastructure                                    | Exploiting a vulnerability to gain admin access to an AI-powered recommendation system         |
+| **API/Service Abuse**         | Excessive or malicious use of AI services                                         | Overloading an AI translation service with excessive requests to disrupt its functionality     |
+
+#### 7.3.4. Output-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Output Manipulation**       | Forcing harmful or misleading outputs from AI systems                             | Crafting inputs to make an AI generate false financial forecasts                              |
+| **Hallucination Exploitation**| Leveraging model inaccuracies for harmful purposes                                | Using an AI's hallucinated data to spread misinformation in public forums                     |
 
 ### 7.4. Creating an AI Incident Response Plan
+
+#### 7.4.1. Foundations of an AI Incident Response Plan
+
+| **Element** | **Description** |
+|-------------|-----------------|
+| **Core Objectives** | • Minimize business and user impact during incidents<br>• Protect sensitive data from AI system exploitation<br>• Maintain regulatory compliance<br>• Preserve evidence for forensic analysis<br>• Identify root causes for prevention<br>• Restore AI system functionality securely<br>• Share actionable intelligence with security community |
+| **Scope Definition** | • AI systems covered (LLMs, RAG systems, agentic architectures)<br>• Integration points with traditional IR procedures<br>• Responsibility boundaries between providers and consumers<br>• Data governance considerations<br>• Applicable regulatory requirements |
+
+#### 7.4.2. Pre-Incident Preparation
+
+| **Component** | **Key Elements** |
+|---------------|------------------|
+| **Risk Assessment** | • AI system components and security posture<br>• Critical data assets processed by AI systems<br>• Potential attack vectors based on ATLAS framework<br>• Compliance requirements<br>• Business impact of potential compromise |
+| **IR Team Composition** | • AI/ML engineers with model expertise<br>• Data scientists for pipeline understanding<br>• Security analysts with AI knowledge<br>• Legal and compliance experts<br>• Business stakeholders<br>• Communications specialists |
+| **Baseline Telemetry** | • Input/output logging for all interactions<br>• System prompt and configuration versioning<br>• Tool usage tracking (agentic systems)<br>• Authentication and authorization events<br>• Embedding and vector database query patterns<br>• Resource utilization metrics |
+
+#### 7.4.3. Incident Response Workflow for AI Systems
+
+##### 7.4.3.1. Preparation Phase
+
+| **Activity** | **AI-Specific Considerations** | **Implementation Guidance** |
+|--------------|--------------------------------|---------------------------|
+| **Risk Assessment & Threat Modeling** | • Identify critical assets in each architecture pattern<br>• Map ATLAS threat vectors to components<br>• Assess likelihood and impact<br>• Prioritize security controls<br>• Document risk thresholds | • Use architectural patterns from Section 4.3<br>• Reference ATLAS techniques in security planning<br>• Conduct architecture-specific threat modeling<br>• Prioritize controls for high-impact scenarios |
+| **Monitoring Infrastructure** | • Input/output logging<br>• System prompt versioning<br>• Configuration management<br>• Authentication tracking<br>• API usage analysis<br>• Resource utilization<br>• Data access patterns | • Implement privacy controls for prompt logging<br>• Maintain auditable prompt history<br>• Track all model versions and parameters<br>• Establish API usage baselines<br>• Monitor for anomalous resource consumption |
+| **Response Capability Development** | • Specialized AI security training<br>• Response tools for AI systems<br>• Emergency access procedures<br>• Backup procedures<br>• Recovery testing | • Train teams on AI-specific threats<br>• Implement tools for log analysis and prompt filtering<br>• Create secure backups of models and embeddings<br>• Regularly test restoration procedures |
+
+### 7.4.3.2. Detection and Analysis Phase
+
+| **Activity** | **AI-Specific Approach** | **Key Considerations** |
+|--------------|--------------------------|------------------------|
+| **Detection Mechanisms** | **Automated Monitoring:**<br>• LLM-based classifiers for suspicious interactions<br>• Semantic similarity checks<br>• Token usage anomaly detection<br>• User feedback signal monitoring<br><br>**Manual Review:**<br>• Human review procedures for flagged interactions<br>• Sampling of high-risk operations<br>• Security dashboards<br>• Escalation triggers<br><br>**Integration Points:**<br>• SIEM integration<br>• Correlation with network security<br>• Authentication event linking | • Balance automated detection with human oversight<br>• Establish clear thresholds for alerts<br>• Avoid false positives through baseline calibration<br>• Ensure privacy considerations in monitoring<br>• Correlate AI system events with broader security telemetry |
+| **Initial Triage** | **Incident Verification:**<br>• Confirm security incident status<br>• Classify per AI attack categories (Sec 7.3)<br>• Determine affected components<br><br>**Impact Assessment:**<br>• Estimate compromise scope<br>• Identify affected users/data<br>• Assess data exposure issues<br>• Determine business impact<br><br>**Priority Assignment:**<br>• Assign priority based on impact<br>• Implement notification procedures<br>• Mobilize specialized resources | • Validate whether anomalous behavior constitutes a security incident<br>• Use categories from Section 7.3 for classification<br>• Focus on potential data exposure through AI systems<br>• Consider regulatory implications<br>• Ensure escalation procedures match incident severity |
+| **Investigation Procedures** | **Evidence Collection:**<br>• Interaction logs<br>• System configurations<br>• Model versions and parameters<br>• Network traffic and API calls<br>• Vector database queries<br><br>**Forensic Analysis:**<br>• Malicious prompt patterns<br>• Data retrieval sequences<br>• Tool usage analysis<br>• Memory manipulation assessment<br>• Data poisoning evaluation<br><br>**Attribution Assessment:**<br>• Targeted vs. opportunistic analysis<br>• Actor identification<br>• Threat intelligence correlation<br>• Attribution documentation | • Preserve evidence in a forensically sound manner<br>• Focus on the unique aspects of AI system compromise<br>• Analyze both the explicit content and implicit patterns<br>• Consider the non-deterministic nature of AI systems<br>• Document investigation methodology thoroughly |
+
+##### 7.4.3.3. Containment, Eradication, and Recovery Phase
+
+| **Activity** | **Architecture-Specific Approaches** | **Implementation Guidance** |
+|--------------|--------------------------------------|----------------------------|
+| **Containment Strategies** | **Short-term Containment:**<br>• Emergency prompt filters<br>• Rate limiting/access restrictions<br>• Component isolation<br>• User/IP blocking<br><br>**Architecture-Specific Containment:**<br>**Basic LLM:** Input validation, reduced temperature, content filtering<br>**LLM with Memory:** Reset memory, session isolation, conversation history purging<br>**RAG:** Data source quarantine, validation of retrieval results<br>**Agentic:** Disable tools, enhance authorization checks<br>**Agentic RAG:** Combined strategies with interface security focus<br><br>**Evidence Preservation:**<br>• Forensic copies before containment<br>• Documented containment actions<br>• Vector database state preservation<br>• Model weight copies | • Implement containment without destroying evidence<br>• Consider each architectural pattern's unique vulnerabilities<br>• Focus containment on the specific attack vector<br>• Document all containment actions thoroughly<br>• Maintain chain of custody for forensic evidence<br>• Consider business impact of containment measures |
+| **Eradication Procedures** | **Root Cause Elimination:**<br>• Vulnerability addressing<br>• Enhanced input validation<br>• System prompt updates<br>• Framework patches<br><br>**Component Remediation:**<br>**Data-Level:** Remove poisoned data, reconstruct embeddings<br>**Model-Level:** Roll back to secure versions, enhance guardrails<br>**Deployment-Level:** Update prompts, strengthen controls<br>**Output-Level:** Implement filtering, content moderation<br><br>**Verification Testing:**<br>• Penetration testing<br>• Attack reproduction attempts<br>• Red-team exercises<br>• Issue verification | • Address fundamental vulnerabilities, not just symptoms<br>• Apply remediations specific to the compromised level<br>• Test thoroughly before returning to production<br>• Document all changes for future reference<br>• Maintain audit trail of remediation actions<br>• Verify effectiveness through testing |
+| **Recovery Procedures** | **Service Restoration:**<br>• Capability prioritization<br>• Phased approach planning<br>• Verification criteria<br>• Required approvals<br><br>**Enhanced Monitoring:**<br>• Heightened monitoring deployment<br>• Normal/abnormal metrics<br>• Additional logging<br>• Scheduled reviews<br><br>**User Communication:**<br>• Communication templates<br>• Transparency guidelines<br>• Communication protocols<br>• User feedback mechanisms<br><br>**Business Continuity:**<br>• Alternative system activation<br>• Restoration prioritization<br>• Stakeholder expectation setting<br>• Impact documentation | • Implement a gradual, verified restoration process<br>• Maintain heightened monitoring during recovery<br>• Communicate clearly with affected users<br>• Document business impact throughout recovery<br>• Ensure leadership approval at key recovery stages<br>• Balance security with operational needs |
+
+##### 7.4.3.4. Post-Incident Activity Phase
+
+| **Activity** | **Key Components** | **Implementation Guidance** |
+|--------------|-------------------|----------------------------|
+| **Lessons Learned** | **Post-Incident Review:**<br>• Timely meeting scheduling<br>• Cross-team representation<br>• Event timeline documentation<br>• Response effectiveness analysis<br><br>**Root Cause Analysis:**<br>• Underlying vulnerability investigation<br>• Determination of causation:<br>  - Architectural design flaws<br>  - Security control implementation errors<br>  - Operational failures<br>  - Novel attack techniques<br><br>**Response Evaluation:**<br>• Detection effectiveness assessment<br>• Containment strategy evaluation<br>• Recovery efficiency analysis<br>• Business impact measurement | • Schedule reviews within 1-2 weeks of resolution<br>• Focus on systemic improvements, not blame<br>• Document timeline from detection through resolution<br>• Identify gaps in tools, processes, and training<br>• Analyze whether incident resulted from known or novel techniques<br>• Measure response metrics against defined objectives |
+| **Security Enhancement** | **Architectural Improvements:**<br>• System architecture updates<br>• Additional security layers<br>• Integration point strengthening<br>• Component separation enhancement<br><br>**Control Enhancements:**<br>• New/improved security controls<br>• Prompt engineering updates<br>• Monitoring capability enhancement<br>• Access control strengthening<br><br>**Process Refinement:**<br>• Playbook updates<br>• Role/responsibility revision<br>• Communication protocol improvement<br>• Documentation enhancement | • Implement architectural changes to address root causes<br>• Strengthen controls at the affected system level<br>• Update detection mechanisms for similar threats<br>• Revise processes based on response effectiveness<br>• Document all improvements for future reference<br>• Assign clear ownership for enhancement implementation |
+| **Knowledge Sharing** | **Internal Transfer:**<br>• Case study documentation<br>• Lesson-sharing workshops<br>• Security awareness updates<br>• Executive briefings<br><br>**External Sharing:**<br>• Industry knowledge contribution<br>• Information-sharing participation<br>• MITRE ATLAS submissions<br>• Standards organization engagement<br><br>**Regulatory Reporting:**<br>• Required notifications<br>• Compliance documentation<br>• Security measure evidence<br>• Audit record maintenance | • Create training materials from incident findings<br>• Share lessons across security and AI teams<br>• Contribute to industry knowledge responsibly<br>• Complete all regulatory reporting requirements<br>• Balance transparency with security considerations<br>• Document compliance with relevant regulations |
+
+##### 7.4.3.5. NIST Alignment Matrix
+
+| **NIST Phase** | **AI-Specific Components** | **Key Considerations** |
+|----------------|----------------------------|------------------------|
+| **Preparation** | • AI-specific risk assessment<br>• Specialized monitoring<br>• Response capability development | • Focus on unique architectural patterns<br>• Develop AI-specific threat models<br>• Build specialized monitoring systems |
+| **Detection & Analysis** | • AI-specific detection mechanisms<br>• Specialized triage procedures<br>• Forensic techniques for AI systems | • Adapt to non-deterministic systems<br>• Address blurred code/data boundaries<br>• Focus on prompt injection vectors |
+| **Containment, Eradication & Recovery** | • Architecture-specific containment<br>• Component-level remediation<br>• Secure restoration procedures | • Consider interconnected AI components<br>• Address data dependencies<br>• Implement staged recovery processes |
+| **Post-Incident Activity** | • AI-specific root cause analysis<br>• Targeted security enhancements<br>• Specialized knowledge sharing | • Continuously improve AI security posture<br>• Contribute to community knowledge<br>• Update architectural safeguards |
+
+#### 7.4.4. Training and Simulation
+
+| **Activity** | **Description** | **Implementation Guidance** |
+|--------------|----------------|----------------------------|
+| **Tabletop Exercises** | Scenario-based discussions using AI attack cases from Section 7.3 | • Conduct quarterly exercises<br>• Rotate scenario types<br>• Include cross-functional teams<br>• Document lessons learned |
+| **Technical Drills** | Hands-on exercises focused on specific AI incident response tasks | • Practice log analysis<br>• Test containment procedures<br>• Validate recovery processes<br>• Measure response times |
+| **Cross-Functional Exercises** | Full-team simulations involving all relevant stakeholders | • Include business representatives<br>• Test communications channels<br>• Validate escalation procedures<br>• Practice regulatory notifications |
+| **Adversarial Simulations** | Red-team exercises based on ATLAS techniques | • Simulate prompt injection attacks<br>• Test data poisoning scenarios<br>• Practice response to model extraction<br>• Evaluate detection capabilities |
+| **Skills Assessment** | Regular evaluation of team knowledge and capabilities | • Identify training gaps<br>• Update learning materials<br>• Track improvement metrics<br>• Recognize high performers |
+
+#### 7.4.5. Integration Roadmap with Enterprise Security
+
+| **Implementation Phase** | **Integration Area** | **Success Metrics & Implementation Indicators** |
+|--------------------------|---------------------|------------------------------------------------|
+| **Preparation** | **Framework Alignment** | • Framework mapping completion percentage<br>• Integrated risk assessment adoption rate<br>• Documentation standardization level<br>• Approved alignment strategy with executive sign-off |
+| | **Handoff Procedures** | • Documented transition point clarity assessment<br>• Workflow validation exercise completion rates<br>• Joint preparation activity participation metrics<br>• Stakeholder approval of defined responsibility matrices |
+| | **Shared Terminology** | • Glossary comprehensiveness rating<br>• Terminology mapping coverage percentage<br>• Documentation terminology compliance audit results<br>• Training completion rates on standardized terminology |
+| | **Tool Integration** | • Monitoring integration completion percentage<br>• Configuration synchronization success rate<br>• Vulnerability assessment coverage metrics<br>• Tool inventory and connection validation status |
+| | **Unified Metrics** | • KPI definition approval rate<br>• Baseline measurement completeness<br>• Dashboard implementation status<br>• Reporting standardization level across domains |
+| **Detection & Analysis** | **Framework Alignment** | • Process adaptation completion rate<br>• Triage procedure alignment validation results<br>• Forensic methodology integration assessment<br>• Cross-domain detection workflow efficiency metrics |
+| | **Handoff Procedures** | • Protocol effectiveness scores in simulation exercises<br>• Escalation criteria clarity assessment results<br>• Workflow efficiency measurements in actual incidents<br>• Cross-team investigation time reduction metrics |
+| | **Shared Terminology** | • Classification scheme adoption rate across teams<br>• Severity definition consistency score<br>• Reporting language standardization level<br>• Classification accuracy in incident categorization |
+| | **Tool Integration** | • SIEM integration success percentage<br>• Alert correlation effectiveness measurements<br>• Investigation dashboard utilization metrics<br>• False positive reduction rate from improved correlation |
+| | **Unified Metrics** | • Detection efficiency metrics implementation rate<br>• Analysis effectiveness KPI measurement accuracy<br>• Cross-domain detection coverage verification<br>• Time-to-detection improvement percentage |
+| **Containment, Eradication & Recovery** | **Framework Alignment** | • Containment strategy alignment validation results<br>• Eradication procedure integration completeness<br>• Recovery methodology effectiveness ratings<br>• Cross-domain incident resolution time improvements |
+| | **Handoff Procedures** | • Responsibility clarity assessment scores<br>• Coordination protocol effectiveness in exercises<br>• Verification procedure success rates<br>• Handoff-related incident extension reduction |
+| | **Shared Terminology** | • Containment action terminology standardization level<br>• Recovery state definition consistency measurements<br>• Validation language adoption rates<br>• Communication efficiency improvement metrics |
+| | **Tool Integration** | • Containment control integration completion percentage<br>• Recovery tracking system effectiveness measurements<br>• Verification system reliability metrics<br>• Cross-platform control execution time reduction |
+| | **Unified Metrics** | • Containment effectiveness measurement accuracy<br>• Recovery time objective achievement rates<br>• Eradication validation metric reliability assessment<br>• Business impact reduction percentage per incident |
+| **Post-Incident Activity** | **Framework Alignment** | • Lessons learned methodology integration effectiveness<br>• Improvement tracking process alignment validation<br>• Knowledge management approach adoption metrics<br>• Recurring incident reduction percentage |
+| | **Handoff Procedures** | • Joint review protocol effectiveness assessment<br>• Improvement responsibility clarity rating<br>• Knowledge sharing workflow efficiency measurements<br>• Cross-team implementation rates of identified improvements |
+| | **Shared Terminology** | • Root cause categorization standardization level<br>• Improvement action description consistency score<br>• Knowledge sharing terminology alignment rate<br>• Documentation quality assessment results |
+| | **Tool Integration** | • Improvement tracking system integration percentage<br>• Knowledge management system connection reliability<br>• Metrics dashboard comprehensiveness rating<br>• Automation level of post-incident workflows |
+| | **Unified Metrics** | • Improvement effectiveness KPI reliability assessments<br>• Incident reduction measurement accuracy across domains<br>• Learning efficiency metric implementation completeness<br>• Time-to-improvement implementation reduction |
 
 ### 7.5. Performing Forensics for an AI system
 
