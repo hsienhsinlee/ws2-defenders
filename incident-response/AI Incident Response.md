@@ -46,7 +46,7 @@
         - [7.2.1.2. Key Recommendations](#7212-key-recommendations)
         - [7.2.1.3. Takeaways for AI Incident Response](#7213-takeaways-for-ai-incident-response)
       - [7.2.2. OASIS CACAO Security Playbooks Version 2.0](#722-oasis-cacao-security-playbooks-version-20)
-    - [7.3. Categories of attacks and how to apply AI playbooks](#73-categories-of-attacks-and-how-to-apply-ai-playbooks)
+    - [7.3. Categories of AI Attacks](#73-categories-of-ai-attacks)
     - [7.4. Creating an AI Incident Response Plan](#74-creating-an-ai-incident-response-plan)
     - [7.5. Performing Forensics for an AI system](#75-performing-forensics-for-an-ai-system)
     - [7.6. Containment and Mitigations](#76-containment-and-mitigations)
@@ -520,7 +520,41 @@ The NIST SP 800-61r2 Computer Security Incident Handling Guide provides structur
 
 
 
-### 7.3. Categories of attacks and how to apply AI playbooks
+### 7.3. Categories of AI Attacks
+
+AI security incidents can be categorized into four primary domains based on the attack vector and impact area:
+
+### 7.3.1. Data-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Data Poisoning**            | Deliberate contamination of training data to induce specific model behaviors      | Injecting fake reviews into a dataset to make an AI model favor specific products artificially |
+| **Data Leakage**              | Unauthorized access to or exfiltration of sensitive training data                 | Hackers gaining access to confidential medical records used to train an AI model              |
+| **Data Integrity Violations** | Tampering with AI system inputs to manipulate outcomes                            | Modifying sensor data in a self-driving car to make it misinterpret road signs                 |
+
+### 7.3.2. Model-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Model Theft/Extraction**    | Unauthorized duplication or stealing of model weights and architecture            | Reverse engineering a proprietary chatbot's model to replicate its behavior                   |
+| **Model Inversion**           | Extracting private training data from model responses                             | Using an AI model's outputs to reconstruct sensitive user data, like medical histories         |
+| **Backdoor Attacks**          | Hidden functionality implanted in models that activates under specific conditions | Adding a secret trigger phrase to make an AI classify harmful content as safe                 |
+
+### 7.3.3. Deployment-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Prompt Injection**          | Manipulating model inputs to bypass safeguards or alter system behavior           | Sending a specially crafted prompt to make an AI assistant disclose restricted information     |
+| **Jailbreaking**              | Circumventing model safety measures to access restricted functionality            | Using creative prompts to make a chatbot generate unethical or harmful content                |
+| **Unauthorized Access**       | Gaining privileged access to AI infrastructure                                    | Exploiting a vulnerability to gain admin access to an AI-powered recommendation system         |
+| **API/Service Abuse**         | Excessive or malicious use of AI services                                         | Overloading an AI translation service with excessive requests to disrupt its functionality     |
+
+### 7.3.4. Output-Level Incidents
+
+| ***Incident Type***          | ***Description***                                                                 | ***Example***                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| **Output Manipulation**       | Forcing harmful or misleading outputs from AI systems                             | Crafting inputs to make an AI generate false financial forecasts                              |
+| **Hallucination Exploitation**| Leveraging model inaccuracies for harmful purposes                                | Using an AI's hallucinated data to spread misinformation in public forums                     |
 
 ### 7.4. Creating an AI Incident Response Plan
 
